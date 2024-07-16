@@ -1,0 +1,14 @@
+<table>
+  <tr>
+    <th>Docker Version</th>
+    <th>Podman Version</th>
+    <th>Result</th>
+  </tr>
+  {% for version in docker_versions %}
+  <tr>
+    <td>{{ version }}</td>
+    <td>latest</td>
+    <td><a href="results/html/docker-v{{ version }}-podman-latest.html">View result</a></td>
+  </tr>
+  {% endfor %}
+</table>
