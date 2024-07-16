@@ -20,11 +20,13 @@ done
 
 # Compare Podman specs with Docker specs
 for version in "${docker_versions[@]}"; do
+	output="docker-v$version-podman-latest"
 	podman run --rm -t \
 		-v "$(pwd)/specs:/specs:ro,Z" \
 		-v "$(pwd)/results:/results:Z" \
 		openapitools/openapi-diff:latest \
 		"/specs/docker-v$version.yaml" "/specs/podman-latest.yaml" \
-		--markdown "/results/docker-v$version-podman-latest.md"
+		--markdown "/results/markdown/$output.md" \
+		--html "/results/html/$output.html"
 done
 
