@@ -13,8 +13,16 @@
   </tr>
   {% for version in docker_versions %}
   <tr>
-    <td scope="row">{{ version }}</td>
-    <td>latest</td>
+    <td scope="row">
+      <a href="https://docs.docker.com/engine/api/v{{version}}/" target="_blank">
+        {{ version }}
+      </a>
+    </td>
+    <td>
+      <a href="https://docs.podman.io/en/latest/_static/api.html" target="_blank">
+        latest
+      </a>
+    </td>
     <td><a href="results/html/docker-v{{ version }}-podman-latest.html">View result</a></td>
   </tr>
   {% endfor %}
@@ -23,6 +31,7 @@
 <hr />
 
 <h3>New changes in Docker API</h3>
+<p>Refer to <a href="https://docs.docker.com/engine/api/version-history/" target="_blank">Docker API Version History</a> for more details.</p>
 
 <table class="table table-striped table-hover">
   <tr>
@@ -30,14 +39,18 @@
     {# to compare the new changes from the last version #}
     <th>#</th>
     {% for version in docker_versions[:-1] %}
-    <th scope="col">{{ version }}</th>
+    <th scope="col">
+        {{ version }}
+    </th>
     {% endfor %}
   </tr>
   {# always skip the first row of the column because there is no reason #}
   {# to compare the first version with itself #}
   {% for version in docker_versions[1:] %}
     <tr>
-      <td scope=""row">{{ version }}</td>
+      <td scope=""row">
+          {{ version }}
+      </td>
           {# skip the last column for the same reason of the table header #}
           {% for other_version in docker_versions[:-1] %}
             {# there is no html to display for the same version comparison #}
