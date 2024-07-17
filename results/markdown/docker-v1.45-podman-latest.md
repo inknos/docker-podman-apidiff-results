@@ -2191,18 +2191,18 @@ Changed response : **200 OK**
 
     * Changed property `Id` (string)
         > ID is the content-addressable ID of an image.
-        > 
+        >
         > This identifier is a content-addressable digest calculated from the
         > image's configuration (which includes the digests of layers used by
         > the image).
-        > 
+        >
         > Note that this digest differs from the `RepoDigests` below, which
         > holds digests of image manifests that reference the image.
 
 
     * Changed property `ParentId` (string)
         > ID of the parent image.
-        > 
+        >
         > Depending on how the image was created, this field may be empty and
         > is only set for images that were built/created locally. This field
         > is empty if the image was pulled from an image registry.
@@ -2211,7 +2211,7 @@ Changed response : **200 OK**
     * Changed property `RepoTags` (array)
         > List of image names/tags in the local image cache that reference this
         > image.
-        > 
+        >
         > Multiple image tags can refer to the same image, and this list may be
         > empty if no tags reference the image, in which case the image is
         > "untagged", in which case it can still be referenced by its ID.
@@ -2221,7 +2221,7 @@ Changed response : **200 OK**
         > List of content-addressable digests of locally available image manifests
         > that the image is referenced from. Multiple manifests can refer to the
         > same image.
-        > 
+        >
         > These digests are usually only available if the image was either pulled
         > from a registry, or if the image was pushed to a registry, which is when
         > the manifest is generated and its digest calculated.
@@ -2239,7 +2239,7 @@ Changed response : **200 OK**
     * Changed property `SharedSize` (integer)
         > Total size of image layers that are shared between this image and other
         > images.
-        > 
+        >
         > This size is not calculated by default. `-1` indicates that the value
         > has not been set / calculated.
 
@@ -2247,7 +2247,7 @@ Changed response : **200 OK**
     * Changed property `Containers` (integer -> integer)
         > Number of containers using this image. Includes both stopped and running
         > containers.
-        > 
+        >
         > This size is not calculated by default, and depends on which API endpoint
         > is used. `-1` indicates that the value has not been set / calculated.
 
@@ -2286,7 +2286,7 @@ Deleted: `Content-type` in `header`
 
 Deleted: `version` in `query`
 > Version of the builder backend to use.
-> 
+>
 > - `1` is the first generation classic (deprecated) builder in the Docker daemon (default)
 > - `2` is [BuildKit](https://github.com/moby/buildkit)
 
@@ -2378,13 +2378,13 @@ Changed: `cpuquota` in `query`
 Changed: `buildargs` in `query`
 > JSON map of string pairs denoting build-time variables.
 > For example, the build argument `Foo` with the value of `bar` would be encoded in JSON as `["Foo":"bar"]`.
-> 
+>
 > For example, buildargs={"Foo":"bar"}.
-> 
+>
 > Note(s):
 > * This should not be used to pass secrets.
 > * The value of buildargs should be URI component encoded before being passed to the API.
-> 
+>
 > (As of version 1.xx)
 
 
@@ -2504,7 +2504,7 @@ Deleted: `changes` in `query`
 > Apply `Dockerfile` instructions to the image that is created,
 > for example: `changes=ENV DEBUG=true`.
 > Note that `ENV DEBUG=true` should be URI component encoded.
-> 
+>
 > Supported `Dockerfile` instructions:
 > `CMD`|`ENTRYPOINT`|`ENV`|`EXPOSE`|`ONBUILD`|`USER`|`VOLUME`|`WORKDIR`
 
@@ -3409,18 +3409,18 @@ Changed response : **200 OK**
 
         * Deleted property `Id` (string)
             > ID is the content-addressable ID of an image.
-            > 
+            >
             > This identifier is a content-addressable digest calculated from the
             > image's configuration (which includes the digests of layers used by
             > the image).
-            > 
+            >
             > Note that this digest differs from the `RepoDigests` below, which
             > holds digests of image manifests that reference the image.
 
 
         * Deleted property `ParentId` (string)
             > ID of the parent image.
-            > 
+            >
             > Depending on how the image was created, this field may be empty and
             > is only set for images that were built/created locally. This field
             > is empty if the image was pulled from an image registry.
@@ -3429,7 +3429,7 @@ Changed response : **200 OK**
         * Deleted property `RepoTags` (array)
             > List of image names/tags in the local image cache that reference this
             > image.
-            > 
+            >
             > Multiple image tags can refer to the same image, and this list may be
             > empty if no tags reference the image, in which case the image is
             > "untagged", in which case it can still be referenced by its ID.
@@ -3439,7 +3439,7 @@ Changed response : **200 OK**
             > List of content-addressable digests of locally available image manifests
             > that the image is referenced from. Multiple manifests can refer to the
             > same image.
-            > 
+            >
             > These digests are usually only available if the image was either pulled
             > from a registry, or if the image was pushed to a registry, which is when
             > the manifest is generated and its digest calculated.
@@ -3447,7 +3447,7 @@ Changed response : **200 OK**
 
         * Deleted property `VirtualSize` (integer)
             > Total size of the image including all layers it is composed of.
-            > 
+            >
             > Deprecated: this field is omitted in API v1.44, but kept for backward compatibility. Use Size instead.
 
 
@@ -3565,7 +3565,7 @@ Changed response : **200 OK**
             > Low-level details about the volume, provided by the volume driver.
             > Details are returned as a map with key/value pairs:
             > `{"key":"value","key2":"value2"}`.
-            > 
+            >
             > The `Status` field is optional, and is omitted if the volume driver
             > does not support this feature.
 
@@ -4605,7 +4605,7 @@ Changed response : **200 OK**
 
         * Property `MacAddress` (string)
             > Mac Address of the container.
-            > 
+            >
             > Deprecated: this field is deprecated since API v1.44. Use EndpointSettings.MacAddress instead.
 
 
@@ -4930,12 +4930,12 @@ Changed response : **200 OK**
 
                 * Property `SizeBytes` (integer)
                     > Size sets the size of the tmpfs, in bytes.
-                    > 
+                    >
                     > This will be converted to an operating system specific value
                     > depending on the host. For example, on linux, it will be converted to
                     > use a 'k', 'm' or 'g' syntax. BSD, though not widely supported with
                     > docker, uses a straight byte value.
-                    > 
+                    >
                     > Percentages are not supported.
 
 
@@ -5058,7 +5058,7 @@ Changed response : **200 OK**
 
         * Changed property `Source` (string)
             > Source is the source location of the mount.
-            > 
+            >
             > For volumes, this contains the storage location of the volume (within
             > `/var/lib/docker/volumes/`). For bind-mounts, and `npipe`, this contains
             > the source (host) part of the bind-mount. For `tmpfs` mount points, this
@@ -5077,7 +5077,7 @@ Changed response : **200 OK**
         * Changed property `Mode` (string)
             > Mode is a comma separated list of options supplied by the user when
             > creating the bind/volume mount.
-            > 
+            >
             > The default is platform-specific (`"z"` on Linux, empty on Windows).
 
 
@@ -5101,18 +5101,18 @@ Changed response : **200 OK**
 
 Deleted: `platform` in `query`
 > Platform in the format `os[/arch[/variant]]` used for image lookup.
-> 
+>
 > When specified, the daemon checks if the requested image is present
 > in the local image cache with the given OS and Architecture, and
 > otherwise returns a `404` status.
-> 
+>
 > If the option is not set, the host's native OS and Architecture are
 > used to look up the image in the image cache. However, if no platform
 > is passed and the given image does exist in the local image cache,
 > but its OS or architecture does not match, the container is created
 > with the available image, and a warning is added to the `Warnings`
 > field in the response, for example;
-> 
+>
 >     WARNING: The requested image's platform (linux/arm64/v8) does not
 >              match the detected host platform (linux/amd64) and no
 >              specific platform was requested
@@ -5182,7 +5182,7 @@ Changed content type : `application/json`
 
 * Changed property `MacAddress` (string)
     > Mac Address of the container.
-    > 
+    >
     > Deprecated: this field is deprecated since API v1.44. Use EndpointSettings.MacAddress instead.
 
 
@@ -5556,12 +5556,12 @@ Changed content type : `application/json`
 
             * Changed property `SizeBytes` (integer)
                 > Size sets the size of the tmpfs, in bytes.
-                > 
+                >
                 > This will be converted to an operating system specific value
                 > depending on the host. For example, on linux, it will be converted to
                 > use a 'k', 'm' or 'g' syntax. BSD, though not widely supported with
                 > docker, uses a straight byte value.
-                > 
+                >
                 > Percentages are not supported.
 
 
@@ -5787,7 +5787,7 @@ Changed response : **200 OK**
 
         * Changed property `Data` (object)
             > Low-level storage metadata, provided as key/value pairs.
-            > 
+            >
             > This information is driver-specific, and depends on the storage-driver
             > in use, and should be used for informational purposes only.
 
@@ -5814,7 +5814,7 @@ Changed response : **200 OK**
 
         * Changed property `Source` (string)
             > Source is the source location of the mount.
-            > 
+            >
             > For volumes, this contains the storage location of the volume (within
             > `/var/lib/docker/volumes/`). For bind-mounts, and `npipe`, this contains
             > the source (host) part of the bind-mount. For `tmpfs` mount points, this
@@ -5833,7 +5833,7 @@ Changed response : **200 OK**
         * Changed property `Mode` (string)
             > Mode is a comma separated list of options supplied by the user when
             > creating the bind/volume mount.
-            > 
+            >
             > The default is platform-specific (`"z"` on Linux, empty on Windows).
 
 
@@ -5895,7 +5895,7 @@ Changed response : **200 OK**
 
         * Changed property `MacAddress` (string)
             > Mac Address of the container.
-            > 
+            >
             > Deprecated: this field is deprecated since API v1.44. Use EndpointSettings.MacAddress instead.
 
 
@@ -6329,12 +6329,12 @@ Changed response : **200 OK**
 
                 * Changed property `SizeBytes` (integer)
                     > Size sets the size of the tmpfs, in bytes.
-                    > 
+                    >
                     > This will be converted to an operating system specific value
                     > depending on the host. For example, on linux, it will be converted to
                     > use a 'k', 'm' or 'g' syntax. BSD, though not widely supported with
                     > docker, uses a straight byte value.
-                    > 
+                    >
                     > Percentages are not supported.
 
 
@@ -6359,19 +6359,19 @@ Changed response : **200 OK**
 
         * Changed property `HairpinMode` (boolean)
             > HairpinMode specifies if hairpin NAT should be enabled on the virtual interface
-            > 
+            >
             > Deprecated: This field is never set and will be removed in a future release.
 
 
         * Changed property `LinkLocalIPv6Address` (string)
             > LinkLocalIPv6Address is an IPv6 unicast address using the link-local prefix
-            > 
+            >
             > Deprecated: This field is never set and will be removed in a future release.
 
 
         * Changed property `LinkLocalIPv6PrefixLen` (integer -> integer)
             > LinkLocalIPv6PrefixLen is the prefix length of an IPv6 unicast address
-            > 
+            >
             > Deprecated: This field is never set and will be removed in a future release.
 
 
@@ -6482,11 +6482,11 @@ Changed response : **200 OK**
 
     * Changed property `Id` (string)
         > ID is the content-addressable ID of an image.
-        > 
+        >
         > This identifier is a content-addressable digest calculated from the
         > image's configuration (which includes the digests of layers used by
         > the image).
-        > 
+        >
         > Note that this digest differs from the `RepoDigests` below, which
         > holds digests of image manifests that reference the image.
 
@@ -6494,7 +6494,7 @@ Changed response : **200 OK**
     * Changed property `RepoTags` (array)
         > RepoTags is a list of image names/tags in the local image cache that
         > reference this image.
-        > 
+        >
         > Multiple image tags can refer to the same image, and this list may be
         > empty if no tags reference the image, in which case the image is
         > "untagged", in which case it can still be referenced by its ID.
@@ -6504,7 +6504,7 @@ Changed response : **200 OK**
         > RepoDigests is a list of content-addressable digests of locally available
         > image manifests that the image is referenced from. Multiple manifests can
         > refer to the same image.
-        > 
+        >
         > These digests are usually only available if the image was either pulled
         > from a registry, or if the image was pushed to a registry, which is when
         > the manifest is generated and its digest calculated.
@@ -6512,7 +6512,7 @@ Changed response : **200 OK**
 
     * Changed property `Parent` (string)
         > Parent is the ID of the parent image.
-        > 
+        >
         > Depending on how the image was created, this field may be empty and
         > is only set for images that were built/created locally. This field
         > is empty if the image was pulled from an image registry.
@@ -6526,14 +6526,14 @@ Changed response : **200 OK**
     * Changed property `Created` (string -> string)
         > Created is the date and time at which the image was created, formatted in
         > RFC 3339 nano-seconds (time.RFC3339Nano).
-        > 
+        >
         > This information is only available if present in the image,
         > and omitted otherwise.
 
 
     * Changed property `DockerVersion` (string)
         > DockerVersion is the version of Docker that was used to build the image.
-        > 
+        >
         > Depending on how the image was created, this field may be empty.
 
 
@@ -6566,7 +6566,7 @@ Changed response : **200 OK**
     * Changed property `VirtualSize` (integer)
         > VirtualSize is the total size of the image including all layers it is
         > composed of.
-        > 
+        >
         > Deprecated: this field is omitted in API v1.44, but kept for backward compatibility. Use Size instead.
 
 
@@ -6579,9 +6579,9 @@ Changed response : **200 OK**
 
             Changed items (string):
                 > The following is an example of the contents of Digest types:
-                > 
+                >
                 > sha256:7173b809ca12ec5dee4506cd86be934c4596dd234ee82c0662eac04a8c2c71dc
-                > 
+                >
                 > This allows to abstract the digest behind this type and work only in those
                 > terms.
 
@@ -6599,7 +6599,7 @@ Changed response : **200 OK**
 
         * Changed property `Data` (object)
             > Low-level storage metadata, provided as key/value pairs.
-            > 
+            >
             > This information is driver-specific, and depends on the storage-driver
             > in use, and should be used for informational purposes only.
 
@@ -6656,7 +6656,7 @@ Changed response : **200 OK**
 
         * Changed property `MacAddress` (string)
             > Mac Address of the container.
-            > 
+            >
             > Deprecated: this field is deprecated since API v1.44. Use EndpointSettings.MacAddress instead.
 
 
@@ -6779,7 +6779,7 @@ Changed response : **201 Created**
         > Low-level details about the volume, provided by the volume driver.
         > Details are returned as a map with key/value pairs:
         > `{"key":"value","key2":"value2"}`.
-        > 
+        >
         > The `Status` field is optional, and is omitted if the volume driver
         > does not support this feature.
 
@@ -6871,21 +6871,21 @@ Changed response : **201 Created**
                 * Property `Preferred` (array)
                     > Preferred is a list of Topologies that the volume should attempt to be
                     > provisioned in.
-                    > 
+                    >
                     > Taken from the CSI spec:
-                    > 
+                    >
                     > Specifies the list of topologies the CO would prefer the volume to
                     > be provisioned in.
-                    > 
+                    >
                     > This field is OPTIONAL. If TopologyRequirement is specified either
                     > requisite or preferred or both MUST be specified.
-                    > 
+                    >
                     > An SP MUST attempt to make the provisioned volume available using
                     > the preferred topologies in order from first to last.
-                    > 
+                    >
                     > If requisite is specified, all topologies in preferred list MUST
                     > also be present in the list of requisite topologies.
-                    > 
+                    >
                     > If the SP is unable to make the provisioned volume available
                     > from any of the preferred topologies, the SP MAY choose a topology
                     > from the list of requisite topologies.
@@ -6894,7 +6894,7 @@ Changed response : **201 Created**
                     > If the list of requisite topologies is specified and the SP is
                     > unable to make the provisioned volume available from any of the
                     > requisite topologies it MUST fail the CreateVolume call.
-                    > 
+                    >
                     > Example 1:
                     > Given a volume should be accessible from a single zone, and
                     > requisite =
@@ -6905,7 +6905,7 @@ Changed response : **201 Created**
                     > then the SP SHOULD first attempt to make the provisioned volume
                     > available from "zone" "Z3" in the "region" "R1" and fall back to
                     > "zone" "Z2" in the "region" "R1" if that is not possible.
-                    > 
+                    >
                     > Example 2:
                     > Given a volume should be accessible from a single zone, and
                     > requisite =
@@ -6921,7 +6921,7 @@ Changed response : **201 Created**
                     > "zone" "Z2" in the "region" "R1" if that is not possible. If that
                     > is not possible, the SP may choose between either the "zone"
                     > "Z3" or "Z5" in the "region" "R1".
-                    > 
+                    >
                     > Example 3:
                     > Given a volume should be accessible from TWO zones (because an
                     > opaque parameter in CreateVolumeRequest, for example, specifies
@@ -6947,7 +6947,7 @@ Changed response : **201 Created**
 
                     Items (object):
                         > This description is taken verbatim from the CSI Spec:
-                        > 
+                        >
                         > A topological domain is a sub-division of a cluster, like "region",
                         > "zone", "rack", etc.
                         > A topological segment is a specific instance of a topological domain,
@@ -6983,17 +6983,17 @@ Changed response : **201 Created**
                 * Property `Requisite` (array)
                     > Requisite specifies a list of Topologies, at least one of which the
                     > volume must be accessible from.
-                    > 
+                    >
                     > Taken verbatim from the CSI Spec:
-                    > 
+                    >
                     > Specifies the list of topologies the provisioned volume MUST be
                     > accessible from.
                     > This field is OPTIONAL. If TopologyRequirement is specified either
                     > requisite or preferred or both MUST be specified.
-                    > 
+                    >
                     > If requisite is specified, the provisioned volume MUST be
                     > accessible from at least one of the requisite topologies.
-                    > 
+                    >
                     > Given
                     > x = number of topologies provisioned volume is accessible from
                     > n = number of requisite topologies
@@ -7012,7 +7012,7 @@ Changed response : **201 Created**
                     > {"region": "R1", "zone": "Z3"}
                     > then the provisioned volume MUST be accessible from the "region"
                     > "R1" and both "zone" "Z2" and "zone" "Z3".
-                    > 
+                    >
                     > If x<n, then the SP SHALL choose x unique topologies from the list
                     > of requisite topologies. If it is unable to do so, the SP MUST fail
                     > the CreateVolume call.
@@ -7030,7 +7030,7 @@ Changed response : **201 Created**
                     > then the provisioned volume MUST be accessible from any combination
                     > of two unique topologies: e.g. "R1/Z2" and "R1/Z3", or "R1/Z2" and
                     > "R1/Z4", or "R1/Z3" and "R1/Z4".
-                    > 
+                    >
                     > If x>n, then the SP MUST make the provisioned volume available from
                     > all topologies from the list of requisite topologies and MAY choose
                     > the remaining x-n unique topologies from the list of all possible
@@ -7046,7 +7046,7 @@ Changed response : **201 Created**
 
                     Items (object):
                         > This description is taken verbatim from the CSI Spec:
-                        > 
+                        >
                         > A topological domain is a sub-division of a cluster, like "region",
                         > "zone", "rack", etc.
                         > A topological segment is a specific instance of a topological domain,
@@ -7217,7 +7217,7 @@ Changed response : **201 Created**
 
                 Changed items (object):
                     > This description is taken verbatim from the CSI Spec:
-                    > 
+                    >
                     > A topological domain is a sub-division of a cluster, like "region",
                     > "zone", "rack", etc.
                     > A topological segment is a specific instance of a topological domain,
@@ -7377,7 +7377,7 @@ Changed response : **200 OK**
         > Low-level details about the volume, provided by the volume driver.
         > Details are returned as a map with key/value pairs:
         > `{"key":"value","key2":"value2"}`.
-        > 
+        >
         > The `Status` field is optional, and is omitted if the volume driver
         > does not support this feature.
 
@@ -7578,7 +7578,7 @@ Changed response : **200 OK**
 
                 Changed items (object):
                     > This description is taken verbatim from the CSI Spec:
-                    > 
+                    >
                     > A topological domain is a sub-division of a cluster, like "region",
                     > "zone", "rack", etc.
                     > A topological segment is a specific instance of a topological domain,
@@ -7961,7 +7961,7 @@ Changed response : **200 OK**
         * Deleted property `Data` (string)
             > Base64-url-safe-encoded ([RFC 4648](https://tools.ietf.org/html/rfc4648#section-5))
             > data to store as secret.
-            > 
+            >
             > This field is only used to _create_ a secret, and is not returned by
             > other endpoints.
 
@@ -8126,7 +8126,7 @@ Changed response : **200 OK**
         * Deleted property `Data` (string)
             > Base64-url-safe-encoded ([RFC 4648](https://tools.ietf.org/html/rfc4648#section-5))
             > data to store as secret.
-            > 
+            >
             > This field is only used to _create_ a secret, and is not returned by
             > other endpoints.
 
@@ -8157,7 +8157,7 @@ Changed: `filters` in `query`
 >   - label=<key> or label=<key>:<value> Matches volumes based on the presence of a label alone or a label and a value.
 >   - name=<volume-name> Matches all of volume name.
 >   - `until=<timestamp>` List volumes created before this timestamp. The `<timestamp>` can be Unix timestamps, date formatted timestamps, or Go duration strings (e.g. `10m`, `1h30m`) computed relative to the daemon machine’s time.
-> 
+>
 > Note:
 >   The boolean `dangling` filter is not yet implemented for this endpoint.
 
@@ -8211,7 +8211,7 @@ Changed response : **200 OK**
             > Low-level details about the volume, provided by the volume driver.
             > Details are returned as a map with key/value pairs:
             > `{"key":"value","key2":"value2"}`.
-            > 
+            >
             > The `Status` field is optional, and is omitted if the volume driver
             > does not support this feature.
 
@@ -8412,7 +8412,7 @@ Changed response : **200 OK**
 
                     Changed items (object):
                         > This description is taken verbatim from the CSI Spec:
-                        > 
+                        >
                         > A topological domain is a sub-division of a cluster, like "region",
                         > "zone", "rack", etc.
                         > A topological segment is a specific instance of a topological domain,
@@ -8444,4 +8444,3 @@ Changed response : **200 OK**
 
 
                     * Added property `Segments` (object)
-

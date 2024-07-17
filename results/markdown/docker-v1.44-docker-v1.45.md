@@ -8,7 +8,7 @@
 
 Changed: `filters` in `query`
 > A JSON encoded value of the filters (a `map[string][]string`) to process on the images list. Available filters:
-> 
+>
 > - `is-official=(true|false)`
 > - `stars=<number>` Matches images that has at least 'number' stars.
 
@@ -25,9 +25,9 @@ Changed response : **200 OK**
 
     * Changed property `is_automated` (boolean)
         > Whether this repository has automated builds enabled.
-        > 
+        >
         > <p><br /></p>
-        > 
+        >
         > > **Deprecated**: This field is deprecated and will always be "false".
 
 
@@ -62,7 +62,7 @@ Changed content type : `application/json`
             * Changed property `ReadOnlyNonRecursive` (boolean)
                 > Make the mount non-recursively read-only, but still leave the mount recursive
                 > (unless NonRecursive is set to `true` in conjunction).
-                > 
+                >
                 > Addded in v1.44, before that version all read-only mounts were
                 > non-recursive by default. To match the previous behaviour this
                 > will default to `true` for clients on versions prior to v1.44.
@@ -95,7 +95,7 @@ Changed content type : `application/octet-stream`
             * Changed property `ReadOnlyNonRecursive` (boolean)
                 > Make the mount non-recursively read-only, but still leave the mount recursive
                 > (unless NonRecursive is set to `true` in conjunction).
-                > 
+                >
                 > Addded in v1.44, before that version all read-only mounts were
                 > non-recursive by default. To match the previous behaviour this
                 > will default to `true` for clients on versions prior to v1.44.
@@ -141,7 +141,7 @@ Changed response : **200 OK**
                 * Changed property `ReadOnlyNonRecursive` (boolean)
                     > Make the mount non-recursively read-only, but still leave the mount recursive
                     > (unless NonRecursive is set to `true` in conjunction).
-                    > 
+                    >
                     > Addded in v1.44, before that version all read-only mounts were
                     > non-recursive by default. To match the previous behaviour this
                     > will default to `true` for clients on versions prior to v1.44.
@@ -168,9 +168,9 @@ Changed response : **200 OK**
 
     * Deleted property `Container` (string)
         > The ID of the container that was used to create the image.
-        > 
+        >
         > Depending on how the image was created, this field may be empty.
-        > 
+        >
         > **Deprecated**: this field is kept for backward compatibility, but
         > will be removed in API v1.45.
 
@@ -192,9 +192,9 @@ Changed content type : `application/json`
 
     * Changed property `ContainerSpec` (object)
         > Container spec for the service.
-        > 
+        >
         > <p><br /></p>
-        > 
+        >
         > > **Note**: ContainerSpec, NetworkAttachmentSpec, and PluginSpec are
         > > mutually exclusive. PluginSpec is only used when the Runtime field
         > > is set to `plugin`. NetworkAttachmentSpec is used when the Runtime
@@ -215,7 +215,7 @@ Changed content type : `application/json`
                 * Changed property `ReadOnlyNonRecursive` (boolean)
                     > Make the mount non-recursively read-only, but still leave the mount recursive
                     > (unless NonRecursive is set to `true` in conjunction).
-                    > 
+                    >
                     > Addded in v1.44, before that version all read-only mounts were
                     > non-recursive by default. To match the previous behaviour this
                     > will default to `true` for clients on versions prior to v1.44.
@@ -242,9 +242,9 @@ Changed content type : `application/json`
 
     * Changed property `ContainerSpec` (object)
         > Container spec for the service.
-        > 
+        >
         > <p><br /></p>
-        > 
+        >
         > > **Note**: ContainerSpec, NetworkAttachmentSpec, and PluginSpec are
         > > mutually exclusive. PluginSpec is only used when the Runtime field
         > > is set to `plugin`. NetworkAttachmentSpec is used when the Runtime
@@ -265,7 +265,7 @@ Changed content type : `application/json`
                 * Changed property `ReadOnlyNonRecursive` (boolean)
                     > Make the mount non-recursively read-only, but still leave the mount recursive
                     > (unless NonRecursive is set to `true` in conjunction).
-                    > 
+                    >
                     > Addded in v1.44, before that version all read-only mounts were
                     > non-recursive by default. To match the previous behaviour this
                     > will default to `true` for clients on versions prior to v1.44.
@@ -298,9 +298,9 @@ Changed response : **200 OK**
 
         * Changed property `ContainerSpec` (object)
             > Container spec for the service.
-            > 
+            >
             > <p><br /></p>
-            > 
+            >
             > > **Note**: ContainerSpec, NetworkAttachmentSpec, and PluginSpec are
             > > mutually exclusive. PluginSpec is only used when the Runtime field
             > > is set to `plugin`. NetworkAttachmentSpec is used when the Runtime
@@ -321,7 +321,7 @@ Changed response : **200 OK**
                     * Changed property `ReadOnlyNonRecursive` (boolean)
                         > Make the mount non-recursively read-only, but still leave the mount recursive
                         > (unless NonRecursive is set to `true` in conjunction).
-                        > 
+                        >
                         > Addded in v1.44, before that version all read-only mounts were
                         > non-recursive by default. To match the previous behaviour this
                         > will default to `true` for clients on versions prior to v1.44.
@@ -352,9 +352,9 @@ Changed response : **200 OK**
 
         * Changed property `ContainerSpec` (object)
             > Container spec for the service.
-            > 
+            >
             > <p><br /></p>
-            > 
+            >
             > > **Note**: ContainerSpec, NetworkAttachmentSpec, and PluginSpec are
             > > mutually exclusive. PluginSpec is only used when the Runtime field
             > > is set to `plugin`. NetworkAttachmentSpec is used when the Runtime
@@ -375,7 +375,7 @@ Changed response : **200 OK**
                     * Changed property `ReadOnlyNonRecursive` (boolean)
                         > Make the mount non-recursively read-only, but still leave the mount recursive
                         > (unless NonRecursive is set to `true` in conjunction).
-                        > 
+                        >
                         > Addded in v1.44, before that version all read-only mounts were
                         > non-recursive by default. To match the previous behaviour this
                         > will default to `true` for clients on versions prior to v1.44.
@@ -412,9 +412,9 @@ Changed response : **200 OK**
 
             * Changed property `ContainerSpec` (object)
                 > Container spec for the service.
-                > 
+                >
                 > <p><br /></p>
-                > 
+                >
                 > > **Note**: ContainerSpec, NetworkAttachmentSpec, and PluginSpec are
                 > > mutually exclusive. PluginSpec is only used when the Runtime field
                 > > is set to `plugin`. NetworkAttachmentSpec is used when the Runtime
@@ -435,7 +435,7 @@ Changed response : **200 OK**
                         * Changed property `ReadOnlyNonRecursive` (boolean)
                             > Make the mount non-recursively read-only, but still leave the mount recursive
                             > (unless NonRecursive is set to `true` in conjunction).
-                            > 
+                            >
                             > Addded in v1.44, before that version all read-only mounts were
                             > non-recursive by default. To match the previous behaviour this
                             > will default to `true` for clients on versions prior to v1.44.
@@ -463,9 +463,9 @@ Changed response : **200 OK**
 
             * Changed property `ContainerSpec` (object)
                 > Container spec for the service.
-                > 
+                >
                 > <p><br /></p>
-                > 
+                >
                 > > **Note**: ContainerSpec, NetworkAttachmentSpec, and PluginSpec are
                 > > mutually exclusive. PluginSpec is only used when the Runtime field
                 > > is set to `plugin`. NetworkAttachmentSpec is used when the Runtime
@@ -486,7 +486,7 @@ Changed response : **200 OK**
                         * Changed property `ReadOnlyNonRecursive` (boolean)
                             > Make the mount non-recursively read-only, but still leave the mount recursive
                             > (unless NonRecursive is set to `true` in conjunction).
-                            > 
+                            >
                             > Addded in v1.44, before that version all read-only mounts were
                             > non-recursive by default. To match the previous behaviour this
                             > will default to `true` for clients on versions prior to v1.44.
@@ -521,9 +521,9 @@ Changed response : **200 OK**
 
             * Changed property `ContainerSpec` (object)
                 > Container spec for the service.
-                > 
+                >
                 > <p><br /></p>
-                > 
+                >
                 > > **Note**: ContainerSpec, NetworkAttachmentSpec, and PluginSpec are
                 > > mutually exclusive. PluginSpec is only used when the Runtime field
                 > > is set to `plugin`. NetworkAttachmentSpec is used when the Runtime
@@ -544,7 +544,7 @@ Changed response : **200 OK**
                         * Changed property `ReadOnlyNonRecursive` (boolean)
                             > Make the mount non-recursively read-only, but still leave the mount recursive
                             > (unless NonRecursive is set to `true` in conjunction).
-                            > 
+                            >
                             > Addded in v1.44, before that version all read-only mounts were
                             > non-recursive by default. To match the previous behaviour this
                             > will default to `true` for clients on versions prior to v1.44.
@@ -570,9 +570,9 @@ Changed response : **200 OK**
 
             * Changed property `ContainerSpec` (object)
                 > Container spec for the service.
-                > 
+                >
                 > <p><br /></p>
-                > 
+                >
                 > > **Note**: ContainerSpec, NetworkAttachmentSpec, and PluginSpec are
                 > > mutually exclusive. PluginSpec is only used when the Runtime field
                 > > is set to `plugin`. NetworkAttachmentSpec is used when the Runtime
@@ -593,7 +593,7 @@ Changed response : **200 OK**
                         * Changed property `ReadOnlyNonRecursive` (boolean)
                             > Make the mount non-recursively read-only, but still leave the mount recursive
                             > (unless NonRecursive is set to `true` in conjunction).
-                            > 
+                            >
                             > Addded in v1.44, before that version all read-only mounts were
                             > non-recursive by default. To match the previous behaviour this
                             > will default to `true` for clients on versions prior to v1.44.
@@ -605,5 +605,3 @@ Changed response : **200 OK**
 
                         * Added property `Subpath` (string)
                             > Source path inside the volume. Must be relative without any back traversals.
-
-

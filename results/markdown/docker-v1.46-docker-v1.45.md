@@ -158,98 +158,98 @@ Changed response : **200 OK**
 
         * Changed property `Hostname` (string)
             > The hostname to use for the container, as a valid RFC 1123 hostname.
-            > 
+            >
             > <p><br /></p>
-            > 
+            >
             > > **Note**: this field is always empty and must not be used.
 
 
         * Changed property `Domainname` (string)
             > The domain name to use for the container.
-            > 
+            >
             > <p><br /></p>
-            > 
+            >
             > > **Note**: this field is always empty and must not be used.
 
 
         * Changed property `AttachStdin` (boolean)
             > Whether to attach to `stdin`.
-            > 
+            >
             > <p><br /></p>
-            > 
+            >
             > > **Note**: this field is always false and must not be used.
 
 
         * Changed property `AttachStdout` (boolean)
             > Whether to attach to `stdout`.
-            > 
+            >
             > <p><br /></p>
-            > 
+            >
             > > **Note**: this field is always false and must not be used.
 
 
         * Changed property `AttachStderr` (boolean)
             > Whether to attach to `stderr`.
-            > 
+            >
             > <p><br /></p>
-            > 
+            >
             > > **Note**: this field is always false and must not be used.
 
 
         * Changed property `Tty` (boolean)
             > Attach standard streams to a TTY, including `stdin` if it is not closed.
-            > 
+            >
             > <p><br /></p>
-            > 
+            >
             > > **Note**: this field is always false and must not be used.
 
 
         * Changed property `OpenStdin` (boolean)
             > Open `stdin`
-            > 
+            >
             > <p><br /></p>
-            > 
+            >
             > > **Note**: this field is always false and must not be used.
 
 
         * Changed property `StdinOnce` (boolean)
             > Close `stdin` after one attached client disconnects.
-            > 
+            >
             > <p><br /></p>
-            > 
+            >
             > > **Note**: this field is always false and must not be used.
 
 
         * Changed property `Image` (string)
             > The name (or reference) of the image to use when creating the container,
             > or which was used when the container was created.
-            > 
+            >
             > <p><br /></p>
-            > 
+            >
             > > **Note**: this field is always empty and must not be used.
 
 
         * Changed property `NetworkDisabled` (boolean)
             > Disable networking for the container.
-            > 
+            >
             > <p><br /></p>
-            > 
+            >
             > > **Note**: this field is always omitted and must not be used.
 
 
         * Changed property `MacAddress` (string)
             > MAC address of the container.
-            > 
+            >
             > <p><br /></p>
-            > 
+            >
             > > **Deprecated**: this field is deprecated in API v1.44 and up. It is always omitted.
 
 
         * Changed property `StopTimeout` (integer)
             > Timeout to stop a container in seconds.
-            > 
+            >
             > <p><br /></p>
-            > 
+            >
             > > **Note**: this field is always omitted and must not be used.
 
 
@@ -299,9 +299,9 @@ Changed content type : `application/json`
 
     * Changed property `ContainerSpec` (object)
         > Container spec for the service.
-        > 
+        >
         > <p><br /></p>
-        > 
+        >
         > > **Note**: ContainerSpec, NetworkAttachmentSpec, and PluginSpec are
         > > mutually exclusive. PluginSpec is only used when the Runtime field
         > > is set to `plugin`. NetworkAttachmentSpec is used when the Runtime
@@ -339,7 +339,7 @@ Changed content type : `application/json`
             > _match_ (`==`) or _exclude_ (`!=`) rule. Multiple constraints find
             > nodes that satisfy every expression (AND match). Constraints can
             > match node or Docker Engine labels as follows:
-            > 
+            >
             > node attribute       | matches                        | example
             > ---------------------|--------------------------------|-----------------------------------------------
             > `node.id`            | Node ID                        | `node.id==2ivku8v2gvtg4`
@@ -349,7 +349,7 @@ Changed content type : `application/json`
             > `node.platform.arch` | Node architecture              | `node.platform.arch==x86_64`
             > `node.labels`        | User-defined node labels       | `node.labels.security==high`
             > `engine.labels`      | Docker Engine's labels         | `engine.labels.operatingsystem==ubuntu-14.04`
-            > 
+            >
             > `engine.labels` apply to Docker Engine labels like operating system,
             > drivers, etc. Swarm administrators add `node.labels` for operational
             > purposes by using the [`node update endpoint`](#operation/NodeUpdate).
@@ -368,9 +368,9 @@ Changed content type : `application/json`
 
     * Changed property `ContainerSpec` (object)
         > Container spec for the service.
-        > 
+        >
         > <p><br /></p>
-        > 
+        >
         > > **Note**: ContainerSpec, NetworkAttachmentSpec, and PluginSpec are
         > > mutually exclusive. PluginSpec is only used when the Runtime field
         > > is set to `plugin`. NetworkAttachmentSpec is used when the Runtime
@@ -408,7 +408,7 @@ Changed content type : `application/json`
             > _match_ (`==`) or _exclude_ (`!=`) rule. Multiple constraints find
             > nodes that satisfy every expression (AND match). Constraints can
             > match node or Docker Engine labels as follows:
-            > 
+            >
             > node attribute       | matches                        | example
             > ---------------------|--------------------------------|-----------------------------------------------
             > `node.id`            | Node ID                        | `node.id==2ivku8v2gvtg4`
@@ -418,7 +418,7 @@ Changed content type : `application/json`
             > `node.platform.arch` | Node architecture              | `node.platform.arch==x86_64`
             > `node.labels`        | User-defined node labels       | `node.labels.security==high`
             > `engine.labels`      | Docker Engine's labels         | `engine.labels.operatingsystem==ubuntu-14.04`
-            > 
+            >
             > `engine.labels` apply to Docker Engine labels like operating system,
             > drivers, etc. Swarm administrators add `node.labels` for operational
             > purposes by using the [`node update endpoint`](#operation/NodeUpdate).
@@ -461,9 +461,9 @@ Changed response : **200 OK**
 
         * Changed property `ContainerSpec` (object)
             > Container spec for the service.
-            > 
+            >
             > <p><br /></p>
-            > 
+            >
             > > **Note**: ContainerSpec, NetworkAttachmentSpec, and PluginSpec are
             > > mutually exclusive. PluginSpec is only used when the Runtime field
             > > is set to `plugin`. NetworkAttachmentSpec is used when the Runtime
@@ -501,7 +501,7 @@ Changed response : **200 OK**
                 > _match_ (`==`) or _exclude_ (`!=`) rule. Multiple constraints find
                 > nodes that satisfy every expression (AND match). Constraints can
                 > match node or Docker Engine labels as follows:
-                > 
+                >
                 > node attribute       | matches                        | example
                 > ---------------------|--------------------------------|-----------------------------------------------
                 > `node.id`            | Node ID                        | `node.id==2ivku8v2gvtg4`
@@ -511,7 +511,7 @@ Changed response : **200 OK**
                 > `node.platform.arch` | Node architecture              | `node.platform.arch==x86_64`
                 > `node.labels`        | User-defined node labels       | `node.labels.security==high`
                 > `engine.labels`      | Docker Engine's labels         | `engine.labels.operatingsystem==ubuntu-14.04`
-                > 
+                >
                 > `engine.labels` apply to Docker Engine labels like operating system,
                 > drivers, etc. Swarm administrators add `node.labels` for operational
                 > purposes by using the [`node update endpoint`](#operation/NodeUpdate).
@@ -534,9 +534,9 @@ Changed response : **200 OK**
 
         * Changed property `ContainerSpec` (object)
             > Container spec for the service.
-            > 
+            >
             > <p><br /></p>
-            > 
+            >
             > > **Note**: ContainerSpec, NetworkAttachmentSpec, and PluginSpec are
             > > mutually exclusive. PluginSpec is only used when the Runtime field
             > > is set to `plugin`. NetworkAttachmentSpec is used when the Runtime
@@ -574,7 +574,7 @@ Changed response : **200 OK**
                 > _match_ (`==`) or _exclude_ (`!=`) rule. Multiple constraints find
                 > nodes that satisfy every expression (AND match). Constraints can
                 > match node or Docker Engine labels as follows:
-                > 
+                >
                 > node attribute       | matches                        | example
                 > ---------------------|--------------------------------|-----------------------------------------------
                 > `node.id`            | Node ID                        | `node.id==2ivku8v2gvtg4`
@@ -584,7 +584,7 @@ Changed response : **200 OK**
                 > `node.platform.arch` | Node architecture              | `node.platform.arch==x86_64`
                 > `node.labels`        | User-defined node labels       | `node.labels.security==high`
                 > `engine.labels`      | Docker Engine's labels         | `engine.labels.operatingsystem==ubuntu-14.04`
-                > 
+                >
                 > `engine.labels` apply to Docker Engine labels like operating system,
                 > drivers, etc. Swarm administrators add `node.labels` for operational
                 > purposes by using the [`node update endpoint`](#operation/NodeUpdate).
@@ -613,9 +613,9 @@ Changed response : **200 OK**
 
             * Changed property `ContainerSpec` (object)
                 > Container spec for the service.
-                > 
+                >
                 > <p><br /></p>
-                > 
+                >
                 > > **Note**: ContainerSpec, NetworkAttachmentSpec, and PluginSpec are
                 > > mutually exclusive. PluginSpec is only used when the Runtime field
                 > > is set to `plugin`. NetworkAttachmentSpec is used when the Runtime
@@ -653,7 +653,7 @@ Changed response : **200 OK**
                     > _match_ (`==`) or _exclude_ (`!=`) rule. Multiple constraints find
                     > nodes that satisfy every expression (AND match). Constraints can
                     > match node or Docker Engine labels as follows:
-                    > 
+                    >
                     > node attribute       | matches                        | example
                     > ---------------------|--------------------------------|-----------------------------------------------
                     > `node.id`            | Node ID                        | `node.id==2ivku8v2gvtg4`
@@ -663,7 +663,7 @@ Changed response : **200 OK**
                     > `node.platform.arch` | Node architecture              | `node.platform.arch==x86_64`
                     > `node.labels`        | User-defined node labels       | `node.labels.security==high`
                     > `engine.labels`      | Docker Engine's labels         | `engine.labels.operatingsystem==ubuntu-14.04`
-                    > 
+                    >
                     > `engine.labels` apply to Docker Engine labels like operating system,
                     > drivers, etc. Swarm administrators add `node.labels` for operational
                     > purposes by using the [`node update endpoint`](#operation/NodeUpdate).
@@ -683,9 +683,9 @@ Changed response : **200 OK**
 
             * Changed property `ContainerSpec` (object)
                 > Container spec for the service.
-                > 
+                >
                 > <p><br /></p>
-                > 
+                >
                 > > **Note**: ContainerSpec, NetworkAttachmentSpec, and PluginSpec are
                 > > mutually exclusive. PluginSpec is only used when the Runtime field
                 > > is set to `plugin`. NetworkAttachmentSpec is used when the Runtime
@@ -723,7 +723,7 @@ Changed response : **200 OK**
                     > _match_ (`==`) or _exclude_ (`!=`) rule. Multiple constraints find
                     > nodes that satisfy every expression (AND match). Constraints can
                     > match node or Docker Engine labels as follows:
-                    > 
+                    >
                     > node attribute       | matches                        | example
                     > ---------------------|--------------------------------|-----------------------------------------------
                     > `node.id`            | Node ID                        | `node.id==2ivku8v2gvtg4`
@@ -733,7 +733,7 @@ Changed response : **200 OK**
                     > `node.platform.arch` | Node architecture              | `node.platform.arch==x86_64`
                     > `node.labels`        | User-defined node labels       | `node.labels.security==high`
                     > `engine.labels`      | Docker Engine's labels         | `engine.labels.operatingsystem==ubuntu-14.04`
-                    > 
+                    >
                     > `engine.labels` apply to Docker Engine labels like operating system,
                     > drivers, etc. Swarm administrators add `node.labels` for operational
                     > purposes by using the [`node update endpoint`](#operation/NodeUpdate).
@@ -760,9 +760,9 @@ Changed response : **200 OK**
 
             * Changed property `ContainerSpec` (object)
                 > Container spec for the service.
-                > 
+                >
                 > <p><br /></p>
-                > 
+                >
                 > > **Note**: ContainerSpec, NetworkAttachmentSpec, and PluginSpec are
                 > > mutually exclusive. PluginSpec is only used when the Runtime field
                 > > is set to `plugin`. NetworkAttachmentSpec is used when the Runtime
@@ -800,7 +800,7 @@ Changed response : **200 OK**
                     > _match_ (`==`) or _exclude_ (`!=`) rule. Multiple constraints find
                     > nodes that satisfy every expression (AND match). Constraints can
                     > match node or Docker Engine labels as follows:
-                    > 
+                    >
                     > node attribute       | matches                        | example
                     > ---------------------|--------------------------------|-----------------------------------------------
                     > `node.id`            | Node ID                        | `node.id==2ivku8v2gvtg4`
@@ -810,7 +810,7 @@ Changed response : **200 OK**
                     > `node.platform.arch` | Node architecture              | `node.platform.arch==x86_64`
                     > `node.labels`        | User-defined node labels       | `node.labels.security==high`
                     > `engine.labels`      | Docker Engine's labels         | `engine.labels.operatingsystem==ubuntu-14.04`
-                    > 
+                    >
                     > `engine.labels` apply to Docker Engine labels like operating system,
                     > drivers, etc. Swarm administrators add `node.labels` for operational
                     > purposes by using the [`node update endpoint`](#operation/NodeUpdate).
@@ -828,9 +828,9 @@ Changed response : **200 OK**
 
             * Changed property `ContainerSpec` (object)
                 > Container spec for the service.
-                > 
+                >
                 > <p><br /></p>
-                > 
+                >
                 > > **Note**: ContainerSpec, NetworkAttachmentSpec, and PluginSpec are
                 > > mutually exclusive. PluginSpec is only used when the Runtime field
                 > > is set to `plugin`. NetworkAttachmentSpec is used when the Runtime
@@ -868,7 +868,7 @@ Changed response : **200 OK**
                     > _match_ (`==`) or _exclude_ (`!=`) rule. Multiple constraints find
                     > nodes that satisfy every expression (AND match). Constraints can
                     > match node or Docker Engine labels as follows:
-                    > 
+                    >
                     > node attribute       | matches                        | example
                     > ---------------------|--------------------------------|-----------------------------------------------
                     > `node.id`            | Node ID                        | `node.id==2ivku8v2gvtg4`
@@ -878,9 +878,7 @@ Changed response : **200 OK**
                     > `node.platform.arch` | Node architecture              | `node.platform.arch==x86_64`
                     > `node.labels`        | User-defined node labels       | `node.labels.security==high`
                     > `engine.labels`      | Docker Engine's labels         | `engine.labels.operatingsystem==ubuntu-14.04`
-                    > 
+                    >
                     > `engine.labels` apply to Docker Engine labels like operating system,
                     > drivers, etc. Swarm administrators add `node.labels` for operational
                     > purposes by using the [`node update endpoint`](#operation/NodeUpdate).
-
-

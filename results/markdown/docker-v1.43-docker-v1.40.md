@@ -294,12 +294,12 @@ Changed response : **200 OK**
 
     * Changed property `VirtualSize` (integer)
         > Total size of the image including all layers it is composed of.
-        > 
+        >
         > In versions of Docker before v1.10, this field was calculated from
         > the image itself and all of its parent images. Docker v1.10 and up
         > store images self-contained, and no longer use a parent-chain, making
         > this field an equivalent of the Size field.
-        > 
+        >
         > This field is kept for backward compatibility, but may be removed in
         > a future version of the API.
 
@@ -312,9 +312,9 @@ Changed response : **200 OK**
 Changed: `filters` in `query`
 > A JSON encoded value of the filters (a `map[string][]string`) to
 > process on the list of build cache objects.
-> 
+>
 > Available filters:
-> 
+>
 > - `until=<duration>`: duration relative to daemon's time, during which build cache was not used, in Go's duration format (e.g., '24h')
 > - `id=<id>`
 > - `parent=<id>`
@@ -442,7 +442,7 @@ Changed response : **200 OK**
 
 Changed: `filters` in `query`
 > Filters to process on the prune list, encoded as JSON (a `map[string][]string`).
-> 
+>
 > Available filters:
 > - `label` (`label=<key>`, `label=<key>=<value>`, `label!=<key>`, or `label!=<key>=<value>`) Prune volumes with (or without, in case `label!=...` is used) the specified labels.
 
@@ -472,7 +472,7 @@ Changed content type : `application/json`
 
     * Changed property `Config` (array)
         > List of IPAM configuration options, specified as a map:
-        > 
+        >
         > ```
         > {"Subnet": <CIDR>, "IPRange": <CIDR>, "Gateway": <IP address>, "AuxAddress": <device_name:IP address>}
         > ```
@@ -563,7 +563,7 @@ Changed response : **200 OK**
 
         * Changed property `Config` (array)
             > List of IPAM configuration options, specified as a map:
-            > 
+            >
             > ```
             > {"Subnet": <CIDR>, "IPRange": <CIDR>, "Gateway": <IP address>, "AuxAddress": <device_name:IP address>}
             > ```
@@ -632,7 +632,7 @@ Changed response : **200 OK**
 
         * Changed property `Config` (array)
             > List of IPAM configuration options, specified as a map:
-            > 
+            >
             > ```
             > {"Subnet": <CIDR>, "IPRange": <CIDR>, "Gateway": <IP address>, "AuxAddress": <device_name:IP address>}
             > ```
@@ -677,9 +677,9 @@ Changed content type : `application/json`
 
     * Changed property `ContainerSpec` (object)
         > Container spec for the service.
-        > 
+        >
         > <p><br /></p>
-        > 
+        >
         > > **Note**: ContainerSpec, NetworkAttachmentSpec, and PluginSpec are
         > > mutually exclusive. PluginSpec is only used when the Runtime field
         > > is set to `plugin`. NetworkAttachmentSpec is used when the Runtime
@@ -709,7 +709,7 @@ Changed content type : `application/json`
 
             * Changed property `Type` (string)
                 > The mount type. Available types:
-                > 
+                >
                 > - `bind` Mounts a file or directory from the host into the container. Must exist prior to creating the container.
                 > - `volume` Creates a volume with the given name and options (or uses a pre-existing volume with the same name and options). These are **not** removed when the container is removed.
                 > - `tmpfs` Create a tmpfs with the given options. The mount source cannot be specified for tmpfs.
@@ -787,9 +787,9 @@ Changed content type : `application/json`
 
     * Changed property `ContainerSpec` (object)
         > Container spec for the service.
-        > 
+        >
         > <p><br /></p>
-        > 
+        >
         > > **Note**: ContainerSpec, NetworkAttachmentSpec, and PluginSpec are
         > > mutually exclusive. PluginSpec is only used when the Runtime field
         > > is set to `plugin`. NetworkAttachmentSpec is used when the Runtime
@@ -819,7 +819,7 @@ Changed content type : `application/json`
 
             * Changed property `Type` (string)
                 > The mount type. Available types:
-                > 
+                >
                 > - `bind` Mounts a file or directory from the host into the container. Must exist prior to creating the container.
                 > - `volume` Creates a volume with the given name and options (or uses a pre-existing volume with the same name and options). These are **not** removed when the container is removed.
                 > - `tmpfs` Create a tmpfs with the given options. The mount source cannot be specified for tmpfs.
@@ -878,7 +878,7 @@ Changed response : **200 OK**
 
         * Changed property `Type` (string)
             > The mount type:
-            > 
+            >
             > - `bind` a mount of a file or directory from the host into the container.
             > - `volume` a docker volume with the given `Name`.
             > - `tmpfs` a `tmpfs`.
@@ -895,18 +895,18 @@ Changed response : **200 OK**
 
 Deleted: `platform` in `query`
 > Platform in the format `os[/arch[/variant]]` used for image lookup.
-> 
+>
 > When specified, the daemon checks if the requested image is present
 > in the local image cache with the given OS and Architecture, and
 > otherwise returns a `404` status.
-> 
+>
 > If the option is not set, the host's native OS and Architecture are
 > used to look up the image in the image cache. However, if no platform
 > is passed and the given image does exist in the local image cache,
 > but its OS or architecture does not match, the container is created
 > with the available image, and a warning is added to the `Warnings`
 > field in the response, for example;
-> 
+>
 >     WARNING: The requested image's platform (linux/arm64/v8) does not
 >              match the detected host platform (linux/amd64) and no
 >              specific platform was requested
@@ -927,7 +927,7 @@ Changed content type : `application/json`
     * Added property `Capabilities` (array)
         > A list of kernel capabilities to be available for container (this
         > overrides the default set).
-        > 
+        >
         > Conflicts with options 'CapAdd' and 'CapDrop'"
 
 
@@ -940,10 +940,10 @@ Changed content type : `application/json`
 
     * Deleted property `CgroupnsMode` (string)
         > cgroup namespace mode for the container. Possible values are:
-        > 
+        >
         > - `"private"`: the container runs in its own private cgroup namespace
         > - `"host"`: use the host system's cgroup namespace
-        > 
+        >
         > If not specified, the daemon default is used, which can either be `"private"`
         > or `"host"`, depending on daemon version, kernel support and configuration.
 
@@ -964,7 +964,7 @@ Changed content type : `application/json`
 
         * Changed property `Type` (string)
             > The mount type. Available types:
-            > 
+            >
             > - `bind` Mounts a file or directory from the host into the container. Must exist prior to creating the container.
             > - `volume` Creates a volume with the given name and options (or uses a pre-existing volume with the same name and options). These are **not** removed when the container is removed.
             > - `tmpfs` Create a tmpfs with the given options. The mount source cannot be specified for tmpfs.
@@ -995,7 +995,7 @@ Changed content type : `application/octet-stream`
     * Added property `Capabilities` (array)
         > A list of kernel capabilities to be available for container (this
         > overrides the default set).
-        > 
+        >
         > Conflicts with options 'CapAdd' and 'CapDrop'"
 
 
@@ -1006,10 +1006,10 @@ Changed content type : `application/octet-stream`
 
     * Deleted property `CgroupnsMode` (string)
         > cgroup namespace mode for the container. Possible values are:
-        > 
+        >
         > - `"private"`: the container runs in its own private cgroup namespace
         > - `"host"`: use the host system's cgroup namespace
-        > 
+        >
         > If not specified, the daemon default is used, which can either be `"private"`
         > or `"host"`, depending on daemon version, kernel support and configuration.
 
@@ -1030,7 +1030,7 @@ Changed content type : `application/octet-stream`
 
         * Changed property `Type` (string)
             > The mount type. Available types:
-            > 
+            >
             > - `bind` Mounts a file or directory from the host into the container. Must exist prior to creating the container.
             > - `volume` Creates a volume with the given name and options (or uses a pre-existing volume with the same name and options). These are **not** removed when the container is removed.
             > - `tmpfs` Create a tmpfs with the given options. The mount source cannot be specified for tmpfs.
@@ -1068,7 +1068,7 @@ Changed response : **200 OK**
 
         * Changed property `Type` (string)
             > The mount type:
-            > 
+            >
             > - `bind` a mount of a file or directory from the host into the container.
             > - `volume` a docker volume with the given `Name`.
             > - `tmpfs` a `tmpfs`.
@@ -1098,7 +1098,7 @@ Changed response : **200 OK**
         * Added property `Capabilities` (array)
             > A list of kernel capabilities to be available for container (this
             > overrides the default set).
-            > 
+            >
             > Conflicts with options 'CapAdd' and 'CapDrop'"
 
 
@@ -1109,10 +1109,10 @@ Changed response : **200 OK**
 
         * Deleted property `CgroupnsMode` (string)
             > cgroup namespace mode for the container. Possible values are:
-            > 
+            >
             > - `"private"`: the container runs in its own private cgroup namespace
             > - `"host"`: use the host system's cgroup namespace
-            > 
+            >
             > If not specified, the daemon default is used, which can either be `"private"`
             > or `"host"`, depending on daemon version, kernel support and configuration.
 
@@ -1133,7 +1133,7 @@ Changed response : **200 OK**
 
             * Changed property `Type` (string)
                 > The mount type. Available types:
-                > 
+                >
                 > - `bind` Mounts a file or directory from the host into the container. Must exist prior to creating the container.
                 > - `volume` Creates a volume with the given name and options (or uses a pre-existing volume with the same name and options). These are **not** removed when the container is removed.
                 > - `tmpfs` Create a tmpfs with the given options. The mount source cannot be specified for tmpfs.
@@ -1164,12 +1164,12 @@ Changed response : **200 OK**
 
     * Changed property `VirtualSize` (integer)
         > Total size of the image including all layers it is composed of.
-        > 
+        >
         > In versions of Docker before v1.10, this field was calculated from
         > the image itself and all of its parent images. Docker v1.10 and up
         > store images self-contained, and no longer use a parent-chain, making
         > this field an equivalent of the Size field.
-        > 
+        >
         > This field is kept for backward compatibility, but may be removed in
         > a future version of the API.
 
@@ -1200,12 +1200,12 @@ Changed response : **200 OK**
 
         * Changed property `VirtualSize` (integer)
             > Total size of the image including all layers it is composed of.
-            > 
+            >
             > In versions of Docker before v1.10, this field was calculated from
             > the image itself and all of its parent images. Docker v1.10 and up
             > store images self-contained, and no longer use a parent-chain, making
             > this field an equivalent of the Size field.
-            > 
+            >
             > This field is kept for backward compatibility, but may be removed in
             > a future version of the API.
 
@@ -1243,7 +1243,7 @@ Changed response : **200 OK**
 
             * Changed property `Type` (string)
                 > The mount type:
-                > 
+                >
                 > - `bind` a mount of a file or directory from the host into the container.
                 > - `volume` a docker volume with the given `Name`.
                 > - `tmpfs` a `tmpfs`.
@@ -1264,12 +1264,12 @@ Changed response : **200 OK**
 
         * Changed property `VirtualSize` (integer)
             > Total size of the image including all layers it is composed of.
-            > 
+            >
             > In versions of Docker before v1.10, this field was calculated from
             > the image itself and all of its parent images. Docker v1.10 and up
             > store images self-contained, and no longer use a parent-chain, making
             > this field an equivalent of the Size field.
-            > 
+            >
             > This field is kept for backward compatibility, but may be removed in
             > a future version of the API.
 
@@ -1307,7 +1307,7 @@ Changed response : **200 OK**
 
             * Changed property `Type` (string)
                 > The mount type:
-                > 
+                >
                 > - `bind` a mount of a file or directory from the host into the container.
                 > - `volume` a docker volume with the given `Name`.
                 > - `tmpfs` a `tmpfs`.
@@ -1334,7 +1334,7 @@ Changed response : **200 OK**
         > The version number of the object such as node, service, etc. This is needed
         > to avoid conflicting writes. The client must send the version number along
         > with the modified specification when updating these objects.
-        > 
+        >
         > This approach ensures safe concurrency and determinism in that the change
         > on the object may not be applied if the version number has changed from the
         > last read. In other words, if two update requests specify the same base
@@ -1349,9 +1349,9 @@ Changed response : **200 OK**
 
         * Changed property `ContainerSpec` (object)
             > Container spec for the service.
-            > 
+            >
             > <p><br /></p>
-            > 
+            >
             > > **Note**: ContainerSpec, NetworkAttachmentSpec, and PluginSpec are
             > > mutually exclusive. PluginSpec is only used when the Runtime field
             > > is set to `plugin`. NetworkAttachmentSpec is used when the Runtime
@@ -1381,7 +1381,7 @@ Changed response : **200 OK**
 
                 * Changed property `Type` (string)
                     > The mount type. Available types:
-                    > 
+                    >
                     > - `bind` Mounts a file or directory from the host into the container. Must exist prior to creating the container.
                     > - `volume` Creates a volume with the given name and options (or uses a pre-existing volume with the same name and options). These are **not** removed when the container is removed.
                     > - `tmpfs` Create a tmpfs with the given options. The mount source cannot be specified for tmpfs.
@@ -1433,7 +1433,7 @@ Changed response : **200 OK**
         > The version number of the object such as node, service, etc. This is needed
         > to avoid conflicting writes. The client must send the version number along
         > with the modified specification when updating these objects.
-        > 
+        >
         > This approach ensures safe concurrency and determinism in that the change
         > on the object may not be applied if the version number has changed from the
         > last read. In other words, if two update requests specify the same base
@@ -1448,9 +1448,9 @@ Changed response : **200 OK**
 
         * Changed property `ContainerSpec` (object)
             > Container spec for the service.
-            > 
+            >
             > <p><br /></p>
-            > 
+            >
             > > **Note**: ContainerSpec, NetworkAttachmentSpec, and PluginSpec are
             > > mutually exclusive. PluginSpec is only used when the Runtime field
             > > is set to `plugin`. NetworkAttachmentSpec is used when the Runtime
@@ -1480,7 +1480,7 @@ Changed response : **200 OK**
 
                 * Changed property `Type` (string)
                     > The mount type. Available types:
-                    > 
+                    >
                     > - `bind` Mounts a file or directory from the host into the container. Must exist prior to creating the container.
                     > - `volume` Creates a volume with the given name and options (or uses a pre-existing volume with the same name and options). These are **not** removed when the container is removed.
                     > - `tmpfs` Create a tmpfs with the given options. The mount source cannot be specified for tmpfs.
@@ -1530,9 +1530,9 @@ Changed response : **200 OK**
 
     * Added property `SystemStatus` (array)
         > Status information about this node (standalone Swarm API).
-        > 
+        >
         > <p><br /></p>
-        > 
+        >
         > > **Note**: The information returned in this field is only propagated
         > > by the Swarm standalone API, and is empty (`null`) when using
         > > built-in swarm mode.
@@ -1548,13 +1548,13 @@ Changed response : **200 OK**
 
     * Added property `ClusterStore` (string)
         > URL of the distributed storage backend.
-        > 
-        > 
+        >
+        >
         > The storage backend is used for multihost networking (to store
         > network and endpoint information) and by the node discovery mechanism.
-        > 
+        >
         > <p><br /></p>
-        > 
+        >
         > > **Note**: This field is only propagated when using standalone Swarm
         > > mode, and overlay networking using an external k/v store. Overlay
         > > networks with Swarm mode enabled use the built-in raft store, and
@@ -1565,9 +1565,9 @@ Changed response : **200 OK**
         > The network endpoint that the Engine advertises for the purpose of
         > node discovery. ClusterAdvertise is a `host:port` combination on which
         > the daemon is reachable by other hosts.
-        > 
+        >
         > <p><br /></p>
-        > 
+        >
         > > **Note**: This field is only propagated when using standalone Swarm
         > > mode, and overlay networking using an external k/v store. Overlay
         > > networks with Swarm mode enabled use the built-in raft store, and
@@ -1580,9 +1580,9 @@ Changed response : **200 OK**
 
     * Deleted property `OSVersion` (string)
         > Version of the host's operating system
-        > 
+        >
         > <p><br /></p>
-        > 
+        >
         > > **Note**: The information returned in this field, including its
         > > very existence, and the formatting of values, should not be considered
         > > stable, and may change without notice.
@@ -1591,14 +1591,14 @@ Changed response : **200 OK**
     * Deleted property `DefaultAddressPools` (array)
         > List of custom default address pools for local networks, which can be
         > specified in the daemon.json file or dockerd option.
-        > 
+        >
         > Example: a Base "10.10.0.0/16" with Size 24 will define the set of 256
         > 10.10.[0-255].0/24 address pools.
 
 
     * Changed property `KernelMemoryTCP` (boolean)
         > Indicates if the host has kernel memory TCP limit support enabled.
-        > 
+        >
         > Kernel memory TCP limits are not supported when using cgroups v2, which
         > does not support the corresponding `memory.kmem.tcp.limit_in_bytes` cgroup.
 
@@ -1606,7 +1606,7 @@ Changed response : **200 OK**
     * Changed property `SecurityOptions` (array)
         > List of security features that are enabled on the daemon, such as
         > apparmor, seccomp, SELinux, user-namespaces (userns), and rootless.
-        > 
+        >
         > Additional configuration options for each security feature may
         > be present, and are included as a comma-separated list of key/value
         > pairs.
@@ -1667,9 +1667,9 @@ Changed response : **200 OK**
 
             * Changed property `ContainerSpec` (object)
                 > Container spec for the service.
-                > 
+                >
                 > <p><br /></p>
-                > 
+                >
                 > > **Note**: ContainerSpec, NetworkAttachmentSpec, and PluginSpec are
                 > > mutually exclusive. PluginSpec is only used when the Runtime field
                 > > is set to `plugin`. NetworkAttachmentSpec is used when the Runtime
@@ -1699,7 +1699,7 @@ Changed response : **200 OK**
 
                     * Changed property `Type` (string)
                         > The mount type. Available types:
-                        > 
+                        >
                         > - `bind` Mounts a file or directory from the host into the container. Must exist prior to creating the container.
                         > - `volume` Creates a volume with the given name and options (or uses a pre-existing volume with the same name and options). These are **not** removed when the container is removed.
                         > - `tmpfs` Create a tmpfs with the given options. The mount source cannot be specified for tmpfs.
@@ -1776,9 +1776,9 @@ Changed response : **200 OK**
 
             * Changed property `ContainerSpec` (object)
                 > Container spec for the service.
-                > 
+                >
                 > <p><br /></p>
-                > 
+                >
                 > > **Note**: ContainerSpec, NetworkAttachmentSpec, and PluginSpec are
                 > > mutually exclusive. PluginSpec is only used when the Runtime field
                 > > is set to `plugin`. NetworkAttachmentSpec is used when the Runtime
@@ -1808,7 +1808,7 @@ Changed response : **200 OK**
 
                     * Changed property `Type` (string)
                         > The mount type. Available types:
-                        > 
+                        >
                         > - `bind` Mounts a file or directory from the host into the container. Must exist prior to creating the container.
                         > - `volume` Creates a volume with the given name and options (or uses a pre-existing volume with the same name and options). These are **not** removed when the container is removed.
                         > - `tmpfs` Create a tmpfs with the given options. The mount source cannot be specified for tmpfs.
@@ -1892,9 +1892,9 @@ Changed response : **200 OK**
 
             * Changed property `ContainerSpec` (object)
                 > Container spec for the service.
-                > 
+                >
                 > <p><br /></p>
-                > 
+                >
                 > > **Note**: ContainerSpec, NetworkAttachmentSpec, and PluginSpec are
                 > > mutually exclusive. PluginSpec is only used when the Runtime field
                 > > is set to `plugin`. NetworkAttachmentSpec is used when the Runtime
@@ -1924,7 +1924,7 @@ Changed response : **200 OK**
 
                     * Changed property `Type` (string)
                         > The mount type. Available types:
-                        > 
+                        >
                         > - `bind` Mounts a file or directory from the host into the container. Must exist prior to creating the container.
                         > - `volume` Creates a volume with the given name and options (or uses a pre-existing volume with the same name and options). These are **not** removed when the container is removed.
                         > - `tmpfs` Create a tmpfs with the given options. The mount source cannot be specified for tmpfs.
@@ -1999,9 +1999,9 @@ Changed response : **200 OK**
 
             * Changed property `ContainerSpec` (object)
                 > Container spec for the service.
-                > 
+                >
                 > <p><br /></p>
-                > 
+                >
                 > > **Note**: ContainerSpec, NetworkAttachmentSpec, and PluginSpec are
                 > > mutually exclusive. PluginSpec is only used when the Runtime field
                 > > is set to `plugin`. NetworkAttachmentSpec is used when the Runtime
@@ -2031,7 +2031,7 @@ Changed response : **200 OK**
 
                     * Changed property `Type` (string)
                         > The mount type. Available types:
-                        > 
+                        >
                         > - `bind` Mounts a file or directory from the host into the container. Must exist prior to creating the container.
                         > - `volume` Creates a volume with the given name and options (or uses a pre-existing volume with the same name and options). These are **not** removed when the container is removed.
                         > - `tmpfs` Create a tmpfs with the given options. The mount source cannot be specified for tmpfs.
@@ -2066,5 +2066,3 @@ Changed response : **200 OK**
 
                     * Deleted property `Pids` (integer)
                         > Limits the maximum number of PIDs in the container. Set `0` for unlimited.
-
-

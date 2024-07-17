@@ -9,9 +9,9 @@
 Changed: `filters` in `query`
 > A JSON encoded value of the filters (a `map[string][]string`) to
 > process on the images list.
-> 
+>
 > Available filters:
-> 
+>
 > - `before`=(`<image-name>[:<tag>]`,  `<image id>` or `<image@digest>`)
 > - `dangling=true`
 > - `label=key` or `label="key=value"` of an image label
@@ -31,12 +31,12 @@ Changed response : **200 OK**
 
     * Changed property `VirtualSize` (integer)
         > Total size of the image including all layers it is composed of.
-        > 
+        >
         > In versions of Docker before v1.10, this field was calculated from
         > the image itself and all of its parent images. Images are now stored
         > self-contained, and no longer use a parent-chain, making this field
         > an equivalent of the Size field.
-        > 
+        >
         > Deprecated: this field is kept for backward compatibility, and will be removed in API v1.44.
 
 
@@ -50,7 +50,7 @@ Changed response : **200 OK**
 
 Changed: `filters` in `query`
 > A JSON encoded value of the filters (a `map[string][]string`) to process on the images list. Available filters:
-> 
+>
 > - `is-automated=(true|false)`
 > - `is-official=(true|false)`
 > - `stars=<number>` Matches images that has at least 'number' stars.
@@ -125,7 +125,7 @@ Changed content type : `application/json`
         > List of all DNS names an endpoint has on a specific network. This
         > list is based on the container name, network aliases, container short
         > ID, and hostname.
-        > 
+        >
         > These DNS names are non-fully qualified but can contain several dots.
         > You can get fully qualified DNS names by appending `.<network-name>`.
         > For instance, if container name is `my.ctr` and the network is named
@@ -280,11 +280,11 @@ Changed response : **200 OK**
 
     * Changed property `Config` (object)
         > Configuration for a container that is portable between hosts.
-        > 
+        >
         > When used as `ContainerConfig` field in an image, `ContainerConfig` is an
         > optional field containing the configuration of the container that was last
         > committed when creating the image.
-        > 
+        >
         > Previous versions of Docker builder used this field to store build cache,
         > and it is not in active use anymore.
 
@@ -375,18 +375,18 @@ Changed response : **200 OK**
 
     * Changed property `Container` (string)
         > The ID of the container that was used to create the image.
-        > 
+        >
         > Depending on how the image was created, this field may be empty.
 
 
     * Changed property `VirtualSize` (integer)
         > Total size of the image including all layers it is composed of.
-        > 
+        >
         > In versions of Docker before v1.10, this field was calculated from
         > the image itself and all of its parent images. Images are now stored
         > self-contained, and no longer use a parent-chain, making this field
         > an equivalent of the Size field.
-        > 
+        >
         > > **Deprecated**: this field is kept for backward compatibility, but
         > > will be removed in API v1.44.
 
@@ -398,19 +398,19 @@ Changed response : **200 OK**
 
         * Changed property `MacAddress` (string)
             > MAC address of the container.
-            > 
+            >
             > <p><br /></p>
-            > 
+            >
             > > **Note**: this field is always omitted and must not be used.
 
 
     * Changed property `ContainerConfig` (object)
         > Configuration for a container that is portable between hosts.
-        > 
+        >
         > When used as `ContainerConfig` field in an image, `ContainerConfig` is an
         > optional field containing the configuration of the container that was last
         > committed when creating the image.
-        > 
+        >
         > Previous versions of Docker builder used this field to store build cache,
         > and it is not in active use anymore.
 
@@ -445,12 +445,12 @@ Changed response : **200 OK**
 
         * Changed property `VirtualSize` (integer)
             > Total size of the image including all layers it is composed of.
-            > 
+            >
             > In versions of Docker before v1.10, this field was calculated from
             > the image itself and all of its parent images. Images are now stored
             > self-contained, and no longer use a parent-chain, making this field
             > an equivalent of the Size field.
-            > 
+            >
             > Deprecated: this field is kept for backward compatibility, and will be removed in API v1.44.
 
 
@@ -472,12 +472,12 @@ Changed response : **200 OK**
 
         * Changed property `VirtualSize` (integer)
             > Total size of the image including all layers it is composed of.
-            > 
+            >
             > In versions of Docker before v1.10, this field was calculated from
             > the image itself and all of its parent images. Images are now stored
             > self-contained, and no longer use a parent-chain, making this field
             > an equivalent of the Size field.
-            > 
+            >
             > Deprecated: this field is kept for backward compatibility, and will be removed in API v1.44.
 
 
@@ -508,9 +508,9 @@ Changed content type : `application/json`
 
     * Changed property `ContainerSpec` (object)
         > Container spec for the service.
-        > 
+        >
         > <p><br /></p>
-        > 
+        >
         > > **Note**: ContainerSpec, NetworkAttachmentSpec, and PluginSpec are
         > > mutually exclusive. PluginSpec is only used when the Runtime field
         > > is set to `plugin`. NetworkAttachmentSpec is used when the Runtime
@@ -576,7 +576,7 @@ Changed response : **201 Created**
 
     * Deleted property `Warnings` (array)
         > Optional warning message.
-        > 
+        >
         > FIXME(thaJeztah): this should have "omitempty" in the generated type.
 
 
@@ -597,9 +597,9 @@ Changed content type : `application/json`
 
     * Changed property `ContainerSpec` (object)
         > Container spec for the service.
-        > 
+        >
         > <p><br /></p>
-        > 
+        >
         > > **Note**: ContainerSpec, NetworkAttachmentSpec, and PluginSpec are
         > > mutually exclusive. PluginSpec is only used when the Runtime field
         > > is set to `plugin`. NetworkAttachmentSpec is used when the Runtime
@@ -676,9 +676,9 @@ Changed response : **200 OK**
 
         * Changed property `ContainerSpec` (object)
             > Container spec for the service.
-            > 
+            >
             > <p><br /></p>
-            > 
+            >
             > > **Note**: ContainerSpec, NetworkAttachmentSpec, and PluginSpec are
             > > mutually exclusive. PluginSpec is only used when the Runtime field
             > > is set to `plugin`. NetworkAttachmentSpec is used when the Runtime
@@ -753,9 +753,9 @@ Changed response : **200 OK**
 
         * Changed property `ContainerSpec` (object)
             > Container spec for the service.
-            > 
+            >
             > <p><br /></p>
-            > 
+            >
             > > **Note**: ContainerSpec, NetworkAttachmentSpec, and PluginSpec are
             > > mutually exclusive. PluginSpec is only used when the Runtime field
             > > is set to `plugin`. NetworkAttachmentSpec is used when the Runtime
@@ -821,12 +821,12 @@ Changed response : **200 OK**
     * Deleted property `CDISpecDirs` (array)
         > List of directories where (Container Device Interface) CDI
         > specifications are located.
-        > 
+        >
         > These specifications define vendor-specific modifications to an OCI
         > runtime specification for a container being created.
-        > 
+        >
         > An empty list indicates that CDI device injection is disabled.
-        > 
+        >
         > Note that since using CDI device injection requires the daemon to have
         > experimental enabled. For non-experimental daemons an empty list will
         > always be returned.
@@ -836,11 +836,11 @@ Changed response : **200 OK**
         > List of [OCI compliant](https://github.com/opencontainers/runtime-spec)
         > runtimes configured on the daemon. Keys hold the "name" used to
         > reference the runtime.
-        > 
+        >
         > The Docker daemon relies on an OCI compliant runtime (invoked via the
         > `containerd` daemon) as its interface to the Linux kernel namespaces,
         > cgroups, and SELinux.
-        > 
+        >
         > The default runtime is `runc`, and automatically configured. Additional
         > runtimes can be configured by the user and will be listed here.
 
@@ -872,9 +872,9 @@ Changed response : **200 OK**
 
             * Changed property `ContainerSpec` (object)
                 > Container spec for the service.
-                > 
+                >
                 > <p><br /></p>
-                > 
+                >
                 > > **Note**: ContainerSpec, NetworkAttachmentSpec, and PluginSpec are
                 > > mutually exclusive. PluginSpec is only used when the Runtime field
                 > > is set to `plugin`. NetworkAttachmentSpec is used when the Runtime
@@ -944,9 +944,9 @@ Changed response : **200 OK**
 
             * Changed property `ContainerSpec` (object)
                 > Container spec for the service.
-                > 
+                >
                 > <p><br /></p>
-                > 
+                >
                 > > **Note**: ContainerSpec, NetworkAttachmentSpec, and PluginSpec are
                 > > mutually exclusive. PluginSpec is only used when the Runtime field
                 > > is set to `plugin`. NetworkAttachmentSpec is used when the Runtime
@@ -1023,9 +1023,9 @@ Changed response : **200 OK**
 
             * Changed property `ContainerSpec` (object)
                 > Container spec for the service.
-                > 
+                >
                 > <p><br /></p>
-                > 
+                >
                 > > **Note**: ContainerSpec, NetworkAttachmentSpec, and PluginSpec are
                 > > mutually exclusive. PluginSpec is only used when the Runtime field
                 > > is set to `plugin`. NetworkAttachmentSpec is used when the Runtime
@@ -1093,9 +1093,9 @@ Changed response : **200 OK**
 
             * Changed property `ContainerSpec` (object)
                 > Container spec for the service.
-                > 
+                >
                 > <p><br /></p>
-                > 
+                >
                 > > **Note**: ContainerSpec, NetworkAttachmentSpec, and PluginSpec are
                 > > mutually exclusive. PluginSpec is only used when the Runtime field
                 > > is set to `plugin`. NetworkAttachmentSpec is used when the Runtime
@@ -1145,5 +1145,3 @@ Changed response : **200 OK**
                     * Deleted property `StartInterval` (integer)
                         > The time to wait between checks in nanoseconds during the start period.
                         > It should be 0 or at least 1000000 (1 ms). 0 means inherit.
-
-

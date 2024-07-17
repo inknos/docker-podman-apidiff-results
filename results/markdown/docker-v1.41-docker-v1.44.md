@@ -180,9 +180,9 @@ Changed response : **200 OK**
 
     * Changed property `Kind` (integer)
         > Kind of change
-        > 
+        >
         > Can be one of:
-        > 
+        >
         > - `0`: Modified ("C")
         > - `1`: Added ("A")
         > - `2`: Deleted ("D")
@@ -220,9 +220,9 @@ Changed content type : `application/json`
 
 * Deleted property `KernelMemory` (integer)
     > Kernel memory limit in bytes.
-    > 
+    >
     > <p><br /></p>
-    > 
+    >
     > > **Deprecated**: This field is deprecated as the kernel 5.4 deprecated
     > > `kmem.limit_in_bytes`.
 
@@ -231,7 +231,7 @@ Changed content type : `application/json`
     > Hard limit for kernel TCP buffer memory (in bytes). Depending on the
     > OCI runtime in use, this option may be ignored. It is no longer supported
     > by the default (runc) runtime.
-    > 
+    >
     > This field is omitted when empty.
 
 
@@ -287,9 +287,9 @@ Added: `shared-size` in `query`
 Changed: `filters` in `query`
 > A JSON encoded value of the filters (a `map[string][]string`) to
 > process on the images list.
-> 
+>
 > Available filters:
-> 
+>
 > - `before`=(`<image-name>[:<tag>]`,  `<image id>` or `<image@digest>`)
 > - `dangling=true`
 > - `label=key` or `label="key=value"` of an image label
@@ -313,7 +313,7 @@ Changed response : **200 OK**
 
     * Changed property `VirtualSize` (integer)
         > Total size of the image including all layers it is composed of.
-        > 
+        >
         > Deprecated: this field is omitted in API v1.44, but kept for backward compatibility. Use Size instead.
 
 
@@ -325,9 +325,9 @@ Changed response : **200 OK**
 Changed: `filters` in `query`
 > A JSON encoded value of the filters (a `map[string][]string`) to
 > process on the list of build cache objects.
-> 
+>
 > Available filters:
-> 
+>
 > - `until=<timestamp>` remove cache older than `<timestamp>`. The `<timestamp>` can be Unix timestamps, date formatted timestamps, or Go duration strings (e.g. `10m`, `1h30m`) computed relative to the daemon's local time.
 > - `id=<id>`
 > - `parent=<id>`
@@ -345,7 +345,7 @@ Changed: `filters` in `query`
 
 Changed: `platform` in `query`
 > Platform in the format os[/arch[/variant]].
-> 
+>
 > When used in combination with the `fromImage` option, the daemon checks
 > if the given image is present in the local image cache with the given
 > OS and Architecture, and otherwise attempts to pull the image. If the
@@ -354,7 +354,7 @@ Changed: `platform` in `query`
 > attempts to pull the image with the host's native OS and Architecture.
 > If the given image does exists in the local image cache, but its OS or
 > architecture does not match, a warning is produced.
-> 
+>
 > When used with the `fromSrc` option to import an image from an archive,
 > this option sets the platform information for the imported image. If
 > the option is not set, the host's native OS and Architecture are used
@@ -368,11 +368,11 @@ Changed: `platform` in `query`
 
 Changed: `filters` in `query`
 > A JSON encoded value of the filters (a `map[string][]string`) to process on the images list. Available filters:
-> 
+>
 > - `is-automated=(true|false)` (deprecated, see below)
 > - `is-official=(true|false)`
 > - `stars=<number>` Matches images that has at least 'number' stars.
-> 
+>
 > The `is-automated` filter is deprecated. The `is_automated` field has
 > been deprecated by Docker Hub's search API. Consequently, searching
 > for `is-automated=true` will yield no results.
@@ -390,9 +390,9 @@ Changed response : **200 OK**
 
     * Changed property `is_automated` (boolean)
         > Whether this repository has automated builds enabled.
-        > 
+        >
         > <p><br /></p>
-        > 
+        >
         > > **Deprecated**: This field is deprecated and will always
         > > be "false" in future.
 
@@ -414,12 +414,12 @@ New header : `Swarm`
 Changed header : `Builder-Version`
 
 > Default version of docker image builder
-> 
+>
 > The default on Linux is version "2" (BuildKit), but the daemon
 > can be configured to recommend version "1" (classic Builder).
 > Windows does not yet support BuildKit for native Windows images,
 > and uses "1" (classic builder) as a default.
-> 
+>
 > This value is a recommendation as advertised by the daemon, and
 > it is up to the client to choose which builder to use.
 
@@ -527,7 +527,7 @@ Changed content type : `application/json`
             * `all`
         * Property `MountVolume` (object)
             > Options for using this volume as a Mount-type volume.
-            > 
+            >
             >     Either MountVolume or BlockVolume, but not both, must be
             >     present.
             >   properties:
@@ -649,7 +649,7 @@ Changed response : **201 Created**
             > The version number of the object such as node, service, etc. This is needed
             > to avoid conflicting writes. The client must send the version number along
             > with the modified specification when updating these objects.
-            > 
+            >
             > This approach ensures safe concurrency and determinism in that the change
             > on the object may not be applied if the version number has changed from the
             > last read. In other words, if two update requests specify the same base
@@ -753,7 +753,7 @@ Changed response : **200 OK**
 
 Changed: `filters` in `query`
 > Filters to process on the prune list, encoded as JSON (a `map[string][]string`).
-> 
+>
 > Available filters:
 > - `label` (`label=<key>`, `label=<key>=<value>`, `label!=<key>`, or `label!=<key>=<value>`) Prune volumes with (or without, in case `label!=...` is used) the specified labels.
 > - `all` (`all=true`) - Consider all (local) volumes for pruning and not just anonymous volumes.
@@ -768,7 +768,7 @@ Changed content type : `application/json`
 
 * Changed property `MacAddress` (string)
     > MAC address of the container.
-    > 
+    >
     > Deprecated: this field is deprecated in API v1.44 and up. Use EndpointSettings.MacAddress instead.
 
 
@@ -835,7 +835,7 @@ Changed content type : `application/json`
         > List of all DNS names an endpoint has on a specific network. This
         > list is based on the container name, network aliases, container short
         > ID, and hostname.
-        > 
+        >
         > These DNS names are non-fully qualified but can contain several dots.
         > You can get fully qualified DNS names by appending `.<network-name>`.
         > For instance, if container name is `my.ctr` and the network is named
@@ -879,7 +879,7 @@ Changed response : **200 OK**
 
         * Changed property `Type` (string)
             > The mount type:
-            > 
+            >
             > - `bind` a mount of a file or directory from the host into the container.
             > - `volume` a docker volume with the given `Name`.
             > - `tmpfs` a `tmpfs`.
@@ -905,7 +905,7 @@ Changed content type : `application/json`
 
 * Changed property `MacAddress` (string)
     > MAC address of the container.
-    > 
+    >
     > Deprecated: this field is deprecated in API v1.44 and up. Use EndpointSettings.MacAddress instead.
 
 
@@ -929,9 +929,9 @@ Changed content type : `application/json`
 
     * Deleted property `KernelMemory` (integer)
         > Kernel memory limit in bytes.
-        > 
+        >
         > <p><br /></p>
-        > 
+        >
         > > **Deprecated**: This field is deprecated as the kernel 5.4 deprecated
         > > `kmem.limit_in_bytes`.
 
@@ -940,7 +940,7 @@ Changed content type : `application/json`
         > Hard limit for kernel TCP buffer memory (in bytes). Depending on the
         > OCI runtime in use, this option may be ignored. It is no longer supported
         > by the default (runc) runtime.
-        > 
+        >
         > This field is omitted when empty.
 
 
@@ -956,7 +956,7 @@ Changed content type : `application/json`
 
         * Changed property `Type` (string)
             > The mount type. Available types:
-            > 
+            >
             > - `bind` Mounts a file or directory from the host into the container. Must exist prior to creating the container.
             > - `volume` Creates a volume with the given name and options (or uses a pre-existing volume with the same name and options). These are **not** removed when the container is removed.
             > - `tmpfs` Create a tmpfs with the given options. The mount source cannot be specified for tmpfs.
@@ -1001,7 +1001,7 @@ Changed content type : `application/octet-stream`
 
 * Changed property `MacAddress` (string)
     > MAC address of the container.
-    > 
+    >
     > Deprecated: this field is deprecated in API v1.44 and up. Use EndpointSettings.MacAddress instead.
 
 
@@ -1025,9 +1025,9 @@ Changed content type : `application/octet-stream`
 
     * Deleted property `KernelMemory` (integer)
         > Kernel memory limit in bytes.
-        > 
+        >
         > <p><br /></p>
-        > 
+        >
         > > **Deprecated**: This field is deprecated as the kernel 5.4 deprecated
         > > `kmem.limit_in_bytes`.
 
@@ -1036,7 +1036,7 @@ Changed content type : `application/octet-stream`
         > Hard limit for kernel TCP buffer memory (in bytes). Depending on the
         > OCI runtime in use, this option may be ignored. It is no longer supported
         > by the default (runc) runtime.
-        > 
+        >
         > This field is omitted when empty.
 
 
@@ -1052,7 +1052,7 @@ Changed content type : `application/octet-stream`
 
         * Changed property `Type` (string)
             > The mount type. Available types:
-            > 
+            >
             > - `bind` Mounts a file or directory from the host into the container. Must exist prior to creating the container.
             > - `volume` Creates a volume with the given name and options (or uses a pre-existing volume with the same name and options). These are **not** removed when the container is removed.
             > - `tmpfs` Create a tmpfs with the given options. The mount source cannot be specified for tmpfs.
@@ -1113,7 +1113,7 @@ Changed response : **200 OK**
 
         * Changed property `Type` (string)
             > The mount type:
-            > 
+            >
             > - `bind` a mount of a file or directory from the host into the container.
             > - `volume` a docker volume with the given `Name`.
             > - `tmpfs` a `tmpfs`.
@@ -1126,18 +1126,18 @@ Changed response : **200 OK**
             * `cluster`
     * Changed property `Config` (object)
         > Configuration for a container that is portable between hosts.
-        > 
+        >
         > When used as `ContainerConfig` field in an image, `ContainerConfig` is an
         > optional field containing the configuration of the container that was last
         > committed when creating the image.
-        > 
+        >
         > Previous versions of Docker builder used this field to store build cache,
         > and it is not in active use anymore.
 
 
         * Changed property `MacAddress` (string)
             > MAC address of the container.
-            > 
+            >
             > Deprecated: this field is deprecated in API v1.44 and up. Use EndpointSettings.MacAddress instead.
 
 
@@ -1171,9 +1171,9 @@ Changed response : **200 OK**
 
         * Deleted property `KernelMemory` (integer)
             > Kernel memory limit in bytes.
-            > 
+            >
             > <p><br /></p>
-            > 
+            >
             > > **Deprecated**: This field is deprecated as the kernel 5.4 deprecated
             > > `kmem.limit_in_bytes`.
 
@@ -1182,7 +1182,7 @@ Changed response : **200 OK**
             > Hard limit for kernel TCP buffer memory (in bytes). Depending on the
             > OCI runtime in use, this option may be ignored. It is no longer supported
             > by the default (runc) runtime.
-            > 
+            >
             > This field is omitted when empty.
 
 
@@ -1198,7 +1198,7 @@ Changed response : **200 OK**
 
             * Changed property `Type` (string)
                 > The mount type. Available types:
-                > 
+                >
                 > - `bind` Mounts a file or directory from the host into the container. Must exist prior to creating the container.
                 > - `volume` Creates a volume with the given name and options (or uses a pre-existing volume with the same name and options). These are **not** removed when the container is removed.
                 > - `tmpfs` Create a tmpfs with the given options. The mount source cannot be specified for tmpfs.
@@ -1236,19 +1236,19 @@ Changed response : **200 OK**
 
         * Changed property `HairpinMode` (boolean)
             > Indicates if hairpin NAT should be enabled on the virtual interface.
-            > 
+            >
             > Deprecated: This field is never set and will be removed in a future release.
 
 
         * Changed property `LinkLocalIPv6Address` (string)
             > IPv6 unicast address using the link-local prefix.
-            > 
+            >
             > Deprecated: This field is never set and will be removed in a future release.
 
 
         * Changed property `LinkLocalIPv6PrefixLen` (integer)
             > Prefix length of the IPv6 unicast address.
-            > 
+            >
             > Deprecated: This field is never set and will be removed in a future release.
 
 
@@ -1282,23 +1282,23 @@ Changed response : **200 OK**
     * Changed property `Created` (string -> string)
         > Date and time at which the image was created, formatted in
         > [RFC 3339](https://www.ietf.org/rfc/rfc3339.txt) format with nano-seconds.
-        > 
+        >
         > This information is only available if present in the image,
         > and omitted otherwise.
 
 
     * Changed property `Container` (string)
         > The ID of the container that was used to create the image.
-        > 
+        >
         > Depending on how the image was created, this field may be empty.
-        > 
+        >
         > **Deprecated**: this field is kept for backward compatibility, but
         > will be removed in API v1.45.
 
 
     * Changed property `VirtualSize` (integer)
         > Total size of the image including all layers it is composed of.
-        > 
+        >
         > Deprecated: this field is omitted in API v1.44, but kept for backward compatibility. Use Size instead.
 
 
@@ -1309,26 +1309,26 @@ Changed response : **200 OK**
 
         * Changed property `MacAddress` (string)
             > MAC address of the container.
-            > 
+            >
             > <p><br /></p>
-            > 
+            >
             > > **Deprecated**: this field is deprecated in API v1.44 and up. It is always omitted.
 
 
     * Changed property `ContainerConfig` (object)
         > Configuration for a container that is portable between hosts.
-        > 
+        >
         > When used as `ContainerConfig` field in an image, `ContainerConfig` is an
         > optional field containing the configuration of the container that was last
         > committed when creating the image.
-        > 
+        >
         > Previous versions of Docker builder used this field to store build cache,
         > and it is not in active use anymore.
 
 
         * Changed property `MacAddress` (string)
             > MAC address of the container.
-            > 
+            >
             > Deprecated: this field is deprecated in API v1.44 and up. Use EndpointSettings.MacAddress instead.
 
 
@@ -1367,7 +1367,7 @@ Changed response : **200 OK**
 
         * Changed property `VirtualSize` (integer)
             > Total size of the image including all layers it is composed of.
-            > 
+            >
             > Deprecated: this field is omitted in API v1.44, but kept for backward compatibility. Use Size instead.
 
 
@@ -1394,7 +1394,7 @@ Changed response : **200 OK**
 
         * Changed property `Parent` (string)
             > ID of the parent build cache record.
-            > 
+            >
             > > **Deprecated**: This field is deprecated, and omitted if empty.
 
 
@@ -1411,7 +1411,7 @@ Changed response : **200 OK**
 
             * Changed property `Type` (string)
                 > The mount type:
-                > 
+                >
                 > - `bind` a mount of a file or directory from the host into the container.
                 > - `volume` a docker volume with the given `Name`.
                 > - `tmpfs` a `tmpfs`.
@@ -1439,7 +1439,7 @@ Changed response : **200 OK**
 
         * Changed property `VirtualSize` (integer)
             > Total size of the image including all layers it is composed of.
-            > 
+            >
             > Deprecated: this field is omitted in API v1.44, but kept for backward compatibility. Use Size instead.
 
 
@@ -1464,7 +1464,7 @@ Changed response : **200 OK**
 
         * Changed property `Parent` (string)
             > ID of the parent build cache record.
-            > 
+            >
             > > **Deprecated**: This field is deprecated, and omitted if empty.
 
 
@@ -1481,7 +1481,7 @@ Changed response : **200 OK**
 
             * Changed property `Type` (string)
                 > The mount type:
-                > 
+                >
                 > - `bind` a mount of a file or directory from the host into the container.
                 > - `volume` a docker volume with the given `Name`.
                 > - `tmpfs` a `tmpfs`.
@@ -1507,7 +1507,7 @@ Changed content type : `application/json`
 
 * Changed property `Networks` (array)
     > Specifies which networks the service should attach to.
-    > 
+    >
     > Deprecated: This field is deprecated since v1.44. The Networks field in TaskSpec should be used instead.
 
 
@@ -1517,9 +1517,9 @@ Changed content type : `application/json`
 
     * Changed property `ContainerSpec` (object)
         > Container spec for the service.
-        > 
+        >
         > <p><br /></p>
-        > 
+        >
         > > **Note**: ContainerSpec, NetworkAttachmentSpec, and PluginSpec are
         > > mutually exclusive. PluginSpec is only used when the Runtime field
         > > is set to `plugin`. NetworkAttachmentSpec is used when the Runtime
@@ -1568,7 +1568,7 @@ Changed content type : `application/json`
 
             * Changed property `Type` (string)
                 > The mount type. Available types:
-                > 
+                >
                 > - `bind` Mounts a file or directory from the host into the container. Must exist prior to creating the container.
                 > - `volume` Creates a volume with the given name and options (or uses a pre-existing volume with the same name and options). These are **not** removed when the container is removed.
                 > - `tmpfs` Create a tmpfs with the given options. The mount source cannot be specified for tmpfs.
@@ -1615,7 +1615,7 @@ Changed response : **201 Created**
 
     * Added property `Warnings` (array)
         > Optional warning message.
-        > 
+        >
         > FIXME(thaJeztah): this should have "omitempty" in the generated type.
 
 
@@ -1634,7 +1634,7 @@ Changed content type : `application/json`
 
 * Changed property `Networks` (array)
     > Specifies which networks the service should attach to.
-    > 
+    >
     > Deprecated: This field is deprecated since v1.44. The Networks field in TaskSpec should be used instead.
 
 
@@ -1644,9 +1644,9 @@ Changed content type : `application/json`
 
     * Changed property `ContainerSpec` (object)
         > Container spec for the service.
-        > 
+        >
         > <p><br /></p>
-        > 
+        >
         > > **Note**: ContainerSpec, NetworkAttachmentSpec, and PluginSpec are
         > > mutually exclusive. PluginSpec is only used when the Runtime field
         > > is set to `plugin`. NetworkAttachmentSpec is used when the Runtime
@@ -1678,7 +1678,7 @@ Changed content type : `application/json`
 
             * Changed property `Type` (string)
                 > The mount type. Available types:
-                > 
+                >
                 > - `bind` Mounts a file or directory from the host into the container. Must exist prior to creating the container.
                 > - `volume` Creates a volume with the given name and options (or uses a pre-existing volume with the same name and options). These are **not** removed when the container is removed.
                 > - `tmpfs` Create a tmpfs with the given options. The mount source cannot be specified for tmpfs.
@@ -1759,9 +1759,9 @@ Changed response : **200 OK**
 
                 * Property `PublishMode` (string)
                     > The mode in which port is published.
-                    > 
+                    >
                     > <p><br /></p>
-                    > 
+                    >
                     > - "ingress" makes the target port accessible on every node,
                     >   regardless of whether there is a task for the service running on
                     >   that node or not.
@@ -1783,9 +1783,9 @@ Changed response : **200 OK**
 
         * Changed property `ContainerSpec` (object)
             > Container spec for the service.
-            > 
+            >
             > <p><br /></p>
-            > 
+            >
             > > **Note**: ContainerSpec, NetworkAttachmentSpec, and PluginSpec are
             > > mutually exclusive. PluginSpec is only used when the Runtime field
             > > is set to `plugin`. NetworkAttachmentSpec is used when the Runtime
@@ -1817,7 +1817,7 @@ Changed response : **200 OK**
 
                 * Changed property `Type` (string)
                     > The mount type. Available types:
-                    > 
+                    >
                     > - `bind` Mounts a file or directory from the host into the container. Must exist prior to creating the container.
                     > - `volume` Creates a volume with the given name and options (or uses a pre-existing volume with the same name and options). These are **not** removed when the container is removed.
                     > - `tmpfs` Create a tmpfs with the given options. The mount source cannot be specified for tmpfs.
@@ -1883,9 +1883,9 @@ Changed response : **200 OK**
 
         * Changed property `ContainerSpec` (object)
             > Container spec for the service.
-            > 
+            >
             > <p><br /></p>
-            > 
+            >
             > > **Note**: ContainerSpec, NetworkAttachmentSpec, and PluginSpec are
             > > mutually exclusive. PluginSpec is only used when the Runtime field
             > > is set to `plugin`. NetworkAttachmentSpec is used when the Runtime
@@ -1917,7 +1917,7 @@ Changed response : **200 OK**
 
                 * Changed property `Type` (string)
                     > The mount type. Available types:
-                    > 
+                    >
                     > - `bind` Mounts a file or directory from the host into the container. Must exist prior to creating the container.
                     > - `volume` Creates a volume with the given name and options (or uses a pre-existing volume with the same name and options). These are **not** removed when the container is removed.
                     > - `tmpfs` Create a tmpfs with the given options. The mount source cannot be specified for tmpfs.
@@ -1968,12 +1968,12 @@ Changed response : **200 OK**
     * Added property `CDISpecDirs` (array)
         > List of directories where (Container Device Interface) CDI
         > specifications are located.
-        > 
+        >
         > These specifications define vendor-specific modifications to an OCI
         > runtime specification for a container being created.
-        > 
+        >
         > An empty list indicates that CDI device injection is disabled.
-        > 
+        >
         > Note that since using CDI device injection requires the daemon to have
         > experimental enabled. For non-experimental daemons an empty list will
         > always be returned.
@@ -1983,22 +1983,22 @@ Changed response : **200 OK**
 
     * Deleted property `KernelMemory` (boolean)
         > Indicates if the host has kernel memory limit support enabled.
-        > 
+        >
         > <p><br /></p>
-        > 
+        >
         > > **Deprecated**: This field is deprecated as the kernel 5.4 deprecated
         > > `kmem.limit_in_bytes`.
 
 
     * Deleted property `ClusterStore` (string)
         > URL of the distributed storage backend.
-        > 
-        > 
+        >
+        >
         > The storage backend is used for multihost networking (to store
         > network and endpoint information) and by the node discovery mechanism.
-        > 
+        >
         > <p><br /></p>
-        > 
+        >
         > > **Deprecated**: This field is only propagated when using standalone Swarm
         > > mode, and overlay networking using an external k/v store. Overlay
         > > networks with Swarm mode enabled use the built-in raft store, and
@@ -2009,9 +2009,9 @@ Changed response : **200 OK**
         > The network endpoint that the Engine advertises for the purpose of
         > node discovery. ClusterAdvertise is a `host:port` combination on which
         > the daemon is reachable by other hosts.
-        > 
+        >
         > <p><br /></p>
-        > 
+        >
         > > **Deprecated**: This field is only propagated when using standalone Swarm
         > > mode, and overlay networking using an external k/v store. Overlay
         > > networks with Swarm mode enabled use the built-in raft store, and
@@ -2021,7 +2021,7 @@ Changed response : **200 OK**
     * Changed property `KernelMemoryTCP` (boolean)
         > Indicates if the host has kernel memory TCP limit support enabled. This
         > field is omitted if not supported.
-        > 
+        >
         > Kernel memory TCP limits are not supported when using cgroups v2, which
         > does not support the corresponding `memory.kmem.tcp.limit_in_bytes` cgroup.
 
@@ -2030,7 +2030,7 @@ Changed response : **200 OK**
         > List of security features that are enabled on the daemon, such as
         > apparmor, seccomp, SELinux, user-namespaces (userns), rootless and
         > no-new-privileges.
-        > 
+        >
         > Additional configuration options for each security feature may
         > be present, and are included as a comma-separated list of key/value
         > pairs.
@@ -2040,11 +2040,11 @@ Changed response : **200 OK**
         > List of [OCI compliant](https://github.com/opencontainers/runtime-spec)
         > runtimes configured on the daemon. Keys hold the "name" used to
         > reference the runtime.
-        > 
+        >
         > The Docker daemon relies on an OCI compliant runtime (invoked via the
         > `containerd` daemon) as its interface to the Linux kernel namespaces,
         > cgroups, and SELinux.
-        > 
+        >
         > The default runtime is `runc`, and automatically configured. Additional
         > runtimes can be configured by the user and will be listed here.
 
@@ -2068,7 +2068,7 @@ Changed response : **200 OK**
 
         * Changed property `Networks` (array)
             > Specifies which networks the service should attach to.
-            > 
+            >
             > Deprecated: This field is deprecated since v1.44. The Networks field in TaskSpec should be used instead.
 
 
@@ -2078,9 +2078,9 @@ Changed response : **200 OK**
 
             * Changed property `ContainerSpec` (object)
                 > Container spec for the service.
-                > 
+                >
                 > <p><br /></p>
-                > 
+                >
                 > > **Note**: ContainerSpec, NetworkAttachmentSpec, and PluginSpec are
                 > > mutually exclusive. PluginSpec is only used when the Runtime field
                 > > is set to `plugin`. NetworkAttachmentSpec is used when the Runtime
@@ -2112,7 +2112,7 @@ Changed response : **200 OK**
 
                     * Changed property `Type` (string)
                         > The mount type. Available types:
-                        > 
+                        >
                         > - `bind` Mounts a file or directory from the host into the container. Must exist prior to creating the container.
                         > - `volume` Creates a volume with the given name and options (or uses a pre-existing volume with the same name and options). These are **not** removed when the container is removed.
                         > - `tmpfs` Create a tmpfs with the given options. The mount source cannot be specified for tmpfs.
@@ -2159,7 +2159,7 @@ Changed response : **200 OK**
 
         * Changed property `Networks` (array)
             > Specifies which networks the service should attach to.
-            > 
+            >
             > Deprecated: This field is deprecated since v1.44. The Networks field in TaskSpec should be used instead.
 
 
@@ -2169,9 +2169,9 @@ Changed response : **200 OK**
 
             * Changed property `ContainerSpec` (object)
                 > Container spec for the service.
-                > 
+                >
                 > <p><br /></p>
-                > 
+                >
                 > > **Note**: ContainerSpec, NetworkAttachmentSpec, and PluginSpec are
                 > > mutually exclusive. PluginSpec is only used when the Runtime field
                 > > is set to `plugin`. NetworkAttachmentSpec is used when the Runtime
@@ -2203,7 +2203,7 @@ Changed response : **200 OK**
 
                     * Changed property `Type` (string)
                         > The mount type. Available types:
-                        > 
+                        >
                         > - `bind` Mounts a file or directory from the host into the container. Must exist prior to creating the container.
                         > - `volume` Creates a volume with the given name and options (or uses a pre-existing volume with the same name and options). These are **not** removed when the container is removed.
                         > - `tmpfs` Create a tmpfs with the given options. The mount source cannot be specified for tmpfs.
@@ -2257,7 +2257,7 @@ Changed response : **200 OK**
 
         * Changed property `Networks` (array)
             > Specifies which networks the service should attach to.
-            > 
+            >
             > Deprecated: This field is deprecated since v1.44. The Networks field in TaskSpec should be used instead.
 
 
@@ -2267,9 +2267,9 @@ Changed response : **200 OK**
 
             * Changed property `ContainerSpec` (object)
                 > Container spec for the service.
-                > 
+                >
                 > <p><br /></p>
-                > 
+                >
                 > > **Note**: ContainerSpec, NetworkAttachmentSpec, and PluginSpec are
                 > > mutually exclusive. PluginSpec is only used when the Runtime field
                 > > is set to `plugin`. NetworkAttachmentSpec is used when the Runtime
@@ -2301,7 +2301,7 @@ Changed response : **200 OK**
 
                     * Changed property `Type` (string)
                         > The mount type. Available types:
-                        > 
+                        >
                         > - `bind` Mounts a file or directory from the host into the container. Must exist prior to creating the container.
                         > - `volume` Creates a volume with the given name and options (or uses a pre-existing volume with the same name and options). These are **not** removed when the container is removed.
                         > - `tmpfs` Create a tmpfs with the given options. The mount source cannot be specified for tmpfs.
@@ -2346,7 +2346,7 @@ Changed response : **200 OK**
 
         * Changed property `Networks` (array)
             > Specifies which networks the service should attach to.
-            > 
+            >
             > Deprecated: This field is deprecated since v1.44. The Networks field in TaskSpec should be used instead.
 
 
@@ -2356,9 +2356,9 @@ Changed response : **200 OK**
 
             * Changed property `ContainerSpec` (object)
                 > Container spec for the service.
-                > 
+                >
                 > <p><br /></p>
-                > 
+                >
                 > > **Note**: ContainerSpec, NetworkAttachmentSpec, and PluginSpec are
                 > > mutually exclusive. PluginSpec is only used when the Runtime field
                 > > is set to `plugin`. NetworkAttachmentSpec is used when the Runtime
@@ -2390,7 +2390,7 @@ Changed response : **200 OK**
 
                     * Changed property `Type` (string)
                         > The mount type. Available types:
-                        > 
+                        >
                         > - `bind` Mounts a file or directory from the host into the container. Must exist prior to creating the container.
                         > - `volume` Creates a volume with the given name and options (or uses a pre-existing volume with the same name and options). These are **not** removed when the container is removed.
                         > - `tmpfs` Create a tmpfs with the given options. The mount source cannot be specified for tmpfs.
@@ -2425,5 +2425,3 @@ Changed response : **200 OK**
                     * Added property `StartInterval` (integer)
                         > The time to wait between checks in nanoseconds during the start period.
                         > It should be 0 or at least 1000000 (1 ms). 0 means inherit.
-
-

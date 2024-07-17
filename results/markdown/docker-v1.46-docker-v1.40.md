@@ -282,9 +282,9 @@ Deleted: `shared-size` in `query`
 Changed: `filters` in `query`
 > A JSON encoded value of the filters (a `map[string][]string`) to
 > process on the images list.
-> 
+>
 > Available filters:
-> 
+>
 > - `before`=(`<image-name>[:<tag>]`,  `<image id>` or `<image@digest>`)
 > - `dangling=true`
 > - `label=key` or `label="key=value"` of an image label
@@ -307,12 +307,12 @@ Changed response : **200 OK**
 
     * Changed property `VirtualSize` (integer)
         > Total size of the image including all layers it is composed of.
-        > 
+        >
         > In versions of Docker before v1.10, this field was calculated from
         > the image itself and all of its parent images. Docker v1.10 and up
         > store images self-contained, and no longer use a parent-chain, making
         > this field an equivalent of the Size field.
-        > 
+        >
         > This field is kept for backward compatibility, but may be removed in
         > a future version of the API.
 
@@ -325,9 +325,9 @@ Changed response : **200 OK**
 Changed: `filters` in `query`
 > A JSON encoded value of the filters (a `map[string][]string`) to
 > process on the list of build cache objects.
-> 
+>
 > Available filters:
-> 
+>
 > - `until=<duration>`: duration relative to daemon's time, during which build cache was not used, in Go's duration format (e.g., '24h')
 > - `id=<id>`
 > - `parent=<id>`
@@ -363,7 +363,7 @@ Deleted: `platform` in `query`
 
 Changed: `filters` in `query`
 > A JSON encoded value of the filters (a `map[string][]string`) to process on the images list. Available filters:
-> 
+>
 > - `is-automated=(true|false)`
 > - `is-official=(true|false)`
 > - `stars=<number>` Matches images that has at least 'number' stars.
@@ -489,7 +489,7 @@ Changed response : **200 OK**
 
 Changed: `filters` in `query`
 > Filters to process on the prune list, encoded as JSON (a `map[string][]string`).
-> 
+>
 > Available filters:
 > - `label` (`label=<key>`, `label=<key>=<value>`, `label!=<key>`, or `label!=<key>=<value>`) Prune volumes with (or without, in case `label!=...` is used) the specified labels.
 
@@ -529,7 +529,7 @@ Changed content type : `application/json`
 
     * Changed property `Config` (array)
         > List of IPAM configuration options, specified as a map:
-        > 
+        >
         > ```
         > {"Subnet": <CIDR>, "IPRange": <CIDR>, "Gateway": <IP address>, "AuxAddress": <device_name:IP address>}
         > ```
@@ -657,7 +657,7 @@ Changed response : **200 OK**
 
         * Changed property `Config` (array)
             > List of IPAM configuration options, specified as a map:
-            > 
+            >
             > ```
             > {"Subnet": <CIDR>, "IPRange": <CIDR>, "Gateway": <IP address>, "AuxAddress": <device_name:IP address>}
             > ```
@@ -726,7 +726,7 @@ Changed response : **200 OK**
 
         * Changed property `Config` (array)
             > List of IPAM configuration options, specified as a map:
-            > 
+            >
             > ```
             > {"Subnet": <CIDR>, "IPRange": <CIDR>, "Gateway": <IP address>, "AuxAddress": <device_name:IP address>}
             > ```
@@ -759,7 +759,7 @@ Changed content type : `application/json`
         > List of all DNS names an endpoint has on a specific network. This
         > list is based on the container name, network aliases, container short
         > ID, and hostname.
-        > 
+        >
         > These DNS names are non-fully qualified but can contain several dots.
         > You can get fully qualified DNS names by appending `.<network-name>`.
         > For instance, if container name is `my.ctr` and the network is named
@@ -810,9 +810,9 @@ Changed content type : `application/json`
 
     * Changed property `ContainerSpec` (object)
         > Container spec for the service.
-        > 
+        >
         > <p><br /></p>
-        > 
+        >
         > > **Note**: ContainerSpec, NetworkAttachmentSpec, and PluginSpec are
         > > mutually exclusive. PluginSpec is only used when the Runtime field
         > > is set to `plugin`. NetworkAttachmentSpec is used when the Runtime
@@ -863,7 +863,7 @@ Changed content type : `application/json`
 
             * Changed property `Type` (string)
                 > The mount type. Available types:
-                > 
+                >
                 > - `bind` Mounts a file or directory from the host into the container. Must exist prior to creating the container.
                 > - `volume` Creates a volume with the given name and options (or uses a pre-existing volume with the same name and options). These are **not** removed when the container is removed.
                 > - `tmpfs` Create a tmpfs with the given options. The mount source cannot be specified for tmpfs.
@@ -884,7 +884,7 @@ Changed content type : `application/json`
                 * Deleted property `ReadOnlyNonRecursive` (boolean)
                     > Make the mount non-recursively read-only, but still leave the mount recursive
                     > (unless NonRecursive is set to `true` in conjunction).
-                    > 
+                    >
                     > Addded in v1.44, before that version all read-only mounts were
                     > non-recursive by default. To match the previous behaviour this
                     > will default to `true` for clients on versions prior to v1.44.
@@ -963,7 +963,7 @@ Changed content type : `application/json`
             > _match_ (`==`) or _exclude_ (`!=`) rule. Multiple constraints find
             > nodes that satisfy every expression (AND match). Constraints can
             > match node or Docker Engine labels as follows:
-            > 
+            >
             > node attribute       | matches                        | example
             > ---------------------|--------------------------------|-----------------------------------------------
             > `node.id`            | Node ID                        | `node.id==2ivku8v2gvtg4`
@@ -973,7 +973,7 @@ Changed content type : `application/json`
             > `node.platform.arch` | Node architecture              | `node.platform.arch==x86_64`
             > `node.labels`        | User-defined node labels       | `node.labels.security==high`
             > `engine.labels`      | Docker Engine's labels         | `engine.labels.operatingsystem==ubuntu-14.04`
-            > 
+            >
             > `engine.labels` apply to Docker Engine labels like operating system,
             > drivers, etc. Swarm administrators add `node.labels` for operational
             > purposes by using the [`node update endpoint`](#operation/NodeUpdate).
@@ -993,7 +993,7 @@ Changed response : **201 Created**
 
     * Deleted property `Warnings` (array)
         > Optional warning message.
-        > 
+        >
         > FIXME(thaJeztah): this should have "omitempty" in the generated type.
 
 
@@ -1028,9 +1028,9 @@ Changed content type : `application/json`
 
     * Changed property `ContainerSpec` (object)
         > Container spec for the service.
-        > 
+        >
         > <p><br /></p>
-        > 
+        >
         > > **Note**: ContainerSpec, NetworkAttachmentSpec, and PluginSpec are
         > > mutually exclusive. PluginSpec is only used when the Runtime field
         > > is set to `plugin`. NetworkAttachmentSpec is used when the Runtime
@@ -1081,7 +1081,7 @@ Changed content type : `application/json`
 
             * Changed property `Type` (string)
                 > The mount type. Available types:
-                > 
+                >
                 > - `bind` Mounts a file or directory from the host into the container. Must exist prior to creating the container.
                 > - `volume` Creates a volume with the given name and options (or uses a pre-existing volume with the same name and options). These are **not** removed when the container is removed.
                 > - `tmpfs` Create a tmpfs with the given options. The mount source cannot be specified for tmpfs.
@@ -1102,7 +1102,7 @@ Changed content type : `application/json`
                 * Deleted property `ReadOnlyNonRecursive` (boolean)
                     > Make the mount non-recursively read-only, but still leave the mount recursive
                     > (unless NonRecursive is set to `true` in conjunction).
-                    > 
+                    >
                     > Addded in v1.44, before that version all read-only mounts were
                     > non-recursive by default. To match the previous behaviour this
                     > will default to `true` for clients on versions prior to v1.44.
@@ -1167,7 +1167,7 @@ Changed content type : `application/json`
             > _match_ (`==`) or _exclude_ (`!=`) rule. Multiple constraints find
             > nodes that satisfy every expression (AND match). Constraints can
             > match node or Docker Engine labels as follows:
-            > 
+            >
             > node attribute       | matches                        | example
             > ---------------------|--------------------------------|-----------------------------------------------
             > `node.id`            | Node ID                        | `node.id==2ivku8v2gvtg4`
@@ -1177,7 +1177,7 @@ Changed content type : `application/json`
             > `node.platform.arch` | Node architecture              | `node.platform.arch==x86_64`
             > `node.labels`        | User-defined node labels       | `node.labels.security==high`
             > `engine.labels`      | Docker Engine's labels         | `engine.labels.operatingsystem==ubuntu-14.04`
-            > 
+            >
             > `engine.labels` apply to Docker Engine labels like operating system,
             > drivers, etc. Swarm administrators add `node.labels` for operational
             > purposes by using the [`node update endpoint`](#operation/NodeUpdate).
@@ -1211,7 +1211,7 @@ Changed response : **200 OK**
 
         * Changed property `Type` (string)
             > The mount type:
-            > 
+            >
             > - `bind` a mount of a file or directory from the host into the container.
             > - `volume` a docker volume with the given `Name`.
             > - `tmpfs` a `tmpfs`.
@@ -1234,18 +1234,18 @@ Changed response : **200 OK**
 
 Deleted: `platform` in `query`
 > Platform in the format `os[/arch[/variant]]` used for image lookup.
-> 
+>
 > When specified, the daemon checks if the requested image is present
 > in the local image cache with the given OS and Architecture, and
 > otherwise returns a `404` status.
-> 
+>
 > If the option is not set, the host's native OS and Architecture are
 > used to look up the image in the image cache. However, if no platform
 > is passed and the given image does exist in the local image cache,
 > but its OS or architecture does not match, the container is created
 > with the available image, and a warning is added to the `Warnings`
 > field in the response, for example;
-> 
+>
 >     WARNING: The requested image's platform (linux/arm64/v8) does not
 >              match the detected host platform (linux/amd64) and no
 >              specific platform was requested
@@ -1279,7 +1279,7 @@ Changed content type : `application/json`
     * Added property `Capabilities` (array)
         > A list of kernel capabilities to be available for container (this
         > overrides the default set).
-        > 
+        >
         > Conflicts with options 'CapAdd' and 'CapDrop'"
 
 
@@ -1292,10 +1292,10 @@ Changed content type : `application/json`
 
     * Deleted property `CgroupnsMode` (string)
         > cgroup namespace mode for the container. Possible values are:
-        > 
+        >
         > - `"private"`: the container runs in its own private cgroup namespace
         > - `"host"`: use the host system's cgroup namespace
-        > 
+        >
         > If not specified, the daemon default is used, which can either be `"private"`
         > or `"host"`, depending on daemon version, kernel support and configuration.
 
@@ -1316,7 +1316,7 @@ Changed content type : `application/json`
 
         * Changed property `Type` (string)
             > The mount type. Available types:
-            > 
+            >
             > - `bind` Mounts a file or directory from the host into the container. Must exist prior to creating the container.
             > - `volume` Creates a volume with the given name and options (or uses a pre-existing volume with the same name and options). These are **not** removed when the container is removed.
             > - `tmpfs` Create a tmpfs with the given options. The mount source cannot be specified for tmpfs.
@@ -1337,7 +1337,7 @@ Changed content type : `application/json`
             * Deleted property `ReadOnlyNonRecursive` (boolean)
                 > Make the mount non-recursively read-only, but still leave the mount recursive
                 > (unless NonRecursive is set to `true` in conjunction).
-                > 
+                >
                 > Addded in v1.44, before that version all read-only mounts were
                 > non-recursive by default. To match the previous behaviour this
                 > will default to `true` for clients on versions prior to v1.44.
@@ -1403,7 +1403,7 @@ Changed content type : `application/octet-stream`
     * Added property `Capabilities` (array)
         > A list of kernel capabilities to be available for container (this
         > overrides the default set).
-        > 
+        >
         > Conflicts with options 'CapAdd' and 'CapDrop'"
 
 
@@ -1414,10 +1414,10 @@ Changed content type : `application/octet-stream`
 
     * Deleted property `CgroupnsMode` (string)
         > cgroup namespace mode for the container. Possible values are:
-        > 
+        >
         > - `"private"`: the container runs in its own private cgroup namespace
         > - `"host"`: use the host system's cgroup namespace
-        > 
+        >
         > If not specified, the daemon default is used, which can either be `"private"`
         > or `"host"`, depending on daemon version, kernel support and configuration.
 
@@ -1438,7 +1438,7 @@ Changed content type : `application/octet-stream`
 
         * Changed property `Type` (string)
             > The mount type. Available types:
-            > 
+            >
             > - `bind` Mounts a file or directory from the host into the container. Must exist prior to creating the container.
             > - `volume` Creates a volume with the given name and options (or uses a pre-existing volume with the same name and options). These are **not** removed when the container is removed.
             > - `tmpfs` Create a tmpfs with the given options. The mount source cannot be specified for tmpfs.
@@ -1459,7 +1459,7 @@ Changed content type : `application/octet-stream`
             * Deleted property `ReadOnlyNonRecursive` (boolean)
                 > Make the mount non-recursively read-only, but still leave the mount recursive
                 > (unless NonRecursive is set to `true` in conjunction).
-                > 
+                >
                 > Addded in v1.44, before that version all read-only mounts were
                 > non-recursive by default. To match the previous behaviour this
                 > will default to `true` for clients on versions prior to v1.44.
@@ -1519,7 +1519,7 @@ Changed response : **200 OK**
 
         * Changed property `Type` (string)
             > The mount type:
-            > 
+            >
             > - `bind` a mount of a file or directory from the host into the container.
             > - `volume` a docker volume with the given `Name`.
             > - `tmpfs` a `tmpfs`.
@@ -1531,11 +1531,11 @@ Changed response : **200 OK**
             * `cluster`
     * Changed property `Config` (object)
         > Configuration for a container that is portable between hosts.
-        > 
+        >
         > When used as `ContainerConfig` field in an image, `ContainerConfig` is an
         > optional field containing the configuration of the container that was last
         > committed when creating the image.
-        > 
+        >
         > Previous versions of Docker builder used this field to store build cache,
         > and it is not in active use anymore.
 
@@ -1573,7 +1573,7 @@ Changed response : **200 OK**
         * Added property `Capabilities` (array)
             > A list of kernel capabilities to be available for container (this
             > overrides the default set).
-            > 
+            >
             > Conflicts with options 'CapAdd' and 'CapDrop'"
 
 
@@ -1584,10 +1584,10 @@ Changed response : **200 OK**
 
         * Deleted property `CgroupnsMode` (string)
             > cgroup namespace mode for the container. Possible values are:
-            > 
+            >
             > - `"private"`: the container runs in its own private cgroup namespace
             > - `"host"`: use the host system's cgroup namespace
-            > 
+            >
             > If not specified, the daemon default is used, which can either be `"private"`
             > or `"host"`, depending on daemon version, kernel support and configuration.
 
@@ -1608,7 +1608,7 @@ Changed response : **200 OK**
 
             * Changed property `Type` (string)
                 > The mount type. Available types:
-                > 
+                >
                 > - `bind` Mounts a file or directory from the host into the container. Must exist prior to creating the container.
                 > - `volume` Creates a volume with the given name and options (or uses a pre-existing volume with the same name and options). These are **not** removed when the container is removed.
                 > - `tmpfs` Create a tmpfs with the given options. The mount source cannot be specified for tmpfs.
@@ -1629,7 +1629,7 @@ Changed response : **200 OK**
                 * Deleted property `ReadOnlyNonRecursive` (boolean)
                     > Make the mount non-recursively read-only, but still leave the mount recursive
                     > (unless NonRecursive is set to `true` in conjunction).
-                    > 
+                    >
                     > Addded in v1.44, before that version all read-only mounts were
                     > non-recursive by default. To match the previous behaviour this
                     > will default to `true` for clients on versions prior to v1.44.
@@ -1703,17 +1703,17 @@ Changed response : **200 OK**
 
     * Added property `Container` (string)
         > The ID of the container that was used to create the image.
-        > 
+        >
         > Depending on how the image was created, this field may be empty.
 
 
     * Added property `ContainerConfig` (object)
         > Configuration for a container that is portable between hosts.
-        > 
+        >
         > When used as `ContainerConfig` field in an image, `ContainerConfig` is an
         > optional field containing the configuration of the container that was last
         > committed when creating the image.
-        > 
+        >
         > Previous versions of Docker builder used this field to store build cache,
         > and it is not in active use anymore.
 
@@ -1744,7 +1744,7 @@ Changed response : **200 OK**
 
         * Property `ExposedPorts` (object)
             > An object mapping ports to an empty object in the form:
-            > 
+            >
             > `{"<port>/<tcp|udp|sctp>": {}}`
 
 
@@ -1780,7 +1780,7 @@ Changed response : **200 OK**
 
             * Property `Test` (array)
                 > The test to perform. Possible values are:
-                > 
+                >
                 > - `[]` inherit healthcheck from image or parent image
                 > - `["NONE"]` disable healthcheck
                 > - `["CMD", args...]` exec arguments directly
@@ -1830,7 +1830,7 @@ Changed response : **200 OK**
 
         * Property `Entrypoint` (array)
             > The entry point for the container as a string or an array of strings.
-            > 
+            >
             > If the array consists of exactly one empty string (`[""]`) then the
             > entry point is reset to system default (i.e., the entry point used by
             > docker when there is no `ENTRYPOINT` instruction in the `Dockerfile`).
@@ -1877,12 +1877,12 @@ Changed response : **200 OK**
 
     * Changed property `VirtualSize` (integer)
         > Total size of the image including all layers it is composed of.
-        > 
+        >
         > In versions of Docker before v1.10, this field was calculated from
         > the image itself and all of its parent images. Docker v1.10 and up
         > store images self-contained, and no longer use a parent-chain, making
         > this field an equivalent of the Size field.
-        > 
+        >
         > This field is kept for backward compatibility, but may be removed in
         > a future version of the API.
 
@@ -1894,98 +1894,98 @@ Changed response : **200 OK**
 
         * Changed property `Hostname` (string)
             > The hostname to use for the container, as a valid RFC 1123 hostname.
-            > 
+            >
             > <p><br /></p>
-            > 
+            >
             > > **Note**: this field is always empty and must not be used.
 
 
         * Changed property `Domainname` (string)
             > The domain name to use for the container.
-            > 
+            >
             > <p><br /></p>
-            > 
+            >
             > > **Note**: this field is always empty and must not be used.
 
 
         * Changed property `AttachStdin` (boolean)
             > Whether to attach to `stdin`.
-            > 
+            >
             > <p><br /></p>
-            > 
+            >
             > > **Note**: this field is always false and must not be used.
 
 
         * Changed property `AttachStdout` (boolean)
             > Whether to attach to `stdout`.
-            > 
+            >
             > <p><br /></p>
-            > 
+            >
             > > **Note**: this field is always false and must not be used.
 
 
         * Changed property `AttachStderr` (boolean)
             > Whether to attach to `stderr`.
-            > 
+            >
             > <p><br /></p>
-            > 
+            >
             > > **Note**: this field is always false and must not be used.
 
 
         * Changed property `Tty` (boolean)
             > Attach standard streams to a TTY, including `stdin` if it is not closed.
-            > 
+            >
             > <p><br /></p>
-            > 
+            >
             > > **Note**: this field is always false and must not be used.
 
 
         * Changed property `OpenStdin` (boolean)
             > Open `stdin`
-            > 
+            >
             > <p><br /></p>
-            > 
+            >
             > > **Note**: this field is always false and must not be used.
 
 
         * Changed property `StdinOnce` (boolean)
             > Close `stdin` after one attached client disconnects.
-            > 
+            >
             > <p><br /></p>
-            > 
+            >
             > > **Note**: this field is always false and must not be used.
 
 
         * Changed property `Image` (string)
             > The name (or reference) of the image to use when creating the container,
             > or which was used when the container was created.
-            > 
+            >
             > <p><br /></p>
-            > 
+            >
             > > **Note**: this field is always empty and must not be used.
 
 
         * Changed property `NetworkDisabled` (boolean)
             > Disable networking for the container.
-            > 
+            >
             > <p><br /></p>
-            > 
+            >
             > > **Note**: this field is always omitted and must not be used.
 
 
         * Changed property `MacAddress` (string)
             > MAC address of the container.
-            > 
+            >
             > <p><br /></p>
-            > 
+            >
             > > **Note**: this field is always omitted and must not be used.
 
 
         * Changed property `StopTimeout` (integer)
             > Timeout to stop a container in seconds.
-            > 
+            >
             > <p><br /></p>
-            > 
+            >
             > > **Note**: this field is always omitted and must not be used.
 
 
@@ -2024,12 +2024,12 @@ Changed response : **200 OK**
 
         * Changed property `VirtualSize` (integer)
             > Total size of the image including all layers it is composed of.
-            > 
+            >
             > In versions of Docker before v1.10, this field was calculated from
             > the image itself and all of its parent images. Docker v1.10 and up
             > store images self-contained, and no longer use a parent-chain, making
             > this field an equivalent of the Size field.
-            > 
+            >
             > This field is kept for backward compatibility, but may be removed in
             > a future version of the API.
 
@@ -2073,7 +2073,7 @@ Changed response : **200 OK**
 
             * Changed property `Type` (string)
                 > The mount type:
-                > 
+                >
                 > - `bind` a mount of a file or directory from the host into the container.
                 > - `volume` a docker volume with the given `Name`.
                 > - `tmpfs` a `tmpfs`.
@@ -2100,12 +2100,12 @@ Changed response : **200 OK**
 
         * Changed property `VirtualSize` (integer)
             > Total size of the image including all layers it is composed of.
-            > 
+            >
             > In versions of Docker before v1.10, this field was calculated from
             > the image itself and all of its parent images. Docker v1.10 and up
             > store images self-contained, and no longer use a parent-chain, making
             > this field an equivalent of the Size field.
-            > 
+            >
             > This field is kept for backward compatibility, but may be removed in
             > a future version of the API.
 
@@ -2149,7 +2149,7 @@ Changed response : **200 OK**
 
             * Changed property `Type` (string)
                 > The mount type:
-                > 
+                >
                 > - `bind` a mount of a file or directory from the host into the container.
                 > - `volume` a docker volume with the given `Name`.
                 > - `tmpfs` a `tmpfs`.
@@ -2182,7 +2182,7 @@ Changed response : **200 OK**
         > The version number of the object such as node, service, etc. This is needed
         > to avoid conflicting writes. The client must send the version number along
         > with the modified specification when updating these objects.
-        > 
+        >
         > This approach ensures safe concurrency and determinism in that the change
         > on the object may not be applied if the version number has changed from the
         > last read. In other words, if two update requests specify the same base
@@ -2203,9 +2203,9 @@ Changed response : **200 OK**
 
         * Changed property `ContainerSpec` (object)
             > Container spec for the service.
-            > 
+            >
             > <p><br /></p>
-            > 
+            >
             > > **Note**: ContainerSpec, NetworkAttachmentSpec, and PluginSpec are
             > > mutually exclusive. PluginSpec is only used when the Runtime field
             > > is set to `plugin`. NetworkAttachmentSpec is used when the Runtime
@@ -2256,7 +2256,7 @@ Changed response : **200 OK**
 
                 * Changed property `Type` (string)
                     > The mount type. Available types:
-                    > 
+                    >
                     > - `bind` Mounts a file or directory from the host into the container. Must exist prior to creating the container.
                     > - `volume` Creates a volume with the given name and options (or uses a pre-existing volume with the same name and options). These are **not** removed when the container is removed.
                     > - `tmpfs` Create a tmpfs with the given options. The mount source cannot be specified for tmpfs.
@@ -2277,7 +2277,7 @@ Changed response : **200 OK**
                     * Deleted property `ReadOnlyNonRecursive` (boolean)
                         > Make the mount non-recursively read-only, but still leave the mount recursive
                         > (unless NonRecursive is set to `true` in conjunction).
-                        > 
+                        >
                         > Addded in v1.44, before that version all read-only mounts were
                         > non-recursive by default. To match the previous behaviour this
                         > will default to `true` for clients on versions prior to v1.44.
@@ -2342,7 +2342,7 @@ Changed response : **200 OK**
                 > _match_ (`==`) or _exclude_ (`!=`) rule. Multiple constraints find
                 > nodes that satisfy every expression (AND match). Constraints can
                 > match node or Docker Engine labels as follows:
-                > 
+                >
                 > node attribute       | matches                        | example
                 > ---------------------|--------------------------------|-----------------------------------------------
                 > `node.id`            | Node ID                        | `node.id==2ivku8v2gvtg4`
@@ -2352,7 +2352,7 @@ Changed response : **200 OK**
                 > `node.platform.arch` | Node architecture              | `node.platform.arch==x86_64`
                 > `node.labels`        | User-defined node labels       | `node.labels.security==high`
                 > `engine.labels`      | Docker Engine's labels         | `engine.labels.operatingsystem==ubuntu-14.04`
-                > 
+                >
                 > `engine.labels` apply to Docker Engine labels like operating system,
                 > drivers, etc. Swarm administrators add `node.labels` for operational
                 > purposes by using the [`node update endpoint`](#operation/NodeUpdate).
@@ -2373,7 +2373,7 @@ Changed response : **200 OK**
         > The version number of the object such as node, service, etc. This is needed
         > to avoid conflicting writes. The client must send the version number along
         > with the modified specification when updating these objects.
-        > 
+        >
         > This approach ensures safe concurrency and determinism in that the change
         > on the object may not be applied if the version number has changed from the
         > last read. In other words, if two update requests specify the same base
@@ -2394,9 +2394,9 @@ Changed response : **200 OK**
 
         * Changed property `ContainerSpec` (object)
             > Container spec for the service.
-            > 
+            >
             > <p><br /></p>
-            > 
+            >
             > > **Note**: ContainerSpec, NetworkAttachmentSpec, and PluginSpec are
             > > mutually exclusive. PluginSpec is only used when the Runtime field
             > > is set to `plugin`. NetworkAttachmentSpec is used when the Runtime
@@ -2447,7 +2447,7 @@ Changed response : **200 OK**
 
                 * Changed property `Type` (string)
                     > The mount type. Available types:
-                    > 
+                    >
                     > - `bind` Mounts a file or directory from the host into the container. Must exist prior to creating the container.
                     > - `volume` Creates a volume with the given name and options (or uses a pre-existing volume with the same name and options). These are **not** removed when the container is removed.
                     > - `tmpfs` Create a tmpfs with the given options. The mount source cannot be specified for tmpfs.
@@ -2468,7 +2468,7 @@ Changed response : **200 OK**
                     * Deleted property `ReadOnlyNonRecursive` (boolean)
                         > Make the mount non-recursively read-only, but still leave the mount recursive
                         > (unless NonRecursive is set to `true` in conjunction).
-                        > 
+                        >
                         > Addded in v1.44, before that version all read-only mounts were
                         > non-recursive by default. To match the previous behaviour this
                         > will default to `true` for clients on versions prior to v1.44.
@@ -2533,7 +2533,7 @@ Changed response : **200 OK**
                 > _match_ (`==`) or _exclude_ (`!=`) rule. Multiple constraints find
                 > nodes that satisfy every expression (AND match). Constraints can
                 > match node or Docker Engine labels as follows:
-                > 
+                >
                 > node attribute       | matches                        | example
                 > ---------------------|--------------------------------|-----------------------------------------------
                 > `node.id`            | Node ID                        | `node.id==2ivku8v2gvtg4`
@@ -2543,7 +2543,7 @@ Changed response : **200 OK**
                 > `node.platform.arch` | Node architecture              | `node.platform.arch==x86_64`
                 > `node.labels`        | User-defined node labels       | `node.labels.security==high`
                 > `engine.labels`      | Docker Engine's labels         | `engine.labels.operatingsystem==ubuntu-14.04`
-                > 
+                >
                 > `engine.labels` apply to Docker Engine labels like operating system,
                 > drivers, etc. Swarm administrators add `node.labels` for operational
                 > purposes by using the [`node update endpoint`](#operation/NodeUpdate).
@@ -2562,9 +2562,9 @@ Changed response : **200 OK**
 
     * Added property `SystemStatus` (array)
         > Status information about this node (standalone Swarm API).
-        > 
+        >
         > <p><br /></p>
-        > 
+        >
         > > **Note**: The information returned in this field is only propagated
         > > by the Swarm standalone API, and is empty (`null`) when using
         > > built-in swarm mode.
@@ -2580,13 +2580,13 @@ Changed response : **200 OK**
 
     * Added property `ClusterStore` (string)
         > URL of the distributed storage backend.
-        > 
-        > 
+        >
+        >
         > The storage backend is used for multihost networking (to store
         > network and endpoint information) and by the node discovery mechanism.
-        > 
+        >
         > <p><br /></p>
-        > 
+        >
         > > **Note**: This field is only propagated when using standalone Swarm
         > > mode, and overlay networking using an external k/v store. Overlay
         > > networks with Swarm mode enabled use the built-in raft store, and
@@ -2597,9 +2597,9 @@ Changed response : **200 OK**
         > The network endpoint that the Engine advertises for the purpose of
         > node discovery. ClusterAdvertise is a `host:port` combination on which
         > the daemon is reachable by other hosts.
-        > 
+        >
         > <p><br /></p>
-        > 
+        >
         > > **Note**: This field is only propagated when using standalone Swarm
         > > mode, and overlay networking using an external k/v store. Overlay
         > > networks with Swarm mode enabled use the built-in raft store, and
@@ -2612,9 +2612,9 @@ Changed response : **200 OK**
 
     * Deleted property `OSVersion` (string)
         > Version of the host's operating system
-        > 
+        >
         > <p><br /></p>
-        > 
+        >
         > > **Note**: The information returned in this field, including its
         > > very existence, and the formatting of values, should not be considered
         > > stable, and may change without notice.
@@ -2623,7 +2623,7 @@ Changed response : **200 OK**
     * Deleted property `DefaultAddressPools` (array)
         > List of custom default address pools for local networks, which can be
         > specified in the daemon.json file or dockerd option.
-        > 
+        >
         > Example: a Base "10.10.0.0/16" with Size 24 will define the set of 256
         > 10.10.[0-255].0/24 address pools.
 
@@ -2631,12 +2631,12 @@ Changed response : **200 OK**
     * Deleted property `CDISpecDirs` (array)
         > List of directories where (Container Device Interface) CDI
         > specifications are located.
-        > 
+        >
         > These specifications define vendor-specific modifications to an OCI
         > runtime specification for a container being created.
-        > 
+        >
         > An empty list indicates that CDI device injection is disabled.
-        > 
+        >
         > Note that since using CDI device injection requires the daemon to have
         > experimental enabled. For non-experimental daemons an empty list will
         > always be returned.
@@ -2646,7 +2646,7 @@ Changed response : **200 OK**
 
     * Changed property `KernelMemoryTCP` (boolean)
         > Indicates if the host has kernel memory TCP limit support enabled.
-        > 
+        >
         > Kernel memory TCP limits are not supported when using cgroups v2, which
         > does not support the corresponding `memory.kmem.tcp.limit_in_bytes` cgroup.
 
@@ -2659,7 +2659,7 @@ Changed response : **200 OK**
     * Changed property `SecurityOptions` (array)
         > List of security features that are enabled on the daemon, such as
         > apparmor, seccomp, SELinux, user-namespaces (userns), and rootless.
-        > 
+        >
         > Additional configuration options for each security feature may
         > be present, and are included as a comma-separated list of key/value
         > pairs.
@@ -2669,11 +2669,11 @@ Changed response : **200 OK**
         > List of [OCI compliant](https://github.com/opencontainers/runtime-spec)
         > runtimes configured on the daemon. Keys hold the "name" used to
         > reference the runtime.
-        > 
+        >
         > The Docker daemon relies on an OCI compliant runtime (invoked via the
         > `containerd` daemon) as its interface to the Linux kernel namespaces,
         > cgroups, and SELinux.
-        > 
+        >
         > The default runtime is `runc`, and automatically configured. Additional
         > runtimes can be configured by the user and will be listed here.
 
@@ -2737,9 +2737,9 @@ Changed response : **200 OK**
 
             * Changed property `ContainerSpec` (object)
                 > Container spec for the service.
-                > 
+                >
                 > <p><br /></p>
-                > 
+                >
                 > > **Note**: ContainerSpec, NetworkAttachmentSpec, and PluginSpec are
                 > > mutually exclusive. PluginSpec is only used when the Runtime field
                 > > is set to `plugin`. NetworkAttachmentSpec is used when the Runtime
@@ -2790,7 +2790,7 @@ Changed response : **200 OK**
 
                     * Changed property `Type` (string)
                         > The mount type. Available types:
-                        > 
+                        >
                         > - `bind` Mounts a file or directory from the host into the container. Must exist prior to creating the container.
                         > - `volume` Creates a volume with the given name and options (or uses a pre-existing volume with the same name and options). These are **not** removed when the container is removed.
                         > - `tmpfs` Create a tmpfs with the given options. The mount source cannot be specified for tmpfs.
@@ -2811,7 +2811,7 @@ Changed response : **200 OK**
                         * Deleted property `ReadOnlyNonRecursive` (boolean)
                             > Make the mount non-recursively read-only, but still leave the mount recursive
                             > (unless NonRecursive is set to `true` in conjunction).
-                            > 
+                            >
                             > Addded in v1.44, before that version all read-only mounts were
                             > non-recursive by default. To match the previous behaviour this
                             > will default to `true` for clients on versions prior to v1.44.
@@ -2876,7 +2876,7 @@ Changed response : **200 OK**
                     > _match_ (`==`) or _exclude_ (`!=`) rule. Multiple constraints find
                     > nodes that satisfy every expression (AND match). Constraints can
                     > match node or Docker Engine labels as follows:
-                    > 
+                    >
                     > node attribute       | matches                        | example
                     > ---------------------|--------------------------------|-----------------------------------------------
                     > `node.id`            | Node ID                        | `node.id==2ivku8v2gvtg4`
@@ -2886,7 +2886,7 @@ Changed response : **200 OK**
                     > `node.platform.arch` | Node architecture              | `node.platform.arch==x86_64`
                     > `node.labels`        | User-defined node labels       | `node.labels.security==high`
                     > `engine.labels`      | Docker Engine's labels         | `engine.labels.operatingsystem==ubuntu-14.04`
-                    > 
+                    >
                     > `engine.labels` apply to Docker Engine labels like operating system,
                     > drivers, etc. Swarm administrators add `node.labels` for operational
                     > purposes by using the [`node update endpoint`](#operation/NodeUpdate).
@@ -2936,9 +2936,9 @@ Changed response : **200 OK**
 
             * Changed property `ContainerSpec` (object)
                 > Container spec for the service.
-                > 
+                >
                 > <p><br /></p>
-                > 
+                >
                 > > **Note**: ContainerSpec, NetworkAttachmentSpec, and PluginSpec are
                 > > mutually exclusive. PluginSpec is only used when the Runtime field
                 > > is set to `plugin`. NetworkAttachmentSpec is used when the Runtime
@@ -2989,7 +2989,7 @@ Changed response : **200 OK**
 
                     * Changed property `Type` (string)
                         > The mount type. Available types:
-                        > 
+                        >
                         > - `bind` Mounts a file or directory from the host into the container. Must exist prior to creating the container.
                         > - `volume` Creates a volume with the given name and options (or uses a pre-existing volume with the same name and options). These are **not** removed when the container is removed.
                         > - `tmpfs` Create a tmpfs with the given options. The mount source cannot be specified for tmpfs.
@@ -3010,7 +3010,7 @@ Changed response : **200 OK**
                         * Deleted property `ReadOnlyNonRecursive` (boolean)
                             > Make the mount non-recursively read-only, but still leave the mount recursive
                             > (unless NonRecursive is set to `true` in conjunction).
-                            > 
+                            >
                             > Addded in v1.44, before that version all read-only mounts were
                             > non-recursive by default. To match the previous behaviour this
                             > will default to `true` for clients on versions prior to v1.44.
@@ -3075,7 +3075,7 @@ Changed response : **200 OK**
                     > _match_ (`==`) or _exclude_ (`!=`) rule. Multiple constraints find
                     > nodes that satisfy every expression (AND match). Constraints can
                     > match node or Docker Engine labels as follows:
-                    > 
+                    >
                     > node attribute       | matches                        | example
                     > ---------------------|--------------------------------|-----------------------------------------------
                     > `node.id`            | Node ID                        | `node.id==2ivku8v2gvtg4`
@@ -3085,7 +3085,7 @@ Changed response : **200 OK**
                     > `node.platform.arch` | Node architecture              | `node.platform.arch==x86_64`
                     > `node.labels`        | User-defined node labels       | `node.labels.security==high`
                     > `engine.labels`      | Docker Engine's labels         | `engine.labels.operatingsystem==ubuntu-14.04`
-                    > 
+                    >
                     > `engine.labels` apply to Docker Engine labels like operating system,
                     > drivers, etc. Swarm administrators add `node.labels` for operational
                     > purposes by using the [`node update endpoint`](#operation/NodeUpdate).
@@ -3142,9 +3142,9 @@ Changed response : **200 OK**
 
             * Changed property `ContainerSpec` (object)
                 > Container spec for the service.
-                > 
+                >
                 > <p><br /></p>
-                > 
+                >
                 > > **Note**: ContainerSpec, NetworkAttachmentSpec, and PluginSpec are
                 > > mutually exclusive. PluginSpec is only used when the Runtime field
                 > > is set to `plugin`. NetworkAttachmentSpec is used when the Runtime
@@ -3195,7 +3195,7 @@ Changed response : **200 OK**
 
                     * Changed property `Type` (string)
                         > The mount type. Available types:
-                        > 
+                        >
                         > - `bind` Mounts a file or directory from the host into the container. Must exist prior to creating the container.
                         > - `volume` Creates a volume with the given name and options (or uses a pre-existing volume with the same name and options). These are **not** removed when the container is removed.
                         > - `tmpfs` Create a tmpfs with the given options. The mount source cannot be specified for tmpfs.
@@ -3216,7 +3216,7 @@ Changed response : **200 OK**
                         * Deleted property `ReadOnlyNonRecursive` (boolean)
                             > Make the mount non-recursively read-only, but still leave the mount recursive
                             > (unless NonRecursive is set to `true` in conjunction).
-                            > 
+                            >
                             > Addded in v1.44, before that version all read-only mounts were
                             > non-recursive by default. To match the previous behaviour this
                             > will default to `true` for clients on versions prior to v1.44.
@@ -3281,7 +3281,7 @@ Changed response : **200 OK**
                     > _match_ (`==`) or _exclude_ (`!=`) rule. Multiple constraints find
                     > nodes that satisfy every expression (AND match). Constraints can
                     > match node or Docker Engine labels as follows:
-                    > 
+                    >
                     > node attribute       | matches                        | example
                     > ---------------------|--------------------------------|-----------------------------------------------
                     > `node.id`            | Node ID                        | `node.id==2ivku8v2gvtg4`
@@ -3291,7 +3291,7 @@ Changed response : **200 OK**
                     > `node.platform.arch` | Node architecture              | `node.platform.arch==x86_64`
                     > `node.labels`        | User-defined node labels       | `node.labels.security==high`
                     > `engine.labels`      | Docker Engine's labels         | `engine.labels.operatingsystem==ubuntu-14.04`
-                    > 
+                    >
                     > `engine.labels` apply to Docker Engine labels like operating system,
                     > drivers, etc. Swarm administrators add `node.labels` for operational
                     > purposes by using the [`node update endpoint`](#operation/NodeUpdate).
@@ -3339,9 +3339,9 @@ Changed response : **200 OK**
 
             * Changed property `ContainerSpec` (object)
                 > Container spec for the service.
-                > 
+                >
                 > <p><br /></p>
-                > 
+                >
                 > > **Note**: ContainerSpec, NetworkAttachmentSpec, and PluginSpec are
                 > > mutually exclusive. PluginSpec is only used when the Runtime field
                 > > is set to `plugin`. NetworkAttachmentSpec is used when the Runtime
@@ -3392,7 +3392,7 @@ Changed response : **200 OK**
 
                     * Changed property `Type` (string)
                         > The mount type. Available types:
-                        > 
+                        >
                         > - `bind` Mounts a file or directory from the host into the container. Must exist prior to creating the container.
                         > - `volume` Creates a volume with the given name and options (or uses a pre-existing volume with the same name and options). These are **not** removed when the container is removed.
                         > - `tmpfs` Create a tmpfs with the given options. The mount source cannot be specified for tmpfs.
@@ -3413,7 +3413,7 @@ Changed response : **200 OK**
                         * Deleted property `ReadOnlyNonRecursive` (boolean)
                             > Make the mount non-recursively read-only, but still leave the mount recursive
                             > (unless NonRecursive is set to `true` in conjunction).
-                            > 
+                            >
                             > Addded in v1.44, before that version all read-only mounts were
                             > non-recursive by default. To match the previous behaviour this
                             > will default to `true` for clients on versions prior to v1.44.
@@ -3478,7 +3478,7 @@ Changed response : **200 OK**
                     > _match_ (`==`) or _exclude_ (`!=`) rule. Multiple constraints find
                     > nodes that satisfy every expression (AND match). Constraints can
                     > match node or Docker Engine labels as follows:
-                    > 
+                    >
                     > node attribute       | matches                        | example
                     > ---------------------|--------------------------------|-----------------------------------------------
                     > `node.id`            | Node ID                        | `node.id==2ivku8v2gvtg4`
@@ -3488,9 +3488,7 @@ Changed response : **200 OK**
                     > `node.platform.arch` | Node architecture              | `node.platform.arch==x86_64`
                     > `node.labels`        | User-defined node labels       | `node.labels.security==high`
                     > `engine.labels`      | Docker Engine's labels         | `engine.labels.operatingsystem==ubuntu-14.04`
-                    > 
+                    >
                     > `engine.labels` apply to Docker Engine labels like operating system,
                     > drivers, etc. Swarm administrators add `node.labels` for operational
                     > purposes by using the [`node update endpoint`](#operation/NodeUpdate).
-
-

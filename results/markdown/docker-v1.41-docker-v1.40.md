@@ -47,7 +47,7 @@ Changed content type : `application/json`
 
     * Changed property `Config` (array)
         > List of IPAM configuration options, specified as a map:
-        > 
+        >
         > ```
         > {"Subnet": <CIDR>, "IPRange": <CIDR>, "Gateway": <IP address>, "AuxAddress": <device_name:IP address>}
         > ```
@@ -119,7 +119,7 @@ Changed response : **200 OK**
 
         * Changed property `Config` (array)
             > List of IPAM configuration options, specified as a map:
-            > 
+            >
             > ```
             > {"Subnet": <CIDR>, "IPRange": <CIDR>, "Gateway": <IP address>, "AuxAddress": <device_name:IP address>}
             > ```
@@ -188,7 +188,7 @@ Changed response : **200 OK**
 
         * Changed property `Config` (array)
             > List of IPAM configuration options, specified as a map:
-            > 
+            >
             > ```
             > {"Subnet": <CIDR>, "IPRange": <CIDR>, "Gateway": <IP address>, "AuxAddress": <device_name:IP address>}
             > ```
@@ -233,9 +233,9 @@ Changed content type : `application/json`
 
     * Changed property `ContainerSpec` (object)
         > Container spec for the service.
-        > 
+        >
         > <p><br /></p>
-        > 
+        >
         > > **Note**: ContainerSpec, NetworkAttachmentSpec, and PluginSpec are
         > > mutually exclusive. PluginSpec is only used when the Runtime field
         > > is set to `plugin`. NetworkAttachmentSpec is used when the Runtime
@@ -316,9 +316,9 @@ Changed content type : `application/json`
 
     * Changed property `ContainerSpec` (object)
         > Container spec for the service.
-        > 
+        >
         > <p><br /></p>
-        > 
+        >
         > > **Note**: ContainerSpec, NetworkAttachmentSpec, and PluginSpec are
         > > mutually exclusive. PluginSpec is only used when the Runtime field
         > > is set to `plugin`. NetworkAttachmentSpec is used when the Runtime
@@ -365,18 +365,18 @@ Changed content type : `application/json`
 
 Deleted: `platform` in `query`
 > Platform in the format `os[/arch[/variant]]` used for image lookup.
-> 
+>
 > When specified, the daemon checks if the requested image is present
 > in the local image cache with the given OS and Architecture, and
 > otherwise returns a `404` status.
-> 
+>
 > If the option is not set, the host's native OS and Architecture are
 > used to look up the image in the image cache. However, if no platform
 > is passed and the given image does exist in the local image cache,
 > but its OS or architecture does not match, the container is created
 > with the available image, and a warning is added to the `Warnings`
 > field in the response, for example;
-> 
+>
 >     WARNING: The requested image's platform (linux/arm64/v8) does not
 >              match the detected host platform (linux/amd64) and no
 >              specific platform was requested
@@ -393,7 +393,7 @@ Changed content type : `application/json`
     * Added property `Capabilities` (array)
         > A list of kernel capabilities to be available for container (this
         > overrides the default set).
-        > 
+        >
         > Conflicts with options 'CapAdd' and 'CapDrop'"
 
 
@@ -401,10 +401,10 @@ Changed content type : `application/json`
 
     * Deleted property `CgroupnsMode` (string)
         > cgroup namespace mode for the container. Possible values are:
-        > 
+        >
         > - `"private"`: the container runs in its own private cgroup namespace
         > - `"host"`: use the host system's cgroup namespace
-        > 
+        >
         > If not specified, the daemon default is used, which can either be `"private"`
         > or `"host"`, depending on daemon version, kernel support and configuration.
 
@@ -422,16 +422,16 @@ Changed content type : `application/octet-stream`
     * Added property `Capabilities` (array)
         > A list of kernel capabilities to be available for container (this
         > overrides the default set).
-        > 
+        >
         > Conflicts with options 'CapAdd' and 'CapDrop'"
 
 
     * Deleted property `CgroupnsMode` (string)
         > cgroup namespace mode for the container. Possible values are:
-        > 
+        >
         > - `"private"`: the container runs in its own private cgroup namespace
         > - `"host"`: use the host system's cgroup namespace
-        > 
+        >
         > If not specified, the daemon default is used, which can either be `"private"`
         > or `"host"`, depending on daemon version, kernel support and configuration.
 
@@ -458,16 +458,16 @@ Changed response : **200 OK**
         * Added property `Capabilities` (array)
             > A list of kernel capabilities to be available for container (this
             > overrides the default set).
-            > 
+            >
             > Conflicts with options 'CapAdd' and 'CapDrop'"
 
 
         * Deleted property `CgroupnsMode` (string)
             > cgroup namespace mode for the container. Possible values are:
-            > 
+            >
             > - `"private"`: the container runs in its own private cgroup namespace
             > - `"host"`: use the host system's cgroup namespace
-            > 
+            >
             > If not specified, the daemon default is used, which can either be `"private"`
             > or `"host"`, depending on daemon version, kernel support and configuration.
 
@@ -493,7 +493,7 @@ Changed response : **200 OK**
         > The version number of the object such as node, service, etc. This is needed
         > to avoid conflicting writes. The client must send the version number along
         > with the modified specification when updating these objects.
-        > 
+        >
         > This approach ensures safe concurrency and determinism in that the change
         > on the object may not be applied if the version number has changed from the
         > last read. In other words, if two update requests specify the same base
@@ -508,9 +508,9 @@ Changed response : **200 OK**
 
         * Changed property `ContainerSpec` (object)
             > Container spec for the service.
-            > 
+            >
             > <p><br /></p>
-            > 
+            >
             > > **Note**: ContainerSpec, NetworkAttachmentSpec, and PluginSpec are
             > > mutually exclusive. PluginSpec is only used when the Runtime field
             > > is set to `plugin`. NetworkAttachmentSpec is used when the Runtime
@@ -565,7 +565,7 @@ Changed response : **200 OK**
         > The version number of the object such as node, service, etc. This is needed
         > to avoid conflicting writes. The client must send the version number along
         > with the modified specification when updating these objects.
-        > 
+        >
         > This approach ensures safe concurrency and determinism in that the change
         > on the object may not be applied if the version number has changed from the
         > last read. In other words, if two update requests specify the same base
@@ -580,9 +580,9 @@ Changed response : **200 OK**
 
         * Changed property `ContainerSpec` (object)
             > Container spec for the service.
-            > 
+            >
             > <p><br /></p>
-            > 
+            >
             > > **Note**: ContainerSpec, NetworkAttachmentSpec, and PluginSpec are
             > > mutually exclusive. PluginSpec is only used when the Runtime field
             > > is set to `plugin`. NetworkAttachmentSpec is used when the Runtime
@@ -635,9 +635,9 @@ Changed response : **200 OK**
 
     * Added property `SystemStatus` (array)
         > Status information about this node (standalone Swarm API).
-        > 
+        >
         > <p><br /></p>
-        > 
+        >
         > > **Note**: The information returned in this field is only propagated
         > > by the Swarm standalone API, and is empty (`null`) when using
         > > built-in swarm mode.
@@ -653,9 +653,9 @@ Changed response : **200 OK**
 
     * Deleted property `OSVersion` (string)
         > Version of the host's operating system
-        > 
+        >
         > <p><br /></p>
-        > 
+        >
         > > **Note**: The information returned in this field, including its
         > > very existence, and the formatting of values, should not be considered
         > > stable, and may change without notice.
@@ -664,7 +664,7 @@ Changed response : **200 OK**
     * Deleted property `DefaultAddressPools` (array)
         > List of custom default address pools for local networks, which can be
         > specified in the daemon.json file or dockerd option.
-        > 
+        >
         > Example: a Base "10.10.0.0/16" with Size 24 will define the set of 256
         > 10.10.[0-255].0/24 address pools.
 
@@ -675,13 +675,13 @@ Changed response : **200 OK**
 
     * Changed property `ClusterStore` (string)
         > URL of the distributed storage backend.
-        > 
-        > 
+        >
+        >
         > The storage backend is used for multihost networking (to store
         > network and endpoint information) and by the node discovery mechanism.
-        > 
+        >
         > <p><br /></p>
-        > 
+        >
         > > **Note**: This field is only propagated when using standalone Swarm
         > > mode, and overlay networking using an external k/v store. Overlay
         > > networks with Swarm mode enabled use the built-in raft store, and
@@ -692,9 +692,9 @@ Changed response : **200 OK**
         > The network endpoint that the Engine advertises for the purpose of
         > node discovery. ClusterAdvertise is a `host:port` combination on which
         > the daemon is reachable by other hosts.
-        > 
+        >
         > <p><br /></p>
-        > 
+        >
         > > **Note**: This field is only propagated when using standalone Swarm
         > > mode, and overlay networking using an external k/v store. Overlay
         > > networks with Swarm mode enabled use the built-in raft store, and
@@ -756,9 +756,9 @@ Changed response : **200 OK**
 
             * Changed property `ContainerSpec` (object)
                 > Container spec for the service.
-                > 
+                >
                 > <p><br /></p>
-                > 
+                >
                 > > **Note**: ContainerSpec, NetworkAttachmentSpec, and PluginSpec are
                 > > mutually exclusive. PluginSpec is only used when the Runtime field
                 > > is set to `plugin`. NetworkAttachmentSpec is used when the Runtime
@@ -838,9 +838,9 @@ Changed response : **200 OK**
 
             * Changed property `ContainerSpec` (object)
                 > Container spec for the service.
-                > 
+                >
                 > <p><br /></p>
-                > 
+                >
                 > > **Note**: ContainerSpec, NetworkAttachmentSpec, and PluginSpec are
                 > > mutually exclusive. PluginSpec is only used when the Runtime field
                 > > is set to `plugin`. NetworkAttachmentSpec is used when the Runtime
@@ -927,9 +927,9 @@ Changed response : **200 OK**
 
             * Changed property `ContainerSpec` (object)
                 > Container spec for the service.
-                > 
+                >
                 > <p><br /></p>
-                > 
+                >
                 > > **Note**: ContainerSpec, NetworkAttachmentSpec, and PluginSpec are
                 > > mutually exclusive. PluginSpec is only used when the Runtime field
                 > > is set to `plugin`. NetworkAttachmentSpec is used when the Runtime
@@ -1007,9 +1007,9 @@ Changed response : **200 OK**
 
             * Changed property `ContainerSpec` (object)
                 > Container spec for the service.
-                > 
+                >
                 > <p><br /></p>
-                > 
+                >
                 > > **Note**: ContainerSpec, NetworkAttachmentSpec, and PluginSpec are
                 > > mutually exclusive. PluginSpec is only used when the Runtime field
                 > > is set to `plugin`. NetworkAttachmentSpec is used when the Runtime
@@ -1047,5 +1047,3 @@ Changed response : **200 OK**
 
                     * Deleted property `Pids` (integer)
                         > Limits the maximum number of PIDs in the container. Set `0` for unlimited.
-
-

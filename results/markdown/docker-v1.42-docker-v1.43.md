@@ -22,9 +22,9 @@ Changed response : **200 OK**
 
     * Changed property `Kind` (integer)
         > Kind of change
-        > 
+        >
         > Can be one of:
-        > 
+        >
         > - `0`: Modified ("C")
         > - `1`: Added ("A")
         > - `2`: Deleted ("D")
@@ -53,12 +53,12 @@ Changed response : **200 OK**
 
     * Changed property `VirtualSize` (integer)
         > Total size of the image including all layers it is composed of.
-        > 
+        >
         > In versions of Docker before v1.10, this field was calculated from
         > the image itself and all of its parent images. Images are now stored
         > self-contained, and no longer use a parent-chain, making this field
         > an equivalent of the Size field.
-        > 
+        >
         > Deprecated: this field is kept for backward compatibility, and will be removed in API v1.44.
 
 
@@ -70,9 +70,9 @@ Changed response : **200 OK**
 Changed: `filters` in `query`
 > A JSON encoded value of the filters (a `map[string][]string`) to
 > process on the list of build cache objects.
-> 
+>
 > Available filters:
-> 
+>
 > - `until=<timestamp>` remove cache older than `<timestamp>`. The `<timestamp>` can be Unix timestamps, date formatted timestamps, or Go duration strings (e.g. `10m`, `1h30m`) computed relative to the daemon's local time.
 > - `id=<id>`
 > - `parent=<id>`
@@ -153,12 +153,12 @@ Changed response : **200 OK**
 
     * Changed property `VirtualSize` (integer)
         > Total size of the image including all layers it is composed of.
-        > 
+        >
         > In versions of Docker before v1.10, this field was calculated from
         > the image itself and all of its parent images. Images are now stored
         > self-contained, and no longer use a parent-chain, making this field
         > an equivalent of the Size field.
-        > 
+        >
         > > **Deprecated**: this field is kept for backward compatibility, but
         > > will be removed in API v1.44.
 
@@ -183,12 +183,12 @@ Changed response : **200 OK**
 
         * Changed property `VirtualSize` (integer)
             > Total size of the image including all layers it is composed of.
-            > 
+            >
             > In versions of Docker before v1.10, this field was calculated from
             > the image itself and all of its parent images. Images are now stored
             > self-contained, and no longer use a parent-chain, making this field
             > an equivalent of the Size field.
-            > 
+            >
             > Deprecated: this field is kept for backward compatibility, and will be removed in API v1.44.
 
 
@@ -203,12 +203,12 @@ Changed response : **200 OK**
 
         * Changed property `VirtualSize` (integer)
             > Total size of the image including all layers it is composed of.
-            > 
+            >
             > In versions of Docker before v1.10, this field was calculated from
             > the image itself and all of its parent images. Images are now stored
             > self-contained, and no longer use a parent-chain, making this field
             > an equivalent of the Size field.
-            > 
+            >
             > Deprecated: this field is kept for backward compatibility, and will be removed in API v1.44.
 
 
@@ -227,9 +227,7 @@ Changed response : **200 OK**
         > List of security features that are enabled on the daemon, such as
         > apparmor, seccomp, SELinux, user-namespaces (userns), rootless and
         > no-new-privileges.
-        > 
+        >
         > Additional configuration options for each security feature may
         > be present, and are included as a comma-separated list of key/value
         > pairs.
-
-

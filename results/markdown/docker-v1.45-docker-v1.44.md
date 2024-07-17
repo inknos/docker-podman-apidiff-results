@@ -8,11 +8,11 @@
 
 Changed: `filters` in `query`
 > A JSON encoded value of the filters (a `map[string][]string`) to process on the images list. Available filters:
-> 
+>
 > - `is-automated=(true|false)` (deprecated, see below)
 > - `is-official=(true|false)`
 > - `stars=<number>` Matches images that has at least 'number' stars.
-> 
+>
 > The `is-automated` filter is deprecated. The `is_automated` field has
 > been deprecated by Docker Hub's search API. Consequently, searching
 > for `is-automated=true` will yield no results.
@@ -30,9 +30,9 @@ Changed response : **200 OK**
 
     * Changed property `is_automated` (boolean)
         > Whether this repository has automated builds enabled.
-        > 
+        >
         > <p><br /></p>
-        > 
+        >
         > > **Deprecated**: This field is deprecated and will always
         > > be "false" in future.
 
@@ -120,11 +120,11 @@ Changed response : **200 OK**
 
     * Changed property `Config` (object)
         > Configuration for a container that is portable between hosts.
-        > 
+        >
         > When used as `ContainerConfig` field in an image, `ContainerConfig` is an
         > optional field containing the configuration of the container that was last
         > committed when creating the image.
-        > 
+        >
         > Previous versions of Docker builder used this field to store build cache,
         > and it is not in active use anymore.
 
@@ -169,20 +169,20 @@ Changed response : **200 OK**
 
     * Added property `Container` (string)
         > The ID of the container that was used to create the image.
-        > 
+        >
         > Depending on how the image was created, this field may be empty.
-        > 
+        >
         > **Deprecated**: this field is kept for backward compatibility, but
         > will be removed in API v1.45.
 
 
     * Added property `ContainerConfig` (object)
         > Configuration for a container that is portable between hosts.
-        > 
+        >
         > When used as `ContainerConfig` field in an image, `ContainerConfig` is an
         > optional field containing the configuration of the container that was last
         > committed when creating the image.
-        > 
+        >
         > Previous versions of Docker builder used this field to store build cache,
         > and it is not in active use anymore.
 
@@ -213,7 +213,7 @@ Changed response : **200 OK**
 
         * Property `ExposedPorts` (object)
             > An object mapping ports to an empty object in the form:
-            > 
+            >
             > `{"<port>/<tcp|udp|sctp>": {}}`
 
 
@@ -249,7 +249,7 @@ Changed response : **200 OK**
 
             * Property `Test` (array)
                 > The test to perform. Possible values are:
-                > 
+                >
                 > - `[]` inherit healthcheck from image or parent image
                 > - `["NONE"]` disable healthcheck
                 > - `["CMD", args...]` exec arguments directly
@@ -304,7 +304,7 @@ Changed response : **200 OK**
 
         * Property `Entrypoint` (array)
             > The entry point for the container as a string or an array of strings.
-            > 
+            >
             > If the array consists of exactly one empty string (`[""]`) then the
             > entry point is reset to system default (i.e., the entry point used by
             > docker when there is no `ENTRYPOINT` instruction in the `Dockerfile`).
@@ -318,7 +318,7 @@ Changed response : **200 OK**
 
         * Property `MacAddress` (string)
             > MAC address of the container.
-            > 
+            >
             > Deprecated: this field is deprecated in API v1.44 and up. Use EndpointSettings.MacAddress instead.
 
 
@@ -359,9 +359,9 @@ Changed content type : `application/json`
 
     * Changed property `ContainerSpec` (object)
         > Container spec for the service.
-        > 
+        >
         > <p><br /></p>
-        > 
+        >
         > > **Note**: ContainerSpec, NetworkAttachmentSpec, and PluginSpec are
         > > mutually exclusive. PluginSpec is only used when the Runtime field
         > > is set to `plugin`. NetworkAttachmentSpec is used when the Runtime
@@ -405,9 +405,9 @@ Changed content type : `application/json`
 
     * Changed property `ContainerSpec` (object)
         > Container spec for the service.
-        > 
+        >
         > <p><br /></p>
-        > 
+        >
         > > **Note**: ContainerSpec, NetworkAttachmentSpec, and PluginSpec are
         > > mutually exclusive. PluginSpec is only used when the Runtime field
         > > is set to `plugin`. NetworkAttachmentSpec is used when the Runtime
@@ -457,9 +457,9 @@ Changed response : **200 OK**
 
         * Changed property `ContainerSpec` (object)
             > Container spec for the service.
-            > 
+            >
             > <p><br /></p>
-            > 
+            >
             > > **Note**: ContainerSpec, NetworkAttachmentSpec, and PluginSpec are
             > > mutually exclusive. PluginSpec is only used when the Runtime field
             > > is set to `plugin`. NetworkAttachmentSpec is used when the Runtime
@@ -507,9 +507,9 @@ Changed response : **200 OK**
 
         * Changed property `ContainerSpec` (object)
             > Container spec for the service.
-            > 
+            >
             > <p><br /></p>
-            > 
+            >
             > > **Note**: ContainerSpec, NetworkAttachmentSpec, and PluginSpec are
             > > mutually exclusive. PluginSpec is only used when the Runtime field
             > > is set to `plugin`. NetworkAttachmentSpec is used when the Runtime
@@ -563,9 +563,9 @@ Changed response : **200 OK**
 
             * Changed property `ContainerSpec` (object)
                 > Container spec for the service.
-                > 
+                >
                 > <p><br /></p>
-                > 
+                >
                 > > **Note**: ContainerSpec, NetworkAttachmentSpec, and PluginSpec are
                 > > mutually exclusive. PluginSpec is only used when the Runtime field
                 > > is set to `plugin`. NetworkAttachmentSpec is used when the Runtime
@@ -610,9 +610,9 @@ Changed response : **200 OK**
 
             * Changed property `ContainerSpec` (object)
                 > Container spec for the service.
-                > 
+                >
                 > <p><br /></p>
-                > 
+                >
                 > > **Note**: ContainerSpec, NetworkAttachmentSpec, and PluginSpec are
                 > > mutually exclusive. PluginSpec is only used when the Runtime field
                 > > is set to `plugin`. NetworkAttachmentSpec is used when the Runtime
@@ -664,9 +664,9 @@ Changed response : **200 OK**
 
             * Changed property `ContainerSpec` (object)
                 > Container spec for the service.
-                > 
+                >
                 > <p><br /></p>
-                > 
+                >
                 > > **Note**: ContainerSpec, NetworkAttachmentSpec, and PluginSpec are
                 > > mutually exclusive. PluginSpec is only used when the Runtime field
                 > > is set to `plugin`. NetworkAttachmentSpec is used when the Runtime
@@ -709,9 +709,9 @@ Changed response : **200 OK**
 
             * Changed property `ContainerSpec` (object)
                 > Container spec for the service.
-                > 
+                >
                 > <p><br /></p>
-                > 
+                >
                 > > **Note**: ContainerSpec, NetworkAttachmentSpec, and PluginSpec are
                 > > mutually exclusive. PluginSpec is only used when the Runtime field
                 > > is set to `plugin`. NetworkAttachmentSpec is used when the Runtime
@@ -740,5 +740,3 @@ Changed response : **200 OK**
 
                         * Deleted property `Subpath` (string)
                             > Source path inside the volume. Must be relative without any back traversals.
-
-
