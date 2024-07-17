@@ -3,9 +3,9 @@
 </head>
 <body>
 
-<h3>Docker vs. Podman</h3>
+<h3>Docker vs. Podman Latest</h3>
 
-<table class="table">
+<table class="table table-striped table-hover">
   <tr>
     <th scope="col">Docker Version</th>
     <th scope="col">Podman Version</th>
@@ -20,23 +20,31 @@
   {% endfor %}
 </table>
 
-<h3>Docker vs. Docker</h3>
+<hr />
 
-<table class="table table-striped table-hover table-sm">
+<h3>New changes in Docker API</h3>
+
+<table class="table table-striped table-hover">
   <tr>
+    {# always skip the last column of the table because there is no reason #}
+    {# to compare the new changes from the last version #}
     <th>#</th>
-    {% for version in docker_versions %}
+    {% for version in docker_versions[:-1] %}
     <th scope="col">{{ version }}</th>
     {% endfor %}
   </tr>
-  {% for version in docker_versions %}
+  {# always skip the first row of the column because there is no reason #}
+  {# to compare the first version with itself #}
+  {% for version in docker_versions[1:] %}
     <tr>
       <td scope=""row">{{ version }}</td>
-          {% for other_version in docker_versions %}
-            {% if other_version == version %}
+          {# skip the last column for the same reason of the table header #}
+          {% for other_version in docker_versions[:-1] %}
+            {# there is no html to display for the same version comparison #}
+            {% if other_version <= version %}
               <td>-</td>
             {% else %}
-              <td><a href="results/html/docker-v{{ version }}-docker-v{{ other_version }}.html">{{ version }}-{{ other_version }}</a></td>
+              <td><a href="results/html/docker-v{{ version }}-docker-v{{ other_version }}.html">{{ version }}->{{ other_version }}</a></td>
             {% endif %}
           {% endfor %}
     </tr>
