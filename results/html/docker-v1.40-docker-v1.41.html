@@ -1,20 +1,97 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><title>Api Change Log</title><link rel="stylesheet" href="http://deepoove.com/swagger-diff/stylesheets/demo.css"></head><body><header><h1>Api Change Log</h1></header><div class="article"><div><h2>What&#x27;s New</h2><hr><ol></ol></div><div><h2>What&#x27;s Deleted</h2><hr><ol></ol></div><div><h2>What&#x27;s Deprecated</h2><hr><ol></ol></div><div><h2>What&#x27;s Changed</h2><hr><ol><li><span class="GET">GET</span>/containers/{id}/stats <span></span><ul class="detail"><li><h3>Parameters</h3><ul class="change param"><li>Add one-shot in query<span class="comment">//Only get a single stat instead of waiting for 2 cycles. Must be used
-with `stream=false`.
-</span></li></ul></li></ul></li><li><span class="POST">POST</span>/containers/{id}/update <span></span><ul class="detail"><li><h3>Request</h3><ul class="change request-body"><li><div><h3>Schema</h3></div>Changed body: &#x27;application/json&#x27;</li></ul></li></ul></li><li><span class="POST">POST</span>/networks/create <span></span><ul class="detail"><li><h3>Request</h3><ul class="change request-body"><li><div><h3>Schema</h3></div>Changed body: &#x27;application/json&#x27;</li></ul></li></ul></li><li><span class="GET">GET</span>/events <span></span><ul class="detail"></ul></li><li><span class="GET">GET</span>/networks <span></span><ul class="detail"><li><h3>Response</h3><ul class="change response"><li>Changed response : [200]<span class="comment">//No error</span><ul class="change request-body"><li><div><h3>Schema incompatible</h3></div>Changed body: &#x27;application/json&#x27;</li></ul></li></ul></li></ul></li><li><span class="GET">GET</span>/networks/{id} <span></span><ul class="detail"><li><h3>Response</h3><ul class="change response"><li>Changed response : [200]<span class="comment">//No error</span><ul class="change request-body"><li><div><h3>Schema incompatible</h3></div>Changed body: &#x27;application/json&#x27;</li></ul></li></ul></li></ul></li><li><span class="POST">POST</span>/services/create <span></span><ul class="detail"><li><h3>Request</h3><ul class="change request-body"><li><div><h3>Schema</h3></div>Changed body: &#x27;application/json&#x27;</li></ul></li></ul></li><li><span class="POST">POST</span>/services/{id}/update <span></span><ul class="detail"><li><h3>Request</h3><ul class="change request-body"><li><div><h3>Schema</h3></div>Changed body: &#x27;application/json&#x27;</li></ul></li></ul></li><li><span class="POST">POST</span>/containers/create <span></span><ul class="detail"><li><h3>Parameters</h3><ul class="change param"><li>Add platform in query<span class="comment">//Platform in the format `os[/arch[/variant]]` used for image lookup.
-
-When specified, the daemon checks if the requested image is present
-in the local image cache with the given OS and Architecture, and
-otherwise returns a `404` status.
-
-If the option is not set, the host&#x27;s native OS and Architecture are
-used to look up the image in the image cache. However, if no platform
-is passed and the given image does exist in the local image cache,
-but its OS or architecture does not match, the container is created
-with the available image, and a warning is added to the `Warnings`
-field in the response, for example;
-
-    WARNING: The requested image&#x27;s platform (linux/arm64/v8) does not
-             match the detected host platform (linux/amd64) and no
-             specific platform was requested
-</span></li></ul></li><li><h3>Request</h3><ul class="change request-body"><li><div><h3>Schema</h3></div>Changed body: &#x27;application/json&#x27;</li><li><div><h3>Schema</h3></div>Changed body: &#x27;application/octet-stream&#x27;</li></ul></li></ul></li><li><span class="GET">GET</span>/containers/{id}/json <span></span><ul class="detail"><li><h3>Response</h3><ul class="change response"><li>Changed response : [200]<span class="comment">//no error</span><ul class="change request-body"><li><div><h3>Schema</h3></div>Changed body: &#x27;application/json&#x27;</li></ul></li></ul></li></ul></li><li><span class="GET">GET</span>/tasks <span></span><ul class="detail"><li><h3>Response</h3><ul class="change response"><li>Changed response : [200]<span class="comment">//no error</span><ul class="change request-body"><li><div><h3>Schema</h3></div>Changed body: &#x27;application/json&#x27;</li></ul></li></ul></li></ul></li><li><span class="GET">GET</span>/tasks/{id} <span></span><ul class="detail"><li><h3>Response</h3><ul class="change response"><li>Changed response : [200]<span class="comment">//no error</span><ul class="change request-body"><li><div><h3>Schema</h3></div>Changed body: &#x27;application/json&#x27;</li></ul></li></ul></li></ul></li><li><span class="GET">GET</span>/info <span></span><ul class="detail"><li><h3>Response</h3><ul class="change response"><li>Changed response : [200]<span class="comment">//No error</span><ul class="change request-body"><li><div><h3>Schema</h3></div>Changed body: &#x27;application/json&#x27;</li></ul></li></ul></li></ul></li><li><span class="GET">GET</span>/services <span></span><ul class="detail"><li><h3>Parameters</h3><ul class="change param"><li>Add status in query<span class="comment">//Include service status, with count of running and desired tasks.
-</span></li></ul></li><li><h3>Response</h3><ul class="change response"><li>Changed response : [200]<span class="comment">//no error</span><ul class="change request-body"><li><div><h3>Schema</h3></div>Changed body: &#x27;application/json&#x27;</li><li><div><h3>Schema</h3></div>Changed body: &#x27;text/plain&#x27;</li></ul></li></ul></li></ul></li><li><span class="GET">GET</span>/services/{id} <span></span><ul class="detail"><li><h3>Response</h3><ul class="change response"><li>Changed response : [200]<span class="comment">//no error</span><ul class="change request-body"><li><div><h3>Schema</h3></div>Changed body: &#x27;application/json&#x27;</li><li><div><h3>Schema</h3></div>Changed body: &#x27;text/plain&#x27;</li></ul></li></ul></li></ul></li></ol></div></div></body></html>
+<h3 id="new-endpoints-none">New Endpoints: None</h3>
+<hr>
+<h3 id="deleted-endpoints-none">Deleted Endpoints: None</h3>
+<hr>
+<h3 id="modified-endpoints-8">Modified Endpoints: 8</h3>
+<hr>
+<p>POST /containers/create</p>
+<ul>
+<li>New query param: platform</li>
+</ul>
+<p>GET /containers/{id}/stats</p>
+<ul>
+<li>Description changed from 'This endpoint returns a live stream of a container’s resource usage<br>
+statistics.</li>
+</ul>
+<p>The <code>precpu_stats</code> is the CPU statistic of the <em>previous</em> read, and is<br>
+used to calculate the CPU usage percentage. It is not an exact copy<br>
+of the <code>cpu_stats</code> field.</p>
+<p>If either <code>precpu_stats.online_cpus</code> or <code>cpu_stats.online_cpus</code> is<br>
+nil then for compatibility with older daemons the length of the<br>
+corresponding <code>cpu_usage.percpu_usage</code> array should be used.</p>
+<p>To calculate the values shown by the <code>stats</code> command of the docker cli tool<br>
+the following formulas can be used:</p>
+<ul>
+<li>used_memory = <code>memory_stats.usage - memory_stats.stats.cache</code></li>
+<li>available_memory = <code>memory_stats.limit</code></li>
+<li>Memory usage % = <code>(used_memory / available_memory) * 100.0</code></li>
+<li>cpu_delta = <code>cpu_stats.cpu_usage.total_usage - precpu_stats.cpu_usage.total_usage</code></li>
+<li>system_cpu_delta = <code>cpu_stats.system_cpu_usage - precpu_stats.system_cpu_usage</code></li>
+<li>number_cpus = <code>lenght(cpu_stats.cpu_usage.percpu_usage)</code> or <code>cpu_stats.online_cpus</code></li>
+<li>CPU usage % = <code>(cpu_delta / system_cpu_delta) * number_cpus * 100.0</code><br>
+' to 'This endpoint returns a live stream of a container’s resource usage<br>
+statistics.</li>
+</ul>
+<p>The <code>precpu_stats</code> is the CPU statistic of the <em>previous</em> read, and is<br>
+used to calculate the CPU usage percentage. It is not an exact copy<br>
+of the <code>cpu_stats</code> field.</p>
+<p>If either <code>precpu_stats.online_cpus</code> or <code>cpu_stats.online_cpus</code> is<br>
+nil then for compatibility with older daemons the length of the<br>
+corresponding <code>cpu_usage.percpu_usage</code> array should be used.</p>
+<p>On a cgroup v2 host, the following fields are not set</p>
+<ul>
+<li><code>blkio_stats</code>: all fields other than <code>io_service_bytes_recursive</code></li>
+<li><code>cpu_stats</code>: <code>cpu_usage.percpu_usage</code></li>
+<li><code>memory_stats</code>: <code>max_usage</code> and <code>failcnt</code><br>
+Also, <code>memory_stats.stats</code> fields are incompatible with cgroup v1.</li>
+</ul>
+<p>To calculate the values shown by the <code>stats</code> command of the docker cli tool<br>
+the following formulas can be used:</p>
+<ul>
+<li>used_memory = <code>memory_stats.usage - memory_stats.stats.cache</code></li>
+<li>available_memory = <code>memory_stats.limit</code></li>
+<li>Memory usage % = <code>(used_memory / available_memory) * 100.0</code></li>
+<li>cpu_delta = <code>cpu_stats.cpu_usage.total_usage - precpu_stats.cpu_usage.total_usage</code></li>
+<li>system_cpu_delta = <code>cpu_stats.system_cpu_usage - precpu_stats.system_cpu_usage</code></li>
+<li>number_cpus = <code>lenght(cpu_stats.cpu_usage.percpu_usage)</code> or <code>cpu_stats.online_cpus</code></li>
+<li>CPU usage % = <code>(cpu_delta / system_cpu_delta) * number_cpus * 100.0</code><br>
+'</li>
+</ul>
+<ul>
+<li>New query param: one-shot</li>
+</ul>
+<p>POST /containers/{id}/update</p>
+<p>GET /events</p>
+<ul>
+<li>Description changed from 'Stream real-time events from the server.</li>
+</ul>
+<p>Various objects within Docker report events when something happens to them.</p>
+<p>Containers report these events: <code>attach</code>, <code>commit</code>, <code>copy</code>, <code>create</code>, <code>destroy</code>, <code>detach</code>, <code>die</code>, <code>exec_create</code>, <code>exec_detach</code>, <code>exec_start</code>, <code>exec_die</code>, <code>export</code>, <code>health_status</code>, <code>kill</code>, <code>oom</code>, <code>pause</code>, <code>rename</code>, <code>resize</code>, <code>restart</code>, <code>start</code>, <code>stop</code>, <code>top</code>, <code>unpause</code>, and <code>update</code></p>
+<p>Images report these events: <code>delete</code>, <code>import</code>, <code>load</code>, <code>pull</code>, <code>push</code>, <code>save</code>, <code>tag</code>, and <code>untag</code></p>
+<p>Volumes report these events: <code>create</code>, <code>mount</code>, <code>unmount</code>, and <code>destroy</code></p>
+<p>Networks report these events: <code>create</code>, <code>connect</code>, <code>disconnect</code>, <code>destroy</code>, <code>update</code>, and <code>remove</code></p>
+<p>The Docker daemon reports these events: <code>reload</code></p>
+<p>Services report these events: <code>create</code>, <code>update</code>, and <code>remove</code></p>
+<p>Nodes report these events: <code>create</code>, <code>update</code>, and <code>remove</code></p>
+<p>Secrets report these events: <code>create</code>, <code>update</code>, and <code>remove</code></p>
+<p>Configs report these events: <code>create</code>, <code>update</code>, and <code>remove</code><br>
+' to 'Stream real-time events from the server.</p>
+<p>Various objects within Docker report events when something happens to them.</p>
+<p>Containers report these events: <code>attach</code>, <code>commit</code>, <code>copy</code>, <code>create</code>, <code>destroy</code>, <code>detach</code>, <code>die</code>, <code>exec_create</code>, <code>exec_detach</code>, <code>exec_start</code>, <code>exec_die</code>, <code>export</code>, <code>health_status</code>, <code>kill</code>, <code>oom</code>, <code>pause</code>, <code>rename</code>, <code>resize</code>, <code>restart</code>, <code>start</code>, <code>stop</code>, <code>top</code>, <code>unpause</code>, <code>update</code>, and <code>prune</code></p>
+<p>Images report these events: <code>delete</code>, <code>import</code>, <code>load</code>, <code>pull</code>, <code>push</code>, <code>save</code>, <code>tag</code>, <code>untag</code>, and <code>prune</code></p>
+<p>Volumes report these events: <code>create</code>, <code>mount</code>, <code>unmount</code>, <code>destroy</code>, and <code>prune</code></p>
+<p>Networks report these events: <code>create</code>, <code>connect</code>, <code>disconnect</code>, <code>destroy</code>, <code>update</code>, <code>remove</code>, and <code>prune</code></p>
+<p>The Docker daemon reports these events: <code>reload</code></p>
+<p>Services report these events: <code>create</code>, <code>update</code>, and <code>remove</code></p>
+<p>Nodes report these events: <code>create</code>, <code>update</code>, and <code>remove</code></p>
+<p>Secrets report these events: <code>create</code>, <code>update</code>, and <code>remove</code></p>
+<p>Configs report these events: <code>create</code>, <code>update</code>, and <code>remove</code></p>
+<p>The Builder reports <code>prune</code> events<br>
+'</p>
+<p>POST /networks/create</p>
+<p>GET /services</p>
+<ul>
+<li>New query param: status</li>
+</ul>
+<p>POST /services/create</p>
+<p>POST /services/{id}/update</p>

@@ -1519,7 +1519,7 @@ recreate it.<br>
 </ul>
 <p>Various objects within Docker report events when something happens to them.</p>
 <p>Containers report these events: <code>attach</code>, <code>commit</code>, <code>copy</code>, <code>create</code>, <code>destroy</code>, <code>detach</code>, <code>die</code>, <code>exec_create</code>, <code>exec_detach</code>, <code>exec_start</code>, <code>exec_die</code>, <code>export</code>, <code>health_status</code>, <code>kill</code>, <code>oom</code>, <code>pause</code>, <code>rename</code>, <code>resize</code>, <code>restart</code>, <code>start</code>, <code>stop</code>, <code>top</code>, <code>unpause</code>, <code>update</code>, and <code>prune</code></p>
-<p>Images report these events: <code>delete</code>, <code>import</code>, <code>load</code>, <code>pull</code>, <code>push</code>, <code>save</code>, <code>tag</code>, <code>untag</code>, and <code>prune</code></p>
+<p>Images report these events: <code>create, </code>delete<code>, </code>import<code>, </code>load<code>, </code>pull<code>, </code>push<code>, </code>save<code>, </code>tag<code>, </code>untag<code>, and </code>prune`</p>
 <p>Volumes report these events: <code>create</code>, <code>mount</code>, <code>unmount</code>, <code>destroy</code>, and <code>prune</code></p>
 <p>Networks report these events: <code>create</code>, <code>connect</code>, <code>disconnect</code>, <code>destroy</code>, <code>update</code>, <code>remove</code>, and <code>prune</code></p>
 <p>The Docker daemon reports these events: <code>reload</code></p>
@@ -1672,6 +1672,7 @@ interactive session with the command.<br>
 </ul>
 <p>POST /images/create</p>
 <ul>
+<li>Description changed from 'Pull or import an image.' to 'Create an image by either pulling it from a registry or importing it.'</li>
 <li>Deleted query param: changes</li>
 <li>Modified query param: fromSrc
 <ul>
@@ -1774,7 +1775,8 @@ process on the images list.</li>
 <li><code>dangling=true</code></li>
 <li><code>label=key</code> or <code>label=&quot;key=value&quot;</code> of an image label</li>
 <li><code>reference</code>=(<code>&lt;image-name&gt;[:&lt;tag&gt;]</code>)</li>
-<li><code>since</code>=(<code>&lt;image-name&gt;[:&lt;tag&gt;]</code>,  <code>&lt;image id&gt;</code> or <code>&lt;image@digest&gt;</code>)<br>
+<li><code>since</code>=(<code>&lt;image-name&gt;[:&lt;tag&gt;]</code>,  <code>&lt;image id&gt;</code> or <code>&lt;image@digest&gt;</code>)</li>
+<li><code>until=&lt;timestamp&gt;</code><br>
 ' to 'A JSON encoded value of the filters (a <code>map[string][]string</code>) to process on the images list. Available filters:</li>
 <li><code>before</code>=(<code>&lt;image-name&gt;[:&lt;tag&gt;]</code>,  <code>&lt;image id&gt;</code> or <code>&lt;image@digest&gt;</code>)</li>
 <li><code>dangling=true</code></li>
@@ -1882,9 +1884,6 @@ unused <em>and</em> untagged images. When set to <code>false</code><br>
 <ul>
 <li>Description changed from 'A JSON encoded value of the filters (a <code>map[string][]string</code>) to process on the images list. Available filters:</li>
 </ul>
-</li>
-<li>
-<p><code>is-automated=(true|false)</code></p>
 </li>
 <li>
 <p><code>is-official=(true|false)</code></p>
@@ -2076,6 +2075,7 @@ already have a tag which references the registry. For example,<br>
 <li>New query param: destination</li>
 <li>New query param: format</li>
 <li>New query param: tlsVerify</li>
+<li>Deleted query param: platform</li>
 <li>Modified path param: name
 <ul>
 <li>Description changed from 'Image name or ID.' to 'Name of image to push.'</li>
@@ -2231,7 +2231,7 @@ containers are returned.</li>
 <li>Deleted response: 404</li>
 <li>Modified response: 201
 <ul>
-<li>Description changed from 'No error' to 'network created'</li>
+<li>Description changed from 'Network created successfully' to 'network created'</li>
 </ul>
 </li>
 <li>Modified response: 400
@@ -2343,7 +2343,7 @@ Available filters:
 </ul>
 <p>POST /networks/{id}/connect</p>
 <ul>
-<li>Description changed from '' to 'Connect a container to a network'</li>
+<li>Description changed from 'The network must be either a local-scoped network or a swarm-scoped network with the <code>attachable</code> option set. A network cannot be re-attached to a running container' to 'Connect a container to a network'</li>
 <li>Modified path param: id
 <ul>
 <li>Description changed from 'Network ID or name' to 'the name of the network'</li>
@@ -2351,16 +2351,20 @@ Available filters:
 </li>
 <li>Responses changed
 <ul>
-<li>New response: 400</li>
 <li>Deleted response: 404</li>
 <li>Modified response: 200
 <ul>
 <li>Description changed from 'No error' to 'OK'</li>
 </ul>
 </li>
+<li>Modified response: 400
+<ul>
+<li>Description changed from 'bad parameter' to 'Bad parameter in request'</li>
+</ul>
+</li>
 <li>Modified response: 403
 <ul>
-<li>Description changed from 'Operation not supported for swarm scoped networks' to 'Network is already connected and container is running or transitioning to the running state ('initialized')'</li>
+<li>Description changed from 'Operation forbidden' to 'Network is already connected and container is running or transitioning to the running state ('initialized')'</li>
 </ul>
 </li>
 <li>Modified response: 500

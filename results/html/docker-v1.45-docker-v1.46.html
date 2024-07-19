@@ -1,1 +1,61 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><title>Api Change Log</title><link rel="stylesheet" href="http://deepoove.com/swagger-diff/stylesheets/demo.css"></head><body><header><h1>Api Change Log</h1></header><div class="article"><div><h2>What&#x27;s New</h2><hr><ol></ol></div><div><h2>What&#x27;s Deleted</h2><hr><ol></ol></div><div><h2>What&#x27;s Deprecated</h2><hr><ol></ol></div><div><h2>What&#x27;s Changed</h2><hr><ol><li><span class="POST">POST</span>/images/{name}/push <span></span><ul class="detail"><li><h3>Parameters</h3><ul class="change param"><li>Add platform in query<span class="comment">//Select a platform-specific manifest to be pushed. OCI platform (JSON encoded)</span></li></ul></li></ul></li><li><span class="GET">GET</span>/events <span></span><ul class="detail"></ul></li><li><span class="POST">POST</span>/networks/create <span></span><ul class="detail"><li><h3>Request</h3><ul class="change request-body"><li><div><h3>Schema</h3></div>Changed body: &#x27;application/json&#x27;</li></ul></li><li><h3>Response</h3><ul class="change response"><li>Changed response : [201]<span class="comment">//Network created successfully</span><ul class="change request-body"><li><div><h3>Schema</h3></div>Changed body: &#x27;application/json&#x27;</li></ul></li></ul></li></ul></li><li><span class="GET">GET</span>/containers/json <span></span><ul class="detail"><li><h3>Response</h3><ul class="change response"><li>Changed response : [200]<span class="comment">//no error</span><ul class="change request-body"><li><div><h3>Schema</h3></div>Changed body: &#x27;application/json&#x27;</li></ul></li></ul></li></ul></li><li><span class="POST">POST</span>/containers/create <span></span><ul class="detail"><li><h3>Request</h3><ul class="change request-body"><li><div><h3>Schema</h3></div>Changed body: &#x27;application/json&#x27;</li><li><div><h3>Schema</h3></div>Changed body: &#x27;application/octet-stream&#x27;</li></ul></li></ul></li><li><span class="GET">GET</span>/containers/{id}/json <span></span><ul class="detail"><li><h3>Response</h3><ul class="change response"><li>Changed response : [200]<span class="comment">//no error</span><ul class="change request-body"><li><div><h3>Schema</h3></div>Changed body: &#x27;application/json&#x27;</li></ul></li></ul></li></ul></li><li><span class="GET">GET</span>/images/{name}/json <span></span><ul class="detail"><li><h3>Response</h3><ul class="change response"><li>Changed response : [200]<span class="comment">//No error</span><ul class="change request-body"><li><div><h3>Schema</h3></div>Changed body: &#x27;application/json&#x27;</li></ul></li></ul></li></ul></li><li><span class="GET">GET</span>/system/df <span></span><ul class="detail"><li><h3>Response</h3><ul class="change response"><li>Changed response : [200]<span class="comment">//no error</span><ul class="change request-body"><li><div><h3>Schema</h3></div>Changed body: &#x27;application/json&#x27;</li><li><div><h3>Schema</h3></div>Changed body: &#x27;text/plain&#x27;</li></ul></li></ul></li></ul></li><li><span class="POST">POST</span>/services/create <span></span><ul class="detail"><li><h3>Request</h3><ul class="change request-body"><li><div><h3>Schema</h3></div>Changed body: &#x27;application/json&#x27;</li></ul></li></ul></li><li><span class="POST">POST</span>/services/{id}/update <span></span><ul class="detail"><li><h3>Request</h3><ul class="change request-body"><li><div><h3>Schema</h3></div>Changed body: &#x27;application/json&#x27;</li></ul></li></ul></li><li><span class="GET">GET</span>/info <span></span><ul class="detail"><li><h3>Response</h3><ul class="change response"><li>Changed response : [200]<span class="comment">//No error</span><ul class="change request-body"><li><div><h3>Schema</h3></div>Changed body: &#x27;application/json&#x27;</li></ul></li></ul></li></ul></li><li><span class="GET">GET</span>/tasks <span></span><ul class="detail"><li><h3>Response</h3><ul class="change response"><li>Changed response : [200]<span class="comment">//no error</span><ul class="change request-body"><li><div><h3>Schema</h3></div>Changed body: &#x27;application/json&#x27;</li></ul></li></ul></li></ul></li><li><span class="GET">GET</span>/tasks/{id} <span></span><ul class="detail"><li><h3>Response</h3><ul class="change response"><li>Changed response : [200]<span class="comment">//no error</span><ul class="change request-body"><li><div><h3>Schema</h3></div>Changed body: &#x27;application/json&#x27;</li></ul></li></ul></li></ul></li><li><span class="GET">GET</span>/services <span></span><ul class="detail"><li><h3>Response</h3><ul class="change response"><li>Changed response : [200]<span class="comment">//no error</span><ul class="change request-body"><li><div><h3>Schema</h3></div>Changed body: &#x27;application/json&#x27;</li><li><div><h3>Schema</h3></div>Changed body: &#x27;text/plain&#x27;</li></ul></li></ul></li></ul></li><li><span class="GET">GET</span>/services/{id} <span></span><ul class="detail"><li><h3>Response</h3><ul class="change response"><li>Changed response : [200]<span class="comment">//no error</span><ul class="change request-body"><li><div><h3>Schema</h3></div>Changed body: &#x27;application/json&#x27;</li><li><div><h3>Schema</h3></div>Changed body: &#x27;text/plain&#x27;</li></ul></li></ul></li></ul></li></ol></div></div></body></html>
+<h3 id="new-endpoints-none">New Endpoints: None</h3>
+<hr>
+<h3 id="deleted-endpoints-none">Deleted Endpoints: None</h3>
+<hr>
+<h3 id="modified-endpoints-7">Modified Endpoints: 7</h3>
+<hr>
+<p>POST /containers/create</p>
+<p>GET /containers/json</p>
+<ul>
+<li>Responses changed
+<ul>
+<li>Modified response: 200</li>
+</ul>
+</li>
+</ul>
+<p>GET /events</p>
+<ul>
+<li>Description changed from 'Stream real-time events from the server.</li>
+</ul>
+<p>Various objects within Docker report events when something happens to them.</p>
+<p>Containers report these events: <code>attach</code>, <code>commit</code>, <code>copy</code>, <code>create</code>, <code>destroy</code>, <code>detach</code>, <code>die</code>, <code>exec_create</code>, <code>exec_detach</code>, <code>exec_start</code>, <code>exec_die</code>, <code>export</code>, <code>health_status</code>, <code>kill</code>, <code>oom</code>, <code>pause</code>, <code>rename</code>, <code>resize</code>, <code>restart</code>, <code>start</code>, <code>stop</code>, <code>top</code>, <code>unpause</code>, <code>update</code>, and <code>prune</code></p>
+<p>Images report these events: <code>delete</code>, <code>import</code>, <code>load</code>, <code>pull</code>, <code>push</code>, <code>save</code>, <code>tag</code>, <code>untag</code>, and <code>prune</code></p>
+<p>Volumes report these events: <code>create</code>, <code>mount</code>, <code>unmount</code>, <code>destroy</code>, and <code>prune</code></p>
+<p>Networks report these events: <code>create</code>, <code>connect</code>, <code>disconnect</code>, <code>destroy</code>, <code>update</code>, <code>remove</code>, and <code>prune</code></p>
+<p>The Docker daemon reports these events: <code>reload</code></p>
+<p>Services report these events: <code>create</code>, <code>update</code>, and <code>remove</code></p>
+<p>Nodes report these events: <code>create</code>, <code>update</code>, and <code>remove</code></p>
+<p>Secrets report these events: <code>create</code>, <code>update</code>, and <code>remove</code></p>
+<p>Configs report these events: <code>create</code>, <code>update</code>, and <code>remove</code></p>
+<p>The Builder reports <code>prune</code> events<br>
+' to 'Stream real-time events from the server.</p>
+<p>Various objects within Docker report events when something happens to them.</p>
+<p>Containers report these events: <code>attach</code>, <code>commit</code>, <code>copy</code>, <code>create</code>, <code>destroy</code>, <code>detach</code>, <code>die</code>, <code>exec_create</code>, <code>exec_detach</code>, <code>exec_start</code>, <code>exec_die</code>, <code>export</code>, <code>health_status</code>, <code>kill</code>, <code>oom</code>, <code>pause</code>, <code>rename</code>, <code>resize</code>, <code>restart</code>, <code>start</code>, <code>stop</code>, <code>top</code>, <code>unpause</code>, <code>update</code>, and <code>prune</code></p>
+<p>Images report these events: <code>create, </code>delete<code>, </code>import<code>, </code>load<code>, </code>pull<code>, </code>push<code>, </code>save<code>, </code>tag<code>, </code>untag<code>, and </code>prune`</p>
+<p>Volumes report these events: <code>create</code>, <code>mount</code>, <code>unmount</code>, <code>destroy</code>, and <code>prune</code></p>
+<p>Networks report these events: <code>create</code>, <code>connect</code>, <code>disconnect</code>, <code>destroy</code>, <code>update</code>, <code>remove</code>, and <code>prune</code></p>
+<p>The Docker daemon reports these events: <code>reload</code></p>
+<p>Services report these events: <code>create</code>, <code>update</code>, and <code>remove</code></p>
+<p>Nodes report these events: <code>create</code>, <code>update</code>, and <code>remove</code></p>
+<p>Secrets report these events: <code>create</code>, <code>update</code>, and <code>remove</code></p>
+<p>Configs report these events: <code>create</code>, <code>update</code>, and <code>remove</code></p>
+<p>The Builder reports <code>prune</code> events<br>
+'</p>
+<p>POST /images/{name}/push</p>
+<ul>
+<li>New query param: platform</li>
+</ul>
+<p>POST /networks/create</p>
+<ul>
+<li>Responses changed
+<ul>
+<li>Modified response: 201
+<ul>
+<li>Description changed from 'No error' to 'Network created successfully'</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>POST /services/create</p>
+<p>POST /services/{id}/update</p>

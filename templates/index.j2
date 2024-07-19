@@ -9,7 +9,9 @@
   <tr>
     <th scope="col">Docker Version</th>
     <th scope="col">Podman Version</th>
-    <th scope="col">Result</th>
+    <th scope="col">Breaking</th>
+    <th scope="col">Changelog</th>
+    <th scope="col">Diff</th>
   </tr>
   {% for version in docker_versions %}
   <tr>
@@ -23,7 +25,9 @@
         latest
       </a>
     </td>
-    <td><a href="results/html/docker-v{{ version }}-podman-latest.html">View result</a></td>
+    <td><a href="results/html/docker-v{{ version }}-podman-latest-breaking.html">View result</a></td>
+    <td><a href="results/html/docker-v{{ version }}-podman-latest-changelog.html">View result</a></td>
+    <td><a href="results/html/docker-v{{ version }}-podman-latest-diff.html">View result</a></td>
   </tr>
   {% endfor %}
 </table>

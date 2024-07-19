@@ -1,27 +1,75 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><title>Api Change Log</title><link rel="stylesheet" href="http://deepoove.com/swagger-diff/stylesheets/demo.css"></head><body><header><h1>Api Change Log</h1></header><div class="article"><div><h2>What&#x27;s New</h2><hr><ol></ol></div><div><h2>What&#x27;s Deleted</h2><hr><ol></ol></div><div><h2>What&#x27;s Deprecated</h2><hr><ol></ol></div><div><h2>What&#x27;s Changed</h2><hr><ol><li><span class="GET">GET</span>/containers/{id}/changes <span></span><ul class="detail"><li><h3>Response</h3><ul class="change response"><li>Changed response : [200]<span class="comment">//The list of changes</span><ul class="change request-body"><li><div><h3>Schema</h3></div>Changed body: &#x27;application/json&#x27;</li></ul></li></ul></li></ul></li><li><span class="GET">GET</span>/images/json <span></span><ul class="detail"><li><h3>Response</h3><ul class="change response"><li>Changed response : [200]<span class="comment">//Summary image data for the images matching the query</span><ul class="change request-body"><li><div><h3>Schema</h3></div>Changed body: &#x27;application/json&#x27;</li></ul></li></ul></li></ul></li><li><span class="POST">POST</span>/build/prune <span></span><ul class="detail"><li><h3>Parameters</h3><ul class="change param"><li>filters in query Notes <del class="comment">A JSON encoded value of the filters (a `map[string][]string`) to
-process on the list of build cache objects.
-
-Available filters:
-
-- `until=&lt;timestamp&gt;` remove cache older than `&lt;timestamp&gt;`. The `&lt;timestamp&gt;` can be Unix timestamps, date formatted timestamps, or Go duration strings (e.g. `10m`, `1h30m`) computed relative to the daemon&#x27;s local time.
-- `id=&lt;id&gt;`
-- `parent=&lt;id&gt;`
-- `type=&lt;string&gt;`
-- `description=&lt;string&gt;`
-- `inuse`
-- `shared`
-- `private`
-</del> change into <span class="comment">A JSON encoded value of the filters (a `map[string][]string`) to
-process on the list of build cache objects.
-
-Available filters:
-
-- `until=&lt;duration&gt;`: duration relative to daemon&#x27;s time, during which build cache was not used, in Go&#x27;s duration format (e.g., &#x27;24h&#x27;)
-- `id=&lt;id&gt;`
-- `parent=&lt;id&gt;`
-- `type=&lt;string&gt;`
-- `description=&lt;string&gt;`
-- `inuse`
-- `shared`
-- `private`
-</span></li></ul></li></ul></li><li><span class="POST">POST</span>/containers/create <span></span><ul class="detail"><li><h3>Request</h3><ul class="change request-body"><li><div><h3>Schema</h3></div>Changed body: &#x27;application/json&#x27;</li><li><div><h3>Schema</h3></div>Changed body: &#x27;application/octet-stream&#x27;</li></ul></li></ul></li><li><span class="GET">GET</span>/containers/{id}/json <span></span><ul class="detail"><li><h3>Response</h3><ul class="change response"><li>Changed response : [200]<span class="comment">//no error</span><ul class="change request-body"><li><div><h3>Schema</h3></div>Changed body: &#x27;application/json&#x27;</li></ul></li></ul></li></ul></li><li><span class="GET">GET</span>/images/{name}/json <span></span><ul class="detail"><li><h3>Response</h3><ul class="change response"><li>Changed response : [200]<span class="comment">//No error</span><ul class="change request-body"><li><div><h3>Schema</h3></div>Changed body: &#x27;application/json&#x27;</li></ul></li></ul></li></ul></li><li><span class="GET">GET</span>/system/df <span></span><ul class="detail"><li><h3>Response</h3><ul class="change response"><li>Changed response : [200]<span class="comment">//no error</span><ul class="change request-body"><li><div><h3>Schema</h3></div>Changed body: &#x27;application/json&#x27;</li><li><div><h3>Schema</h3></div>Changed body: &#x27;text/plain&#x27;</li></ul></li></ul></li></ul></li><li><span class="GET">GET</span>/info <span></span><ul class="detail"><li><h3>Response</h3><ul class="change response"><li>Changed response : [200]<span class="comment">//No error</span><ul class="change request-body"><li><div><h3>Schema</h3></div>Changed body: &#x27;application/json&#x27;</li></ul></li></ul></li></ul></li></ol></div></div></body></html>
+<h3 id="new-endpoints-none">New Endpoints: None</h3>
+<hr>
+<h3 id="deleted-endpoints-none">Deleted Endpoints: None</h3>
+<hr>
+<h3 id="modified-endpoints-3">Modified Endpoints: 3</h3>
+<hr>
+<p>POST /build/prune</p>
+<ul>
+<li>Modified query param: filters
+<ul>
+<li>Description changed from 'A JSON encoded value of the filters (a <code>map[string][]string</code>) to<br>
+process on the list of build cache objects.</li>
+</ul>
+</li>
+</ul>
+<p>Available filters:</p>
+<ul>
+<li><code>until=&lt;timestamp&gt;</code> remove cache older than <code>&lt;timestamp&gt;</code>. The <code>&lt;timestamp&gt;</code> can be Unix timestamps, date formatted timestamps, or Go duration strings (e.g. <code>10m</code>, <code>1h30m</code>) computed relative to the daemon's local time.</li>
+<li><code>id=&lt;id&gt;</code></li>
+<li><code>parent=&lt;id&gt;</code></li>
+<li><code>type=&lt;string&gt;</code></li>
+<li><code>description=&lt;string&gt;</code></li>
+<li><code>inuse</code></li>
+<li><code>shared</code></li>
+<li><code>private</code><br>
+' to 'A JSON encoded value of the filters (a <code>map[string][]string</code>) to<br>
+process on the list of build cache objects.</li>
+</ul>
+<p>Available filters:</p>
+<ul>
+<li><code>until=&lt;duration&gt;</code>: duration relative to daemon's time, during which build cache was not used, in Go's duration format (e.g., '24h')</li>
+<li><code>id=&lt;id&gt;</code></li>
+<li><code>parent=&lt;id&gt;</code></li>
+<li><code>type=&lt;string&gt;</code></li>
+<li><code>description=&lt;string&gt;</code></li>
+<li><code>inuse</code></li>
+<li><code>shared</code></li>
+<li><code>private</code><br>
+'</li>
+</ul>
+<p>POST /containers/create</p>
+<p>GET /containers/{id}/changes</p>
+<ul>
+<li>
+<p>Description changed from 'Returns which files in a container's filesystem have been added, deleted,<br>
+or modified. The <code>Kind</code> of modification can be one of:</p>
+</li>
+<li>
+<p><code>0</code>: Modified (&quot;C&quot;)</p>
+</li>
+<li>
+<p><code>1</code>: Added (&quot;A&quot;)</p>
+</li>
+<li>
+<p><code>2</code>: Deleted (&quot;D&quot;)<br>
+' to 'Returns which files in a container's filesystem have been added, deleted,<br>
+or modified. The <code>Kind</code> of modification can be one of:</p>
+</li>
+<li>
+<p><code>0</code>: Modified</p>
+</li>
+<li>
+<p><code>1</code>: Added</p>
+</li>
+<li>
+<p><code>2</code>: Deleted<br>
+'</p>
+</li>
+<li>
+<p>Responses changed</p>
+<ul>
+<li>Modified response: 200</li>
+</ul>
+</li>
+</ul>

@@ -1,0 +1,4775 @@
+<html>
+
+<head>
+    <style>
+
+        @import url(//fonts.googleapis.com/css?family=Nunito);
+
+        * {
+            font-family: 'Nunito','Helvetica Neue',Helvetica,Arial,sans-serif;
+        }
+
+        .title {
+            margin: 1em 0 0.5em 0;
+            font-size: 36px;
+        }
+
+        .path {
+            color: #016BF8;
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        .endpoint {
+            color: #21313c;
+            line-height: 24px;
+            margin: 22px 0;
+        }
+
+        .endpoint-header {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .change-type {
+            box-sizing: border-box;
+            font-weight: 700;
+            font-size: 12px;
+            line-height: 16px;
+            border-radius: 5px;
+            height: 18px;
+            padding-left: 6px;
+            padding-right: 6px;
+            text-transform: uppercase;
+            border: 1px solid;
+            letter-spacing: 1px;
+            background-color: #E3FCF7;
+            border-color: #C0FAE6;
+            color: #00684A;
+            margin-top: 2px;
+        }
+
+        .change {
+        }
+
+        .breaking {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            margin-right: 5px;
+        }
+
+        .breaking-icon {
+            color: #DB3030;
+        }
+
+        .endpoint-changes {
+        }
+
+        .tooltip {
+            position:relative;
+        }
+
+        .tooltip:before {
+            content: attr(data-text);
+            position:absolute;
+
+
+            top:50%;
+            transform:translateY(-50%);
+
+
+            left:100%;
+            margin-left:15px;
+
+
+            width:200px;
+            padding:10px;
+            border-radius:10px;
+            background:#000;
+            color: #fff;
+            text-align:center;
+
+            display:none;
+        }
+
+        .tooltip:hover:before {
+            display:block;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="title">API Changelog 1.45 vs. 5.0.0 </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">GET /_ping</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            <div class="breaking tooltip" data-text="Breaking Change">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 16 16" class="breaking-icon" role="img" aria-label="Important With Circle Icon"><path fill="currentColor" fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14ZM7 4.5a1 1 0 0 1 2 0v4a1 1 0 0 1-2 0v-4Zm2 7a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z" clip-rule="evenodd"></path></svg>
+            </div>
+
+            api path removed without deprecation
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">HEAD /_ping</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            <div class="breaking tooltip" data-text="Breaking Change">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 16 16" class="breaking-icon" role="img" aria-label="Important With Circle Icon"><path fill="currentColor" fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14ZM7 4.5a1 1 0 0 1 2 0v4a1 1 0 0 1-2 0v-4Zm2 7a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z" clip-rule="evenodd"></path></svg>
+            </div>
+
+            api path removed without deprecation
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">POST /auth</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            <div class="breaking tooltip" data-text="Breaking Change">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 16 16" class="breaking-icon" role="img" aria-label="Important With Circle Icon"><path fill="currentColor" fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14ZM7 4.5a1 1 0 0 1 2 0v4a1 1 0 0 1-2 0v-4Zm2 7a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z" clip-rule="evenodd"></path></svg>
+            </div>
+
+            removed the success response with the status &#39;204&#39;
+            </li>
+
+            <li class="change">
+
+            api tag &#39;system (compat)&#39; added
+            </li>
+
+            <li class="change">
+
+            api tag &#39;System&#39; removed
+            </li>
+
+            <li class="change">
+
+            removed the non-success response with the status &#39;401&#39;
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">POST /build</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            <div class="breaking tooltip" data-text="Breaking Change">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 16 16" class="breaking-icon" role="img" aria-label="Important With Circle Icon"><path fill="currentColor" fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14ZM7 4.5a1 1 0 0 1 2 0v4a1 1 0 0 1-2 0v-4Zm2 7a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z" clip-rule="evenodd"></path></svg>
+            </div>
+
+            deleted the &#39;header&#39; request parameter &#39;Content-type&#39;
+            </li>
+
+            <li class="change">
+
+            <div class="breaking tooltip" data-text="Breaking Change">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 16 16" class="breaking-icon" role="img" aria-label="Important With Circle Icon"><path fill="currentColor" fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14ZM7 4.5a1 1 0 0 1 2 0v4a1 1 0 0 1-2 0v-4Zm2 7a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z" clip-rule="evenodd"></path></svg>
+            </div>
+
+            deleted the &#39;query&#39; request parameter &#39;version&#39;
+            </li>
+
+            <li class="change">
+
+            api tag &#39;images (compat)&#39; added
+            </li>
+
+            <li class="change">
+
+            api tag &#39;Image&#39; removed
+            </li>
+
+            <li class="change">
+
+            added the new optional &#39;header&#39; request parameter &#39;Content-Type&#39;
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">POST /build/prune</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            <div class="breaking tooltip" data-text="Breaking Change">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 16 16" class="breaking-icon" role="img" aria-label="Important With Circle Icon"><path fill="currentColor" fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14ZM7 4.5a1 1 0 0 1 2 0v4a1 1 0 0 1-2 0v-4Zm2 7a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z" clip-rule="evenodd"></path></svg>
+            </div>
+
+            api path removed without deprecation
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">POST /commit</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            <div class="breaking tooltip" data-text="Breaking Change">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 16 16" class="breaking-icon" role="img" aria-label="Important With Circle Icon"><path fill="currentColor" fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14ZM7 4.5a1 1 0 0 1 2 0v4a1 1 0 0 1-2 0v-4Zm2 7a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z" clip-rule="evenodd"></path></svg>
+            </div>
+
+            deleted the &#39;body&#39; request parameter &#39;containerConfig&#39;
+            </li>
+
+            <li class="change">
+
+            api tag &#39;containers (compat)&#39; added
+            </li>
+
+            <li class="change">
+
+            api tag &#39;Image&#39; removed
+            </li>
+
+            <li class="change">
+
+            added the new optional &#39;query&#39; request parameter &#39;squash&#39;
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">GET /configs</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            <div class="breaking tooltip" data-text="Breaking Change">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 16 16" class="breaking-icon" role="img" aria-label="Important With Circle Icon"><path fill="currentColor" fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14ZM7 4.5a1 1 0 0 1 2 0v4a1 1 0 0 1-2 0v-4Zm2 7a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z" clip-rule="evenodd"></path></svg>
+            </div>
+
+            api path removed without deprecation
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">POST /configs/create</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            <div class="breaking tooltip" data-text="Breaking Change">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 16 16" class="breaking-icon" role="img" aria-label="Important With Circle Icon"><path fill="currentColor" fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14ZM7 4.5a1 1 0 0 1 2 0v4a1 1 0 0 1-2 0v-4Zm2 7a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z" clip-rule="evenodd"></path></svg>
+            </div>
+
+            api path removed without deprecation
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">DELETE /configs/{id}</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            <div class="breaking tooltip" data-text="Breaking Change">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 16 16" class="breaking-icon" role="img" aria-label="Important With Circle Icon"><path fill="currentColor" fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14ZM7 4.5a1 1 0 0 1 2 0v4a1 1 0 0 1-2 0v-4Zm2 7a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z" clip-rule="evenodd"></path></svg>
+            </div>
+
+            api path removed without deprecation
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">GET /configs/{id}</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            <div class="breaking tooltip" data-text="Breaking Change">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 16 16" class="breaking-icon" role="img" aria-label="Important With Circle Icon"><path fill="currentColor" fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14ZM7 4.5a1 1 0 0 1 2 0v4a1 1 0 0 1-2 0v-4Zm2 7a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z" clip-rule="evenodd"></path></svg>
+            </div>
+
+            api path removed without deprecation
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">POST /configs/{id}/update</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            <div class="breaking tooltip" data-text="Breaking Change">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 16 16" class="breaking-icon" role="img" aria-label="Important With Circle Icon"><path fill="currentColor" fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14ZM7 4.5a1 1 0 0 1 2 0v4a1 1 0 0 1-2 0v-4Zm2 7a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z" clip-rule="evenodd"></path></svg>
+            </div>
+
+            api path removed without deprecation
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">POST /containers/create</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            <div class="breaking tooltip" data-text="Breaking Change">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 16 16" class="breaking-icon" role="img" aria-label="Important With Circle Icon"><path fill="currentColor" fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14ZM7 4.5a1 1 0 0 1 2 0v4a1 1 0 0 1-2 0v-4Zm2 7a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z" clip-rule="evenodd"></path></svg>
+            </div>
+
+            for the &#39;body&#39; request parameter &#39;body&#39;, the type/format was changed from &#39;&#39;/&#39;&#39; to &#39;object&#39;/&#39;&#39;
+            </li>
+
+            <li class="change">
+
+            <div class="breaking tooltip" data-text="Breaking Change">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 16 16" class="breaking-icon" role="img" aria-label="Important With Circle Icon"><path fill="currentColor" fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14ZM7 4.5a1 1 0 0 1 2 0v4a1 1 0 0 1-2 0v-4Zm2 7a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z" clip-rule="evenodd"></path></svg>
+            </div>
+
+            deleted the &#39;query&#39; request parameter &#39;platform&#39;
+            </li>
+
+            <li class="change">
+
+            api tag &#39;containers (compat)&#39; added
+            </li>
+
+            <li class="change">
+
+            api tag &#39;Container&#39; removed
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">GET /containers/json</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            api tag &#39;containers (compat)&#39; added
+            </li>
+
+            <li class="change">
+
+            api tag &#39;Container&#39; removed
+            </li>
+
+            <li class="change">
+
+            added the new optional &#39;query&#39; request parameter &#39;external&#39;
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">POST /containers/prune</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            api tag &#39;containers (compat)&#39; added
+            </li>
+
+            <li class="change">
+
+            api tag &#39;Container&#39; removed
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">DELETE /containers/{id}</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            api tag &#39;containers (compat)&#39; added
+            </li>
+
+            <li class="change">
+
+            api tag &#39;Container&#39; removed
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">GET /containers/{id}/archive</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            api tag &#39;containers (compat)&#39; added
+            </li>
+
+            <li class="change">
+
+            api tag &#39;Container&#39; removed
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">HEAD /containers/{id}/archive</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            <div class="breaking tooltip" data-text="Breaking Change">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 16 16" class="breaking-icon" role="img" aria-label="Important With Circle Icon"><path fill="currentColor" fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14ZM7 4.5a1 1 0 0 1 2 0v4a1 1 0 0 1-2 0v-4Zm2 7a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z" clip-rule="evenodd"></path></svg>
+            </div>
+
+            api removed without deprecation
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">PUT /containers/{id}/archive</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            <div class="breaking tooltip" data-text="Breaking Change">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 16 16" class="breaking-icon" role="img" aria-label="Important With Circle Icon"><path fill="currentColor" fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14ZM7 4.5a1 1 0 0 1 2 0v4a1 1 0 0 1-2 0v-4Zm2 7a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z" clip-rule="evenodd"></path></svg>
+            </div>
+
+            deleted the &#39;body&#39; request parameter &#39;inputStream&#39;
+            </li>
+
+            <li class="change">
+
+            api tag &#39;containers (compat)&#39; added
+            </li>
+
+            <li class="change">
+
+            api tag &#39;Container&#39; removed
+            </li>
+
+            <li class="change">
+
+            added the new optional &#39;body&#39; request parameter &#39;request&#39;
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">POST /containers/{id}/attach</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            <div class="breaking tooltip" data-text="Breaking Change">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 16 16" class="breaking-icon" role="img" aria-label="Important With Circle Icon"><path fill="currentColor" fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14ZM7 4.5a1 1 0 0 1 2 0v4a1 1 0 0 1-2 0v-4Zm2 7a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z" clip-rule="evenodd"></path></svg>
+            </div>
+
+            removed the success response with the status &#39;200&#39;
+            </li>
+
+            <li class="change">
+
+            api tag &#39;containers (compat)&#39; added
+            </li>
+
+            <li class="change">
+
+            api tag &#39;Container&#39; removed
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">GET /containers/{id}/attach/ws</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            <div class="breaking tooltip" data-text="Breaking Change">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 16 16" class="breaking-icon" role="img" aria-label="Important With Circle Icon"><path fill="currentColor" fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14ZM7 4.5a1 1 0 0 1 2 0v4a1 1 0 0 1-2 0v-4Zm2 7a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z" clip-rule="evenodd"></path></svg>
+            </div>
+
+            api path removed without deprecation
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">GET /containers/{id}/changes</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            <div class="breaking tooltip" data-text="Breaking Change">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 16 16" class="breaking-icon" role="img" aria-label="Important With Circle Icon"><path fill="currentColor" fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14ZM7 4.5a1 1 0 0 1 2 0v4a1 1 0 0 1-2 0v-4Zm2 7a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z" clip-rule="evenodd"></path></svg>
+            </div>
+
+            api path removed without deprecation
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">POST /containers/{id}/exec</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            <div class="breaking tooltip" data-text="Breaking Change">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 16 16" class="breaking-icon" role="img" aria-label="Important With Circle Icon"><path fill="currentColor" fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14ZM7 4.5a1 1 0 0 1 2 0v4a1 1 0 0 1-2 0v-4Zm2 7a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z" clip-rule="evenodd"></path></svg>
+            </div>
+
+            deleted the &#39;body&#39; request parameter &#39;execConfig&#39;
+            </li>
+
+            <li class="change">
+
+            api tag &#39;exec (compat)&#39; added
+            </li>
+
+            <li class="change">
+
+            api tag &#39;Exec&#39; removed
+            </li>
+
+            <li class="change">
+
+            added the new optional &#39;body&#39; request parameter &#39;control&#39;
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">GET /containers/{id}/export</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            api tag &#39;containers (compat)&#39; added
+            </li>
+
+            <li class="change">
+
+            api tag &#39;Container&#39; removed
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">GET /containers/{id}/json</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            api tag &#39;containers (compat)&#39; added
+            </li>
+
+            <li class="change">
+
+            api tag &#39;Container&#39; removed
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">POST /containers/{id}/kill</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            api tag &#39;containers (compat)&#39; added
+            </li>
+
+            <li class="change">
+
+            api tag &#39;Container&#39; removed
+            </li>
+
+            <li class="change">
+
+            added the new optional &#39;query&#39; request parameter &#39;all&#39;
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">GET /containers/{id}/logs</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            api tag &#39;containers (compat)&#39; added
+            </li>
+
+            <li class="change">
+
+            api tag &#39;Container&#39; removed
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">POST /containers/{id}/pause</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            api tag &#39;containers (compat)&#39; added
+            </li>
+
+            <li class="change">
+
+            api tag &#39;Container&#39; removed
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">POST /containers/{id}/rename</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            api tag &#39;containers (compat)&#39; added
+            </li>
+
+            <li class="change">
+
+            api tag &#39;Container&#39; removed
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">POST /containers/{id}/resize</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            api tag &#39;containers (compat)&#39; added
+            </li>
+
+            <li class="change">
+
+            api tag &#39;Container&#39; removed
+            </li>
+
+            <li class="change">
+
+            added the new optional &#39;query&#39; request parameter &#39;running&#39;
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">POST /containers/{id}/restart</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            <div class="breaking tooltip" data-text="Breaking Change">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 16 16" class="breaking-icon" role="img" aria-label="Important With Circle Icon"><path fill="currentColor" fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14ZM7 4.5a1 1 0 0 1 2 0v4a1 1 0 0 1-2 0v-4Zm2 7a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z" clip-rule="evenodd"></path></svg>
+            </div>
+
+            deleted the &#39;query&#39; request parameter &#39;signal&#39;
+            </li>
+
+            <li class="change">
+
+            api tag &#39;containers (compat)&#39; added
+            </li>
+
+            <li class="change">
+
+            api tag &#39;Container&#39; removed
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">POST /containers/{id}/start</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            api tag &#39;containers (compat)&#39; added
+            </li>
+
+            <li class="change">
+
+            api tag &#39;Container&#39; removed
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">GET /containers/{id}/stats</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            api tag &#39;containers (compat)&#39; added
+            </li>
+
+            <li class="change">
+
+            api tag &#39;Container&#39; removed
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">POST /containers/{id}/stop</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            <div class="breaking tooltip" data-text="Breaking Change">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 16 16" class="breaking-icon" role="img" aria-label="Important With Circle Icon"><path fill="currentColor" fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14ZM7 4.5a1 1 0 0 1 2 0v4a1 1 0 0 1-2 0v-4Zm2 7a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z" clip-rule="evenodd"></path></svg>
+            </div>
+
+            deleted the &#39;query&#39; request parameter &#39;signal&#39;
+            </li>
+
+            <li class="change">
+
+            api tag &#39;containers (compat)&#39; added
+            </li>
+
+            <li class="change">
+
+            api tag &#39;Container&#39; removed
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">GET /containers/{id}/top</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            api tag &#39;containers (compat)&#39; added
+            </li>
+
+            <li class="change">
+
+            api tag &#39;Container&#39; removed
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">POST /containers/{id}/unpause</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            api tag &#39;containers (compat)&#39; added
+            </li>
+
+            <li class="change">
+
+            api tag &#39;Container&#39; removed
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">POST /containers/{id}/update</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            <div class="breaking tooltip" data-text="Breaking Change">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 16 16" class="breaking-icon" role="img" aria-label="Important With Circle Icon"><path fill="currentColor" fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14ZM7 4.5a1 1 0 0 1 2 0v4a1 1 0 0 1-2 0v-4Zm2 7a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z" clip-rule="evenodd"></path></svg>
+            </div>
+
+            deleted the &#39;body&#39; request parameter &#39;update&#39;
+            </li>
+
+            <li class="change">
+
+            api tag &#39;containers (compat)&#39; added
+            </li>
+
+            <li class="change">
+
+            api tag &#39;Container&#39; removed
+            </li>
+
+            <li class="change">
+
+            added the new optional &#39;body&#39; request parameter &#39;resources&#39;
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">POST /containers/{id}/wait</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            api tag &#39;containers (compat)&#39; added
+            </li>
+
+            <li class="change">
+
+            api tag &#39;Container&#39; removed
+            </li>
+
+            <li class="change">
+
+            added the new optional &#39;query&#39; request parameter &#39;interval&#39;
+            </li>
+
+            <li class="change">
+
+            removed the non-success response with the status &#39;400&#39;
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">GET /distribution/{name}/json</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            <div class="breaking tooltip" data-text="Breaking Change">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 16 16" class="breaking-icon" role="img" aria-label="Important With Circle Icon"><path fill="currentColor" fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14ZM7 4.5a1 1 0 0 1 2 0v4a1 1 0 0 1-2 0v-4Zm2 7a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z" clip-rule="evenodd"></path></svg>
+            </div>
+
+            api path removed without deprecation
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">GET /events</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            api tag &#39;system (compat)&#39; added
+            </li>
+
+            <li class="change">
+
+            api tag &#39;System&#39; removed
+            </li>
+
+            <li class="change">
+
+            removed the non-success response with the status &#39;400&#39;
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">GET /exec/{id}/json</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            api tag &#39;exec (compat)&#39; added
+            </li>
+
+            <li class="change">
+
+            api tag &#39;Exec&#39; removed
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">POST /exec/{id}/resize</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            <div class="breaking tooltip" data-text="Breaking Change">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 16 16" class="breaking-icon" role="img" aria-label="Important With Circle Icon"><path fill="currentColor" fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14ZM7 4.5a1 1 0 0 1 2 0v4a1 1 0 0 1-2 0v-4Zm2 7a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z" clip-rule="evenodd"></path></svg>
+            </div>
+
+            removed the success response with the status &#39;200&#39;
+            </li>
+
+            <li class="change">
+
+            api tag &#39;exec (compat)&#39; added
+            </li>
+
+            <li class="change">
+
+            api tag &#39;Exec&#39; removed
+            </li>
+
+            <li class="change">
+
+            added the new optional &#39;query&#39; request parameter &#39;running&#39;
+            </li>
+
+            <li class="change">
+
+            removed the non-success response with the status &#39;400&#39;
+            </li>
+
+            <li class="change">
+
+            added the success response with the status &#39;201&#39;
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">POST /exec/{id}/start</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            <div class="breaking tooltip" data-text="Breaking Change">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 16 16" class="breaking-icon" role="img" aria-label="Important With Circle Icon"><path fill="currentColor" fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14ZM7 4.5a1 1 0 0 1 2 0v4a1 1 0 0 1-2 0v-4Zm2 7a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z" clip-rule="evenodd"></path></svg>
+            </div>
+
+            deleted the &#39;body&#39; request parameter &#39;execStartConfig&#39;
+            </li>
+
+            <li class="change">
+
+            api tag &#39;exec (compat)&#39; added
+            </li>
+
+            <li class="change">
+
+            api tag &#39;Exec&#39; removed
+            </li>
+
+            <li class="change">
+
+            added the new optional &#39;body&#39; request parameter &#39;control&#39;
+            </li>
+
+            <li class="change">
+
+            added the non-success response with the status &#39;500&#39;
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">POST /images/create</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            <div class="breaking tooltip" data-text="Breaking Change">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 16 16" class="breaking-icon" role="img" aria-label="Important With Circle Icon"><path fill="currentColor" fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14ZM7 4.5a1 1 0 0 1 2 0v4a1 1 0 0 1-2 0v-4Zm2 7a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z" clip-rule="evenodd"></path></svg>
+            </div>
+
+            for the &#39;body&#39; request parameter &#39;inputImage&#39;, the type/format was changed from &#39;string&#39;/&#39;&#39; to &#39;string&#39;/&#39;binary&#39;
+            </li>
+
+            <li class="change">
+
+            <div class="breaking tooltip" data-text="Breaking Change">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 16 16" class="breaking-icon" role="img" aria-label="Important With Circle Icon"><path fill="currentColor" fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14ZM7 4.5a1 1 0 0 1 2 0v4a1 1 0 0 1-2 0v-4Zm2 7a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z" clip-rule="evenodd"></path></svg>
+            </div>
+
+            deleted the &#39;query&#39; request parameter &#39;changes&#39;
+            </li>
+
+            <li class="change">
+
+            api tag &#39;images (compat)&#39; added
+            </li>
+
+            <li class="change">
+
+            api tag &#39;Image&#39; removed
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">GET /images/get</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            <div class="breaking tooltip" data-text="Breaking Change">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 16 16" class="breaking-icon" role="img" aria-label="Important With Circle Icon"><path fill="currentColor" fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14ZM7 4.5a1 1 0 0 1 2 0v4a1 1 0 0 1-2 0v-4Zm2 7a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z" clip-rule="evenodd"></path></svg>
+            </div>
+
+            the &#39;query&#39; request parameter &#39;names&#39; became required
+            </li>
+
+            <li class="change">
+
+            api tag &#39;images (compat)&#39; added
+            </li>
+
+            <li class="change">
+
+            api tag &#39;Image&#39; removed
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">GET /images/json</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            <div class="breaking tooltip" data-text="Breaking Change">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 16 16" class="breaking-icon" role="img" aria-label="Important With Circle Icon"><path fill="currentColor" fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14ZM7 4.5a1 1 0 0 1 2 0v4a1 1 0 0 1-2 0v-4Zm2 7a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z" clip-rule="evenodd"></path></svg>
+            </div>
+
+            deleted the &#39;query&#39; request parameter &#39;shared-size&#39;
+            </li>
+
+            <li class="change">
+
+            api tag &#39;images (compat)&#39; added
+            </li>
+
+            <li class="change">
+
+            api tag &#39;Image&#39; removed
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">POST /images/load</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            <div class="breaking tooltip" data-text="Breaking Change">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 16 16" class="breaking-icon" role="img" aria-label="Important With Circle Icon"><path fill="currentColor" fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14ZM7 4.5a1 1 0 0 1 2 0v4a1 1 0 0 1-2 0v-4Zm2 7a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z" clip-rule="evenodd"></path></svg>
+            </div>
+
+            deleted the &#39;body&#39; request parameter &#39;imagesTarball&#39;
+            </li>
+
+            <li class="change">
+
+            api tag &#39;images (compat)&#39; added
+            </li>
+
+            <li class="change">
+
+            api tag &#39;Image&#39; removed
+            </li>
+
+            <li class="change">
+
+            added the new optional &#39;body&#39; request parameter &#39;request&#39;
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">POST /images/prune</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            api tag &#39;images (compat)&#39; added
+            </li>
+
+            <li class="change">
+
+            api tag &#39;Image&#39; removed
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">GET /images/search</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            api tag &#39;images (compat)&#39; added
+            </li>
+
+            <li class="change">
+
+            api tag &#39;Image&#39; removed
+            </li>
+
+            <li class="change">
+
+            added the new optional &#39;query&#39; request parameter &#39;listTags&#39;
+            </li>
+
+            <li class="change">
+
+            added the new optional &#39;query&#39; request parameter &#39;tlsVerify&#39;
+            </li>
+
+            <li class="change">
+
+            the &#39;query&#39; request parameter &#39;term&#39; became optional
+            </li>
+
+            <li class="change">
+
+            added the non-success response with the status &#39;400&#39;
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">DELETE /images/{name}</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            api tag &#39;images (compat)&#39; added
+            </li>
+
+            <li class="change">
+
+            api tag &#39;Image&#39; removed
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">GET /images/{name}/get</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            api tag &#39;images (compat)&#39; added
+            </li>
+
+            <li class="change">
+
+            api tag &#39;Image&#39; removed
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">GET /images/{name}/history</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            api tag &#39;images (compat)&#39; added
+            </li>
+
+            <li class="change">
+
+            api tag &#39;Image&#39; removed
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">GET /images/{name}/json</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            api tag &#39;images (compat)&#39; added
+            </li>
+
+            <li class="change">
+
+            api tag &#39;Image&#39; removed
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">POST /images/{name}/push</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            api tag &#39;images (compat)&#39; added
+            </li>
+
+            <li class="change">
+
+            api tag &#39;Image&#39; removed
+            </li>
+
+            <li class="change">
+
+            added the new optional &#39;query&#39; request parameter &#39;all&#39;
+            </li>
+
+            <li class="change">
+
+            added the new optional &#39;query&#39; request parameter &#39;compress&#39;
+            </li>
+
+            <li class="change">
+
+            added the new optional &#39;query&#39; request parameter &#39;destination&#39;
+            </li>
+
+            <li class="change">
+
+            added the new optional &#39;query&#39; request parameter &#39;format&#39;
+            </li>
+
+            <li class="change">
+
+            added the new optional &#39;query&#39; request parameter &#39;tlsVerify&#39;
+            </li>
+
+            <li class="change">
+
+            the &#39;header&#39; request parameter &#39;X-Registry-Auth&#39; became optional
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">POST /images/{name}/tag</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            api tag &#39;images (compat)&#39; added
+            </li>
+
+            <li class="change">
+
+            api tag &#39;Image&#39; removed
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">GET /info</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            api tag &#39;system (compat)&#39; added
+            </li>
+
+            <li class="change">
+
+            api tag &#39;System&#39; removed
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">GET /libpod/_ping</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            endpoint added
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">POST /libpod/build</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            endpoint added
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">POST /libpod/commit</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            endpoint added
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">POST /libpod/containers/create</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            endpoint added
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">GET /libpod/containers/json</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            endpoint added
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">POST /libpod/containers/prune</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            endpoint added
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">GET /libpod/containers/showmounted</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            endpoint added
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">GET /libpod/containers/stats</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            endpoint added
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">DELETE /libpod/containers/{name}</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            endpoint added
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">GET /libpod/containers/{name}/archive</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            endpoint added
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">PUT /libpod/containers/{name}/archive</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            endpoint added
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">POST /libpod/containers/{name}/attach</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            endpoint added
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">GET /libpod/containers/{name}/changes</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            endpoint added
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">POST /libpod/containers/{name}/checkpoint</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            endpoint added
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">POST /libpod/containers/{name}/exec</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            endpoint added
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">GET /libpod/containers/{name}/exists</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            endpoint added
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">GET /libpod/containers/{name}/export</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            endpoint added
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">GET /libpod/containers/{name}/healthcheck</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            endpoint added
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">POST /libpod/containers/{name}/init</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            endpoint added
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">GET /libpod/containers/{name}/json</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            endpoint added
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">POST /libpod/containers/{name}/kill</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            endpoint added
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">GET /libpod/containers/{name}/logs</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            endpoint added
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">POST /libpod/containers/{name}/mount</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            endpoint added
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">POST /libpod/containers/{name}/pause</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            endpoint added
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">POST /libpod/containers/{name}/rename</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            endpoint added
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">POST /libpod/containers/{name}/resize</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            endpoint added
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">POST /libpod/containers/{name}/restart</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            endpoint added
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">POST /libpod/containers/{name}/restore</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            endpoint added
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">POST /libpod/containers/{name}/start</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            endpoint added
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">GET /libpod/containers/{name}/stats</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            endpoint added
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">POST /libpod/containers/{name}/stop</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            endpoint added
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">GET /libpod/containers/{name}/top</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            endpoint added
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">POST /libpod/containers/{name}/unmount</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            endpoint added
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">POST /libpod/containers/{name}/unpause</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            endpoint added
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">POST /libpod/containers/{name}/update</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            endpoint added
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">POST /libpod/containers/{name}/wait</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            endpoint added
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">GET /libpod/events</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            endpoint added
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">GET /libpod/exec/{id}/json</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            endpoint added
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">POST /libpod/exec/{id}/resize</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            endpoint added
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">POST /libpod/exec/{id}/start</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            endpoint added
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">GET /libpod/generate/kube</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            endpoint added
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">GET /libpod/generate/{name}/systemd</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            endpoint added
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">GET /libpod/images/export</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            endpoint added
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">POST /libpod/images/import</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            endpoint added
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">GET /libpod/images/json</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            endpoint added
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">POST /libpod/images/load</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            endpoint added
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">POST /libpod/images/prune</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            endpoint added
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">POST /libpod/images/pull</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            endpoint added
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">DELETE /libpod/images/remove</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            endpoint added
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">POST /libpod/images/scp/{name}</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            endpoint added
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">GET /libpod/images/search</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            endpoint added
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">DELETE /libpod/images/{name}</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            endpoint added
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">GET /libpod/images/{name}/changes</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            endpoint added
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">GET /libpod/images/{name}/exists</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            endpoint added
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">GET /libpod/images/{name}/get</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            endpoint added
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">GET /libpod/images/{name}/history</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            endpoint added
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">GET /libpod/images/{name}/json</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            endpoint added
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">POST /libpod/images/{name}/push</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            endpoint added
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">GET /libpod/images/{name}/resolve</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            endpoint added
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">POST /libpod/images/{name}/tag</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            endpoint added
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">GET /libpod/images/{name}/tree</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            endpoint added
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">POST /libpod/images/{name}/untag</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            endpoint added
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">GET /libpod/info</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            endpoint added
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">POST /libpod/kube/apply</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            endpoint added
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">DELETE /libpod/manifests/{name}</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            endpoint added
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">POST /libpod/manifests/{name}</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            endpoint added
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">PUT /libpod/manifests/{name}</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            endpoint added
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">POST /libpod/manifests/{name}/add</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            endpoint added
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">GET /libpod/manifests/{name}/exists</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            endpoint added
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">GET /libpod/manifests/{name}/json</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            endpoint added
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">POST /libpod/manifests/{name}/push</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            endpoint added
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">POST /libpod/manifests/{name}/registry/{destination}</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            endpoint added
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">POST /libpod/networks/create</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            endpoint added
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">GET /libpod/networks/json</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            endpoint added
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">POST /libpod/networks/prune</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            endpoint added
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">DELETE /libpod/networks/{name}</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            endpoint added
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">POST /libpod/networks/{name}/connect</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            endpoint added
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">POST /libpod/networks/{name}/disconnect</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            endpoint added
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">GET /libpod/networks/{name}/exists</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            endpoint added
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">GET /libpod/networks/{name}/json</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            endpoint added
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">POST /libpod/networks/{name}/update</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            endpoint added
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">DELETE /libpod/play/kube</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            endpoint added
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">POST /libpod/play/kube</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            endpoint added
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">POST /libpod/pods/create</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            endpoint added
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">GET /libpod/pods/json</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            endpoint added
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">POST /libpod/pods/prune</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            endpoint added
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">GET /libpod/pods/stats</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            endpoint added
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">DELETE /libpod/pods/{name}</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            endpoint added
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">GET /libpod/pods/{name}/exists</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            endpoint added
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">GET /libpod/pods/{name}/json</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            endpoint added
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">POST /libpod/pods/{name}/kill</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            endpoint added
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">POST /libpod/pods/{name}/pause</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            endpoint added
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">POST /libpod/pods/{name}/restart</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            endpoint added
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">POST /libpod/pods/{name}/start</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            endpoint added
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">POST /libpod/pods/{name}/stop</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            endpoint added
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">GET /libpod/pods/{name}/top</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            endpoint added
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">POST /libpod/pods/{name}/unpause</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            endpoint added
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">POST /libpod/secrets/create</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            endpoint added
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">GET /libpod/secrets/json</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            endpoint added
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">DELETE /libpod/secrets/{name}</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            endpoint added
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">GET /libpod/secrets/{name}/exists</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            endpoint added
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">GET /libpod/secrets/{name}/json</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            endpoint added
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">POST /libpod/system/check</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            endpoint added
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">GET /libpod/system/df</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            endpoint added
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">POST /libpod/system/prune</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            endpoint added
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">GET /libpod/version</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            endpoint added
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">POST /libpod/volumes/create</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            endpoint added
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">GET /libpod/volumes/json</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            endpoint added
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">POST /libpod/volumes/prune</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            endpoint added
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">DELETE /libpod/volumes/{name}</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            endpoint added
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">GET /libpod/volumes/{name}/exists</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            endpoint added
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">GET /libpod/volumes/{name}/json</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            endpoint added
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">GET /networks</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            api tag &#39;networks (compat)&#39; added
+            </li>
+
+            <li class="change">
+
+            api tag &#39;Network&#39; removed
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">POST /networks/create</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            <div class="breaking tooltip" data-text="Breaking Change">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 16 16" class="breaking-icon" role="img" aria-label="Important With Circle Icon"><path fill="currentColor" fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14ZM7 4.5a1 1 0 0 1 2 0v4a1 1 0 0 1-2 0v-4Zm2 7a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z" clip-rule="evenodd"></path></svg>
+            </div>
+
+            deleted the &#39;body&#39; request parameter &#39;networkConfig&#39;
+            </li>
+
+            <li class="change">
+
+            api tag &#39;networks (compat)&#39; added
+            </li>
+
+            <li class="change">
+
+            api tag &#39;Network&#39; removed
+            </li>
+
+            <li class="change">
+
+            added the new optional &#39;body&#39; request parameter &#39;create&#39;
+            </li>
+
+            <li class="change">
+
+            removed the non-success response with the status &#39;403&#39;
+            </li>
+
+            <li class="change">
+
+            removed the non-success response with the status &#39;404&#39;
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">POST /networks/prune</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            api tag &#39;networks (compat)&#39; added
+            </li>
+
+            <li class="change">
+
+            api tag &#39;Network&#39; removed
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">DELETE /networks/{id}</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            api tag &#39;networks (compat)&#39; added
+            </li>
+
+            <li class="change">
+
+            api tag &#39;Network&#39; removed
+            </li>
+
+            <li class="change">
+
+            removed the non-success response with the status &#39;403&#39;
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">GET /networks/{id}</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            api tag &#39;networks (compat)&#39; added
+            </li>
+
+            <li class="change">
+
+            api tag &#39;Network&#39; removed
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">POST /networks/{id}/connect</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            <div class="breaking tooltip" data-text="Breaking Change">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 16 16" class="breaking-icon" role="img" aria-label="Important With Circle Icon"><path fill="currentColor" fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14ZM7 4.5a1 1 0 0 1 2 0v4a1 1 0 0 1-2 0v-4Zm2 7a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z" clip-rule="evenodd"></path></svg>
+            </div>
+
+            deleted the &#39;body&#39; request parameter &#39;container&#39;
+            </li>
+
+            <li class="change">
+
+            api tag &#39;networks (compat)&#39; added
+            </li>
+
+            <li class="change">
+
+            api tag &#39;Network&#39; removed
+            </li>
+
+            <li class="change">
+
+            added the new optional &#39;body&#39; request parameter &#39;create&#39;
+            </li>
+
+            <li class="change">
+
+            removed the non-success response with the status &#39;404&#39;
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">POST /networks/{id}/disconnect</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            <div class="breaking tooltip" data-text="Breaking Change">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 16 16" class="breaking-icon" role="img" aria-label="Important With Circle Icon"><path fill="currentColor" fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14ZM7 4.5a1 1 0 0 1 2 0v4a1 1 0 0 1-2 0v-4Zm2 7a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z" clip-rule="evenodd"></path></svg>
+            </div>
+
+            deleted the &#39;body&#39; request parameter &#39;container&#39;
+            </li>
+
+            <li class="change">
+
+            api tag &#39;networks (compat)&#39; added
+            </li>
+
+            <li class="change">
+
+            api tag &#39;Network&#39; removed
+            </li>
+
+            <li class="change">
+
+            added the new optional &#39;body&#39; request parameter &#39;create&#39;
+            </li>
+
+            <li class="change">
+
+            added the non-success response with the status &#39;400&#39;
+            </li>
+
+            <li class="change">
+
+            removed the non-success response with the status &#39;403&#39;
+            </li>
+
+            <li class="change">
+
+            removed the non-success response with the status &#39;404&#39;
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">GET /nodes</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            <div class="breaking tooltip" data-text="Breaking Change">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 16 16" class="breaking-icon" role="img" aria-label="Important With Circle Icon"><path fill="currentColor" fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14ZM7 4.5a1 1 0 0 1 2 0v4a1 1 0 0 1-2 0v-4Zm2 7a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z" clip-rule="evenodd"></path></svg>
+            </div>
+
+            api path removed without deprecation
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">DELETE /nodes/{id}</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            <div class="breaking tooltip" data-text="Breaking Change">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 16 16" class="breaking-icon" role="img" aria-label="Important With Circle Icon"><path fill="currentColor" fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14ZM7 4.5a1 1 0 0 1 2 0v4a1 1 0 0 1-2 0v-4Zm2 7a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z" clip-rule="evenodd"></path></svg>
+            </div>
+
+            api path removed without deprecation
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">GET /nodes/{id}</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            <div class="breaking tooltip" data-text="Breaking Change">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 16 16" class="breaking-icon" role="img" aria-label="Important With Circle Icon"><path fill="currentColor" fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14ZM7 4.5a1 1 0 0 1 2 0v4a1 1 0 0 1-2 0v-4Zm2 7a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z" clip-rule="evenodd"></path></svg>
+            </div>
+
+            api path removed without deprecation
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">POST /nodes/{id}/update</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            <div class="breaking tooltip" data-text="Breaking Change">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 16 16" class="breaking-icon" role="img" aria-label="Important With Circle Icon"><path fill="currentColor" fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14ZM7 4.5a1 1 0 0 1 2 0v4a1 1 0 0 1-2 0v-4Zm2 7a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z" clip-rule="evenodd"></path></svg>
+            </div>
+
+            api path removed without deprecation
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">GET /plugins</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            <div class="breaking tooltip" data-text="Breaking Change">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 16 16" class="breaking-icon" role="img" aria-label="Important With Circle Icon"><path fill="currentColor" fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14ZM7 4.5a1 1 0 0 1 2 0v4a1 1 0 0 1-2 0v-4Zm2 7a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z" clip-rule="evenodd"></path></svg>
+            </div>
+
+            api path removed without deprecation
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">POST /plugins/create</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            <div class="breaking tooltip" data-text="Breaking Change">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 16 16" class="breaking-icon" role="img" aria-label="Important With Circle Icon"><path fill="currentColor" fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14ZM7 4.5a1 1 0 0 1 2 0v4a1 1 0 0 1-2 0v-4Zm2 7a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z" clip-rule="evenodd"></path></svg>
+            </div>
+
+            api path removed without deprecation
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">GET /plugins/privileges</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            <div class="breaking tooltip" data-text="Breaking Change">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 16 16" class="breaking-icon" role="img" aria-label="Important With Circle Icon"><path fill="currentColor" fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14ZM7 4.5a1 1 0 0 1 2 0v4a1 1 0 0 1-2 0v-4Zm2 7a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z" clip-rule="evenodd"></path></svg>
+            </div>
+
+            api path removed without deprecation
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">POST /plugins/pull</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            <div class="breaking tooltip" data-text="Breaking Change">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 16 16" class="breaking-icon" role="img" aria-label="Important With Circle Icon"><path fill="currentColor" fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14ZM7 4.5a1 1 0 0 1 2 0v4a1 1 0 0 1-2 0v-4Zm2 7a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z" clip-rule="evenodd"></path></svg>
+            </div>
+
+            api path removed without deprecation
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">DELETE /plugins/{name}</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            <div class="breaking tooltip" data-text="Breaking Change">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 16 16" class="breaking-icon" role="img" aria-label="Important With Circle Icon"><path fill="currentColor" fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14ZM7 4.5a1 1 0 0 1 2 0v4a1 1 0 0 1-2 0v-4Zm2 7a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z" clip-rule="evenodd"></path></svg>
+            </div>
+
+            api path removed without deprecation
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">POST /plugins/{name}/disable</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            <div class="breaking tooltip" data-text="Breaking Change">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 16 16" class="breaking-icon" role="img" aria-label="Important With Circle Icon"><path fill="currentColor" fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14ZM7 4.5a1 1 0 0 1 2 0v4a1 1 0 0 1-2 0v-4Zm2 7a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z" clip-rule="evenodd"></path></svg>
+            </div>
+
+            api path removed without deprecation
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">POST /plugins/{name}/enable</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            <div class="breaking tooltip" data-text="Breaking Change">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 16 16" class="breaking-icon" role="img" aria-label="Important With Circle Icon"><path fill="currentColor" fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14ZM7 4.5a1 1 0 0 1 2 0v4a1 1 0 0 1-2 0v-4Zm2 7a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z" clip-rule="evenodd"></path></svg>
+            </div>
+
+            api path removed without deprecation
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">GET /plugins/{name}/json</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            <div class="breaking tooltip" data-text="Breaking Change">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 16 16" class="breaking-icon" role="img" aria-label="Important With Circle Icon"><path fill="currentColor" fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14ZM7 4.5a1 1 0 0 1 2 0v4a1 1 0 0 1-2 0v-4Zm2 7a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z" clip-rule="evenodd"></path></svg>
+            </div>
+
+            api path removed without deprecation
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">POST /plugins/{name}/push</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            <div class="breaking tooltip" data-text="Breaking Change">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 16 16" class="breaking-icon" role="img" aria-label="Important With Circle Icon"><path fill="currentColor" fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14ZM7 4.5a1 1 0 0 1 2 0v4a1 1 0 0 1-2 0v-4Zm2 7a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z" clip-rule="evenodd"></path></svg>
+            </div>
+
+            api path removed without deprecation
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">POST /plugins/{name}/set</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            <div class="breaking tooltip" data-text="Breaking Change">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 16 16" class="breaking-icon" role="img" aria-label="Important With Circle Icon"><path fill="currentColor" fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14ZM7 4.5a1 1 0 0 1 2 0v4a1 1 0 0 1-2 0v-4Zm2 7a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z" clip-rule="evenodd"></path></svg>
+            </div>
+
+            api path removed without deprecation
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">POST /plugins/{name}/upgrade</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            <div class="breaking tooltip" data-text="Breaking Change">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 16 16" class="breaking-icon" role="img" aria-label="Important With Circle Icon"><path fill="currentColor" fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14ZM7 4.5a1 1 0 0 1 2 0v4a1 1 0 0 1-2 0v-4Zm2 7a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z" clip-rule="evenodd"></path></svg>
+            </div>
+
+            api path removed without deprecation
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">GET /secrets</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            api tag &#39;secrets (compat)&#39; added
+            </li>
+
+            <li class="change">
+
+            api tag &#39;Secret&#39; removed
+            </li>
+
+            <li class="change">
+
+            removed the non-success response with the status &#39;503&#39;
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">POST /secrets/create</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            <div class="breaking tooltip" data-text="Breaking Change">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 16 16" class="breaking-icon" role="img" aria-label="Important With Circle Icon"><path fill="currentColor" fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14ZM7 4.5a1 1 0 0 1 2 0v4a1 1 0 0 1-2 0v-4Zm2 7a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z" clip-rule="evenodd"></path></svg>
+            </div>
+
+            deleted the &#39;body&#39; request parameter &#39;body&#39;
+            </li>
+
+            <li class="change">
+
+            api tag &#39;secrets (compat)&#39; added
+            </li>
+
+            <li class="change">
+
+            api tag &#39;Secret&#39; removed
+            </li>
+
+            <li class="change">
+
+            added the new optional &#39;body&#39; request parameter &#39;create&#39;
+            </li>
+
+            <li class="change">
+
+            removed the non-success response with the status &#39;503&#39;
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">DELETE /secrets/{id}</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            api tag &#39;secrets (compat)&#39; added
+            </li>
+
+            <li class="change">
+
+            api tag &#39;Secret&#39; removed
+            </li>
+
+            <li class="change">
+
+            removed the non-success response with the status &#39;503&#39;
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">GET /secrets/{id}</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            api tag &#39;secrets (compat)&#39; added
+            </li>
+
+            <li class="change">
+
+            api tag &#39;Secret&#39; removed
+            </li>
+
+            <li class="change">
+
+            removed the non-success response with the status &#39;503&#39;
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">POST /secrets/{id}/update</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            <div class="breaking tooltip" data-text="Breaking Change">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 16 16" class="breaking-icon" role="img" aria-label="Important With Circle Icon"><path fill="currentColor" fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14ZM7 4.5a1 1 0 0 1 2 0v4a1 1 0 0 1-2 0v-4Zm2 7a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z" clip-rule="evenodd"></path></svg>
+            </div>
+
+            api path removed without deprecation
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">GET /services</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            <div class="breaking tooltip" data-text="Breaking Change">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 16 16" class="breaking-icon" role="img" aria-label="Important With Circle Icon"><path fill="currentColor" fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14ZM7 4.5a1 1 0 0 1 2 0v4a1 1 0 0 1-2 0v-4Zm2 7a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z" clip-rule="evenodd"></path></svg>
+            </div>
+
+            api path removed without deprecation
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">POST /services/create</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            <div class="breaking tooltip" data-text="Breaking Change">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 16 16" class="breaking-icon" role="img" aria-label="Important With Circle Icon"><path fill="currentColor" fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14ZM7 4.5a1 1 0 0 1 2 0v4a1 1 0 0 1-2 0v-4Zm2 7a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z" clip-rule="evenodd"></path></svg>
+            </div>
+
+            api path removed without deprecation
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">DELETE /services/{id}</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            <div class="breaking tooltip" data-text="Breaking Change">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 16 16" class="breaking-icon" role="img" aria-label="Important With Circle Icon"><path fill="currentColor" fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14ZM7 4.5a1 1 0 0 1 2 0v4a1 1 0 0 1-2 0v-4Zm2 7a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z" clip-rule="evenodd"></path></svg>
+            </div>
+
+            api path removed without deprecation
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">GET /services/{id}</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            <div class="breaking tooltip" data-text="Breaking Change">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 16 16" class="breaking-icon" role="img" aria-label="Important With Circle Icon"><path fill="currentColor" fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14ZM7 4.5a1 1 0 0 1 2 0v4a1 1 0 0 1-2 0v-4Zm2 7a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z" clip-rule="evenodd"></path></svg>
+            </div>
+
+            api path removed without deprecation
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">GET /services/{id}/logs</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            <div class="breaking tooltip" data-text="Breaking Change">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 16 16" class="breaking-icon" role="img" aria-label="Important With Circle Icon"><path fill="currentColor" fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14ZM7 4.5a1 1 0 0 1 2 0v4a1 1 0 0 1-2 0v-4Zm2 7a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z" clip-rule="evenodd"></path></svg>
+            </div>
+
+            api path removed without deprecation
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">POST /services/{id}/update</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            <div class="breaking tooltip" data-text="Breaking Change">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 16 16" class="breaking-icon" role="img" aria-label="Important With Circle Icon"><path fill="currentColor" fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14ZM7 4.5a1 1 0 0 1 2 0v4a1 1 0 0 1-2 0v-4Zm2 7a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z" clip-rule="evenodd"></path></svg>
+            </div>
+
+            api path removed without deprecation
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">POST /session</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            <div class="breaking tooltip" data-text="Breaking Change">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 16 16" class="breaking-icon" role="img" aria-label="Important With Circle Icon"><path fill="currentColor" fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14ZM7 4.5a1 1 0 0 1 2 0v4a1 1 0 0 1-2 0v-4Zm2 7a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z" clip-rule="evenodd"></path></svg>
+            </div>
+
+            api path removed without deprecation
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">GET /swarm</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            <div class="breaking tooltip" data-text="Breaking Change">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 16 16" class="breaking-icon" role="img" aria-label="Important With Circle Icon"><path fill="currentColor" fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14ZM7 4.5a1 1 0 0 1 2 0v4a1 1 0 0 1-2 0v-4Zm2 7a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z" clip-rule="evenodd"></path></svg>
+            </div>
+
+            api path removed without deprecation
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">POST /swarm/init</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            <div class="breaking tooltip" data-text="Breaking Change">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 16 16" class="breaking-icon" role="img" aria-label="Important With Circle Icon"><path fill="currentColor" fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14ZM7 4.5a1 1 0 0 1 2 0v4a1 1 0 0 1-2 0v-4Zm2 7a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z" clip-rule="evenodd"></path></svg>
+            </div>
+
+            api path removed without deprecation
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">POST /swarm/join</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            <div class="breaking tooltip" data-text="Breaking Change">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 16 16" class="breaking-icon" role="img" aria-label="Important With Circle Icon"><path fill="currentColor" fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14ZM7 4.5a1 1 0 0 1 2 0v4a1 1 0 0 1-2 0v-4Zm2 7a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z" clip-rule="evenodd"></path></svg>
+            </div>
+
+            api path removed without deprecation
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">POST /swarm/leave</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            <div class="breaking tooltip" data-text="Breaking Change">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 16 16" class="breaking-icon" role="img" aria-label="Important With Circle Icon"><path fill="currentColor" fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14ZM7 4.5a1 1 0 0 1 2 0v4a1 1 0 0 1-2 0v-4Zm2 7a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z" clip-rule="evenodd"></path></svg>
+            </div>
+
+            api path removed without deprecation
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">POST /swarm/unlock</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            <div class="breaking tooltip" data-text="Breaking Change">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 16 16" class="breaking-icon" role="img" aria-label="Important With Circle Icon"><path fill="currentColor" fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14ZM7 4.5a1 1 0 0 1 2 0v4a1 1 0 0 1-2 0v-4Zm2 7a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z" clip-rule="evenodd"></path></svg>
+            </div>
+
+            api path removed without deprecation
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">GET /swarm/unlockkey</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            <div class="breaking tooltip" data-text="Breaking Change">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 16 16" class="breaking-icon" role="img" aria-label="Important With Circle Icon"><path fill="currentColor" fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14ZM7 4.5a1 1 0 0 1 2 0v4a1 1 0 0 1-2 0v-4Zm2 7a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z" clip-rule="evenodd"></path></svg>
+            </div>
+
+            api path removed without deprecation
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">POST /swarm/update</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            <div class="breaking tooltip" data-text="Breaking Change">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 16 16" class="breaking-icon" role="img" aria-label="Important With Circle Icon"><path fill="currentColor" fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14ZM7 4.5a1 1 0 0 1 2 0v4a1 1 0 0 1-2 0v-4Zm2 7a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z" clip-rule="evenodd"></path></svg>
+            </div>
+
+            api path removed without deprecation
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">GET /system/df</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            <div class="breaking tooltip" data-text="Breaking Change">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 16 16" class="breaking-icon" role="img" aria-label="Important With Circle Icon"><path fill="currentColor" fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14ZM7 4.5a1 1 0 0 1 2 0v4a1 1 0 0 1-2 0v-4Zm2 7a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z" clip-rule="evenodd"></path></svg>
+            </div>
+
+            deleted the &#39;query&#39; request parameter &#39;type&#39;
+            </li>
+
+            <li class="change">
+
+            api tag &#39;system (compat)&#39; added
+            </li>
+
+            <li class="change">
+
+            api tag &#39;System&#39; removed
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">GET /tasks</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            <div class="breaking tooltip" data-text="Breaking Change">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 16 16" class="breaking-icon" role="img" aria-label="Important With Circle Icon"><path fill="currentColor" fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14ZM7 4.5a1 1 0 0 1 2 0v4a1 1 0 0 1-2 0v-4Zm2 7a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z" clip-rule="evenodd"></path></svg>
+            </div>
+
+            api path removed without deprecation
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">GET /tasks/{id}</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            <div class="breaking tooltip" data-text="Breaking Change">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 16 16" class="breaking-icon" role="img" aria-label="Important With Circle Icon"><path fill="currentColor" fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14ZM7 4.5a1 1 0 0 1 2 0v4a1 1 0 0 1-2 0v-4Zm2 7a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z" clip-rule="evenodd"></path></svg>
+            </div>
+
+            api path removed without deprecation
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">GET /tasks/{id}/logs</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            <div class="breaking tooltip" data-text="Breaking Change">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 16 16" class="breaking-icon" role="img" aria-label="Important With Circle Icon"><path fill="currentColor" fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14ZM7 4.5a1 1 0 0 1 2 0v4a1 1 0 0 1-2 0v-4Zm2 7a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z" clip-rule="evenodd"></path></svg>
+            </div>
+
+            api path removed without deprecation
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">GET /version</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            api tag &#39;system (compat)&#39; added
+            </li>
+
+            <li class="change">
+
+            api tag &#39;System&#39; removed
+            </li>
+
+            <li class="change">
+
+            removed the non-success response with the status &#39;500&#39;
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">GET /volumes</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            api tag &#39;volumes (compat)&#39; added
+            </li>
+
+            <li class="change">
+
+            api tag &#39;Volume&#39; removed
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">POST /volumes/create</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            <div class="breaking tooltip" data-text="Breaking Change">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 16 16" class="breaking-icon" role="img" aria-label="Important With Circle Icon"><path fill="currentColor" fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14ZM7 4.5a1 1 0 0 1 2 0v4a1 1 0 0 1-2 0v-4Zm2 7a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z" clip-rule="evenodd"></path></svg>
+            </div>
+
+            deleted the &#39;body&#39; request parameter &#39;volumeConfig&#39;
+            </li>
+
+            <li class="change">
+
+            api tag &#39;volumes (compat)&#39; added
+            </li>
+
+            <li class="change">
+
+            api tag &#39;Volume&#39; removed
+            </li>
+
+            <li class="change">
+
+            added the new optional &#39;body&#39; request parameter &#39;create&#39;
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">POST /volumes/prune</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            api tag &#39;volumes (compat)&#39; added
+            </li>
+
+            <li class="change">
+
+            api tag &#39;Volume&#39; removed
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">DELETE /volumes/{name}</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            api tag &#39;volumes (compat)&#39; added
+            </li>
+
+            <li class="change">
+
+            api tag &#39;Volume&#39; removed
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">GET /volumes/{name}</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            api tag &#39;volumes (compat)&#39; added
+            </li>
+
+            <li class="change">
+
+            api tag &#39;Volume&#39; removed
+            </li>
+
+            <li class="change">
+
+            removed the non-success response with the status &#39;404&#39;
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <div class="endpoint-header">
+            <span class="path">
+                <div class="">PUT /volumes/{name}</div>
+            </span>
+            <div class="change-type">Updated</div>
+        </div>
+        <ul class="endpoint-changes">
+
+            <li class="change">
+
+            <div class="breaking tooltip" data-text="Breaking Change">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 16 16" class="breaking-icon" role="img" aria-label="Important With Circle Icon"><path fill="currentColor" fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14ZM7 4.5a1 1 0 0 1 2 0v4a1 1 0 0 1-2 0v-4Zm2 7a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z" clip-rule="evenodd"></path></svg>
+            </div>
+
+            api removed without deprecation
+            </li>
+
+        </ul>
+    </div>
+
+</body>
+
+</html>

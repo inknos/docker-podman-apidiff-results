@@ -1,57 +1,231 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><title>Api Change Log</title><link rel="stylesheet" href="http://deepoove.com/swagger-diff/stylesheets/demo.css"></head><body><header><h1>Api Change Log</h1></header><div class="article"><div><h2>What&#x27;s New</h2><hr><ol></ol></div><div><h2>What&#x27;s Deleted</h2><hr><ol></ol></div><div><h2>What&#x27;s Deprecated</h2><hr><ol></ol></div><div><h2>What&#x27;s Changed</h2><hr><ol><li><span class="GET">GET</span>/containers/{id}/changes <span></span><ul class="detail"><li><h3>Response</h3><ul class="change response"><li>Changed response : [200]<span class="comment">//The list of changes</span><ul class="change request-body"><li><div><h3>Schema</h3></div>Changed body: &#x27;application/json&#x27;</li></ul></li></ul></li></ul></li><li><span class="GET">GET</span>/images/json <span></span><ul class="detail"><li><h3>Parameters</h3><ul class="change param"><li>filters in query Notes <del class="comment">A JSON encoded value of the filters (a `map[string][]string`) to
-process on the images list.
-
-Available filters:
-
-- `before`=(`&lt;image-name&gt;[:&lt;tag&gt;]`,  `&lt;image id&gt;` or `&lt;image@digest&gt;`)
-- `dangling=true`
-- `label=key` or `label=&quot;key=value&quot;` of an image label
-- `reference`=(`&lt;image-name&gt;[:&lt;tag&gt;]`)
-- `since`=(`&lt;image-name&gt;[:&lt;tag&gt;]`,  `&lt;image id&gt;` or `&lt;image@digest&gt;`)
-- `until=&lt;timestamp&gt;`
-</del> change into <span class="comment">A JSON encoded value of the filters (a `map[string][]string`) to
-process on the images list.
-
-Available filters:
-
-- `before`=(`&lt;image-name&gt;[:&lt;tag&gt;]`,  `&lt;image id&gt;` or `&lt;image@digest&gt;`)
-- `dangling=true`
-- `label=key` or `label=&quot;key=value&quot;` of an image label
-- `reference`=(`&lt;image-name&gt;[:&lt;tag&gt;]`)
-- `since`=(`&lt;image-name&gt;[:&lt;tag&gt;]`,  `&lt;image id&gt;` or `&lt;image@digest&gt;`)
-</span></li></ul></li><li><h3>Response</h3><ul class="change response"><li>Changed response : [200]<span class="comment">//Summary image data for the images matching the query</span><ul class="change request-body"><li><div><h3>Schema</h3></div>Changed body: &#x27;application/json&#x27;</li></ul></li></ul></li></ul></li><li><span class="POST">POST</span>/build/prune <span></span><ul class="detail"><li><h3>Parameters</h3><ul class="change param"><li>filters in query Notes <del class="comment">A JSON encoded value of the filters (a `map[string][]string`) to
-process on the list of build cache objects.
-
-Available filters:
-
-- `until=&lt;timestamp&gt;` remove cache older than `&lt;timestamp&gt;`. The `&lt;timestamp&gt;` can be Unix timestamps, date formatted timestamps, or Go duration strings (e.g. `10m`, `1h30m`) computed relative to the daemon&#x27;s local time.
-- `id=&lt;id&gt;`
-- `parent=&lt;id&gt;`
-- `type=&lt;string&gt;`
-- `description=&lt;string&gt;`
-- `inuse`
-- `shared`
-- `private`
-</del> change into <span class="comment">A JSON encoded value of the filters (a `map[string][]string`) to
-process on the list of build cache objects.
-
-Available filters:
-
-- `until=&lt;duration&gt;`: duration relative to daemon&#x27;s time, during which build cache was not used, in Go&#x27;s duration format (e.g., &#x27;24h&#x27;)
-- `id=&lt;id&gt;`
-- `parent=&lt;id&gt;`
-- `type=&lt;string&gt;`
-- `description=&lt;string&gt;`
-- `inuse`
-- `shared`
-- `private`
-</span></li></ul></li></ul></li><li><span class="POST">POST</span>/images/create <span></span><ul class="detail"></ul></li><li><span class="POST">POST</span>/images/{name}/push <span></span><ul class="detail"><li><h3>Parameters</h3><ul class="change param"><li class="missing"><span>Delete</span><del>platform</del><span>in query</span><span class="comment">//Select a platform-specific manifest to be pushed. OCI platform (JSON encoded)</span></li></ul></li></ul></li><li><span class="GET">GET</span>/images/search <span></span><ul class="detail"><li><h3>Parameters</h3><ul class="change param"><li>filters in query Notes <del class="comment">A JSON encoded value of the filters (a `map[string][]string`) to process on the images list. Available filters:
-
-- `is-official=(true|false)`
-- `stars=&lt;number&gt;` Matches images that has at least &#x27;number&#x27; stars.
-</del> change into <span class="comment">A JSON encoded value of the filters (a `map[string][]string`) to process on the images list. Available filters:
-
-- `is-automated=(true|false)`
-- `is-official=(true|false)`
-- `stars=&lt;number&gt;` Matches images that has at least &#x27;number&#x27; stars.
-</span></li></ul></li><li><h3>Response</h3><ul class="change response"><li>Changed response : [200]<span class="comment">//No error</span><ul class="change request-body"><li><div><h3>Schema</h3></div>Changed body: &#x27;application/json&#x27;</li></ul></li></ul></li></ul></li><li><span class="POST">POST</span>/commit <span></span><ul class="detail"><li><h3>Request</h3><ul class="change request-body"><li><div><h3>Schema</h3></div>Changed body: &#x27;application/json&#x27;</li></ul></li></ul></li><li><span class="GET">GET</span>/events <span></span><ul class="detail"></ul></li><li><span class="POST">POST</span>/networks/create <span></span><ul class="detail"><li><h3>Request</h3><ul class="change request-body"><li><div><h3>Schema</h3></div>Changed body: &#x27;application/json&#x27;</li></ul></li><li><h3>Response</h3><ul class="change response"><li>Changed response : [201]<span class="comment">//No error</span><ul class="change request-body"><li><div><h3>Schema incompatible</h3></div>Changed body: &#x27;application/json&#x27;</li></ul></li><li>Changed response : [403]<span class="comment">//operation not supported for pre-defined networks</span><ul class="change request-body"></ul></li></ul></li></ul></li><li><span class="POST">POST</span>/networks/{id}/connect <span></span><ul class="detail"><li><h3>Request</h3><ul class="change request-body"><li><div><h3>Schema</h3></div>Changed body: &#x27;application/json&#x27;</li></ul></li><li><h3>Response</h3><ul class="change response"><li>Deleted response : [400]<span class="comment">//bad parameter</span></li><li>Changed response : [403]<span class="comment">//Operation not supported for swarm scoped networks</span><ul class="change request-body"></ul></li></ul></li></ul></li><li><span class="GET">GET</span>/containers/json <span></span><ul class="detail"><li><h3>Response</h3><ul class="change response"><li>Changed response : [200]<span class="comment">//no error</span><ul class="change request-body"><li><div><h3>Schema</h3></div>Changed body: &#x27;application/json&#x27;</li></ul></li></ul></li></ul></li><li><span class="POST">POST</span>/containers/create <span></span><ul class="detail"><li><h3>Request</h3><ul class="change request-body"><li><div><h3>Schema</h3></div>Changed body: &#x27;application/json&#x27;</li><li><div><h3>Schema</h3></div>Changed body: &#x27;application/octet-stream&#x27;</li></ul></li></ul></li><li><span class="GET">GET</span>/containers/{id}/json <span></span><ul class="detail"><li><h3>Response</h3><ul class="change response"><li>Changed response : [200]<span class="comment">//no error</span><ul class="change request-body"><li><div><h3>Schema</h3></div>Changed body: &#x27;application/json&#x27;</li></ul></li></ul></li></ul></li><li><span class="GET">GET</span>/images/{name}/json <span></span><ul class="detail"><li><h3>Response</h3><ul class="change response"><li>Changed response : [200]<span class="comment">//No error</span><ul class="change request-body"><li><div><h3>Schema incompatible</h3></div>Changed body: &#x27;application/json&#x27;<p class="missing">Changed property type: Created (string -&gt; string)</p><p class="missing">Missing property: Config.Healthcheck.StartInterval (integer)</p></li></ul></li></ul></li></ul></li><li><span class="GET">GET</span>/system/df <span></span><ul class="detail"><li><h3>Response</h3><ul class="change response"><li>Changed response : [200]<span class="comment">//no error</span><ul class="change request-body"><li><div><h3>Schema</h3></div>Changed body: &#x27;application/json&#x27;</li><li><div><h3>Schema</h3></div>Changed body: &#x27;text/plain&#x27;</li></ul></li></ul></li></ul></li><li><span class="POST">POST</span>/services/create <span></span><ul class="detail"><li><h3>Request</h3><ul class="change request-body"><li><div><h3>Schema</h3></div>Changed body: &#x27;application/json&#x27;</li></ul></li><li><h3>Response</h3><ul class="change response"><li>Changed response : [201]<span class="comment">//no error</span><ul class="change request-body"><li><div><h3>Schema</h3></div>Changed body: &#x27;application/json&#x27;</li></ul></li></ul></li></ul></li><li><span class="POST">POST</span>/services/{id}/update <span></span><ul class="detail"><li><h3>Request</h3><ul class="change request-body"><li><div><h3>Schema</h3></div>Changed body: &#x27;application/json&#x27;</li></ul></li></ul></li><li><span class="GET">GET</span>/tasks <span></span><ul class="detail"><li><h3>Response</h3><ul class="change response"><li>Changed response : [200]<span class="comment">//no error</span><ul class="change request-body"><li><div><h3>Schema</h3></div>Changed body: &#x27;application/json&#x27;</li></ul></li></ul></li></ul></li><li><span class="GET">GET</span>/tasks/{id} <span></span><ul class="detail"><li><h3>Response</h3><ul class="change response"><li>Changed response : [200]<span class="comment">//no error</span><ul class="change request-body"><li><div><h3>Schema</h3></div>Changed body: &#x27;application/json&#x27;</li></ul></li></ul></li></ul></li><li><span class="GET">GET</span>/info <span></span><ul class="detail"><li><h3>Response</h3><ul class="change response"><li>Changed response : [200]<span class="comment">//No error</span><ul class="change request-body"><li><div><h3>Schema</h3></div>Changed body: &#x27;application/json&#x27;</li></ul></li></ul></li></ul></li><li><span class="GET">GET</span>/services <span></span><ul class="detail"><li><h3>Response</h3><ul class="change response"><li>Changed response : [200]<span class="comment">//no error</span><ul class="change request-body"><li><div><h3>Schema</h3></div>Changed body: &#x27;application/json&#x27;</li><li><div><h3>Schema</h3></div>Changed body: &#x27;text/plain&#x27;</li></ul></li></ul></li></ul></li><li><span class="GET">GET</span>/services/{id} <span></span><ul class="detail"><li><h3>Response</h3><ul class="change response"><li>Changed response : [200]<span class="comment">//no error</span><ul class="change request-body"><li><div><h3>Schema</h3></div>Changed body: &#x27;application/json&#x27;</li><li><div><h3>Schema</h3></div>Changed body: &#x27;text/plain&#x27;</li></ul></li></ul></li></ul></li></ol></div></div></body></html>
+<h3 id="new-endpoints-none">New Endpoints: None</h3>
+<hr>
+<h3 id="deleted-endpoints-none">Deleted Endpoints: None</h3>
+<hr>
+<h3 id="modified-endpoints-15">Modified Endpoints: 15</h3>
+<hr>
+<p>POST /build/prune</p>
+<ul>
+<li>Modified query param: filters
+<ul>
+<li>Description changed from 'A JSON encoded value of the filters (a <code>map[string][]string</code>) to<br>
+process on the list of build cache objects.</li>
+</ul>
+</li>
+</ul>
+<p>Available filters:</p>
+<ul>
+<li><code>until=&lt;timestamp&gt;</code> remove cache older than <code>&lt;timestamp&gt;</code>. The <code>&lt;timestamp&gt;</code> can be Unix timestamps, date formatted timestamps, or Go duration strings (e.g. <code>10m</code>, <code>1h30m</code>) computed relative to the daemon's local time.</li>
+<li><code>id=&lt;id&gt;</code></li>
+<li><code>parent=&lt;id&gt;</code></li>
+<li><code>type=&lt;string&gt;</code></li>
+<li><code>description=&lt;string&gt;</code></li>
+<li><code>inuse</code></li>
+<li><code>shared</code></li>
+<li><code>private</code><br>
+' to 'A JSON encoded value of the filters (a <code>map[string][]string</code>) to<br>
+process on the list of build cache objects.</li>
+</ul>
+<p>Available filters:</p>
+<ul>
+<li><code>until=&lt;duration&gt;</code>: duration relative to daemon's time, during which build cache was not used, in Go's duration format (e.g., '24h')</li>
+<li><code>id=&lt;id&gt;</code></li>
+<li><code>parent=&lt;id&gt;</code></li>
+<li><code>type=&lt;string&gt;</code></li>
+<li><code>description=&lt;string&gt;</code></li>
+<li><code>inuse</code></li>
+<li><code>shared</code></li>
+<li><code>private</code><br>
+'</li>
+</ul>
+<p>POST /commit</p>
+<p>POST /containers/create</p>
+<p>GET /containers/json</p>
+<ul>
+<li>Responses changed
+<ul>
+<li>Modified response: 200</li>
+</ul>
+</li>
+</ul>
+<p>GET /containers/{id}/changes</p>
+<ul>
+<li>
+<p>Description changed from 'Returns which files in a container's filesystem have been added, deleted,<br>
+or modified. The <code>Kind</code> of modification can be one of:</p>
+</li>
+<li>
+<p><code>0</code>: Modified (&quot;C&quot;)</p>
+</li>
+<li>
+<p><code>1</code>: Added (&quot;A&quot;)</p>
+</li>
+<li>
+<p><code>2</code>: Deleted (&quot;D&quot;)<br>
+' to 'Returns which files in a container's filesystem have been added, deleted,<br>
+or modified. The <code>Kind</code> of modification can be one of:</p>
+</li>
+<li>
+<p><code>0</code>: Modified</p>
+</li>
+<li>
+<p><code>1</code>: Added</p>
+</li>
+<li>
+<p><code>2</code>: Deleted<br>
+'</p>
+</li>
+<li>
+<p>Responses changed</p>
+<ul>
+<li>Modified response: 200</li>
+</ul>
+</li>
+</ul>
+<p>GET /events</p>
+<ul>
+<li>Description changed from 'Stream real-time events from the server.</li>
+</ul>
+<p>Various objects within Docker report events when something happens to them.</p>
+<p>Containers report these events: <code>attach</code>, <code>commit</code>, <code>copy</code>, <code>create</code>, <code>destroy</code>, <code>detach</code>, <code>die</code>, <code>exec_create</code>, <code>exec_detach</code>, <code>exec_start</code>, <code>exec_die</code>, <code>export</code>, <code>health_status</code>, <code>kill</code>, <code>oom</code>, <code>pause</code>, <code>rename</code>, <code>resize</code>, <code>restart</code>, <code>start</code>, <code>stop</code>, <code>top</code>, <code>unpause</code>, <code>update</code>, and <code>prune</code></p>
+<p>Images report these events: <code>create, </code>delete<code>, </code>import<code>, </code>load<code>, </code>pull<code>, </code>push<code>, </code>save<code>, </code>tag<code>, </code>untag<code>, and </code>prune`</p>
+<p>Volumes report these events: <code>create</code>, <code>mount</code>, <code>unmount</code>, <code>destroy</code>, and <code>prune</code></p>
+<p>Networks report these events: <code>create</code>, <code>connect</code>, <code>disconnect</code>, <code>destroy</code>, <code>update</code>, <code>remove</code>, and <code>prune</code></p>
+<p>The Docker daemon reports these events: <code>reload</code></p>
+<p>Services report these events: <code>create</code>, <code>update</code>, and <code>remove</code></p>
+<p>Nodes report these events: <code>create</code>, <code>update</code>, and <code>remove</code></p>
+<p>Secrets report these events: <code>create</code>, <code>update</code>, and <code>remove</code></p>
+<p>Configs report these events: <code>create</code>, <code>update</code>, and <code>remove</code></p>
+<p>The Builder reports <code>prune</code> events<br>
+' to 'Stream real-time events from the server.</p>
+<p>Various objects within Docker report events when something happens to them.</p>
+<p>Containers report these events: <code>attach</code>, <code>commit</code>, <code>copy</code>, <code>create</code>, <code>destroy</code>, <code>detach</code>, <code>die</code>, <code>exec_create</code>, <code>exec_detach</code>, <code>exec_start</code>, <code>exec_die</code>, <code>export</code>, <code>health_status</code>, <code>kill</code>, <code>oom</code>, <code>pause</code>, <code>rename</code>, <code>resize</code>, <code>restart</code>, <code>start</code>, <code>stop</code>, <code>top</code>, <code>unpause</code>, <code>update</code>, and <code>prune</code></p>
+<p>Images report these events: <code>delete</code>, <code>import</code>, <code>load</code>, <code>pull</code>, <code>push</code>, <code>save</code>, <code>tag</code>, <code>untag</code>, and <code>prune</code></p>
+<p>Volumes report these events: <code>create</code>, <code>mount</code>, <code>unmount</code>, <code>destroy</code>, and <code>prune</code></p>
+<p>Networks report these events: <code>create</code>, <code>connect</code>, <code>disconnect</code>, <code>destroy</code>, <code>update</code>, <code>remove</code>, and <code>prune</code></p>
+<p>The Docker daemon reports these events: <code>reload</code></p>
+<p>Services report these events: <code>create</code>, <code>update</code>, and <code>remove</code></p>
+<p>Nodes report these events: <code>create</code>, <code>update</code>, and <code>remove</code></p>
+<p>Secrets report these events: <code>create</code>, <code>update</code>, and <code>remove</code></p>
+<p>Configs report these events: <code>create</code>, <code>update</code>, and <code>remove</code></p>
+<p>The Builder reports <code>prune</code> events<br>
+'</p>
+<p>POST /images/create</p>
+<ul>
+<li>Description changed from 'Pull or import an image.' to 'Create an image by either pulling it from a registry or importing it.'</li>
+</ul>
+<p>GET /images/json</p>
+<ul>
+<li>Modified query param: filters
+<ul>
+<li>Description changed from 'A JSON encoded value of the filters (a <code>map[string][]string</code>) to<br>
+process on the images list.</li>
+</ul>
+</li>
+</ul>
+<p>Available filters:</p>
+<ul>
+<li><code>before</code>=(<code>&lt;image-name&gt;[:&lt;tag&gt;]</code>,  <code>&lt;image id&gt;</code> or <code>&lt;image@digest&gt;</code>)</li>
+<li><code>dangling=true</code></li>
+<li><code>label=key</code> or <code>label=&quot;key=value&quot;</code> of an image label</li>
+<li><code>reference</code>=(<code>&lt;image-name&gt;[:&lt;tag&gt;]</code>)</li>
+<li><code>since</code>=(<code>&lt;image-name&gt;[:&lt;tag&gt;]</code>,  <code>&lt;image id&gt;</code> or <code>&lt;image@digest&gt;</code>)</li>
+<li><code>until=&lt;timestamp&gt;</code><br>
+' to 'A JSON encoded value of the filters (a <code>map[string][]string</code>) to<br>
+process on the images list.</li>
+</ul>
+<p>Available filters:</p>
+<ul>
+<li><code>before</code>=(<code>&lt;image-name&gt;[:&lt;tag&gt;]</code>,  <code>&lt;image id&gt;</code> or <code>&lt;image@digest&gt;</code>)</li>
+<li><code>dangling=true</code></li>
+<li><code>label=key</code> or <code>label=&quot;key=value&quot;</code> of an image label</li>
+<li><code>reference</code>=(<code>&lt;image-name&gt;[:&lt;tag&gt;]</code>)</li>
+<li><code>since</code>=(<code>&lt;image-name&gt;[:&lt;tag&gt;]</code>,  <code>&lt;image id&gt;</code> or <code>&lt;image@digest&gt;</code>)<br>
+'</li>
+</ul>
+<p>GET /images/search</p>
+<ul>
+<li>
+<p>Modified query param: filters</p>
+<ul>
+<li>Description changed from 'A JSON encoded value of the filters (a <code>map[string][]string</code>) to process on the images list. Available filters:</li>
+</ul>
+</li>
+<li>
+<p><code>is-official=(true|false)</code></p>
+</li>
+<li>
+<p><code>stars=&lt;number&gt;</code> Matches images that has at least 'number' stars.<br>
+' to 'A JSON encoded value of the filters (a <code>map[string][]string</code>) to process on the images list. Available filters:</p>
+</li>
+<li>
+<p><code>is-automated=(true|false)</code></p>
+</li>
+<li>
+<p><code>is-official=(true|false)</code></p>
+</li>
+<li>
+<p><code>stars=&lt;number&gt;</code> Matches images that has at least 'number' stars.<br>
+'</p>
+</li>
+<li>
+<p>Responses changed</p>
+<ul>
+<li>Modified response: 200</li>
+</ul>
+</li>
+</ul>
+<p>POST /images/{name}/push</p>
+<ul>
+<li>Deleted query param: platform</li>
+</ul>
+<p>POST /networks/create</p>
+<ul>
+<li>Responses changed
+<ul>
+<li>Modified response: 201
+<ul>
+<li>Description changed from 'Network created successfully' to 'No error'</li>
+</ul>
+</li>
+<li>Modified response: 403
+<ul>
+<li>Description changed from 'Forbidden operation. This happens when trying to create a network named after a pre-defined network,<br>
+or when trying to create an overlay network on a daemon which is not part of a Swarm cluster.<br>
+' to 'operation not supported for pre-defined networks'</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>POST /networks/{id}/connect</p>
+<ul>
+<li>Description changed from 'The network must be either a local-scoped network or a swarm-scoped network with the <code>attachable</code> option set. A network cannot be re-attached to a running container' to ''</li>
+<li>Responses changed
+<ul>
+<li>Deleted response: 400</li>
+<li>Modified response: 403
+<ul>
+<li>Description changed from 'Operation forbidden' to 'Operation not supported for swarm scoped networks'</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>POST /services/create</p>
+<ul>
+<li>Responses changed
+<ul>
+<li>Modified response: 201</li>
+</ul>
+</li>
+</ul>
+<p>POST /services/{id}/update</p>
+<p>GET /system/df</p>
+<ul>
+<li>Responses changed
+<ul>
+<li>Modified response: 200</li>
+</ul>
+</li>
+</ul>

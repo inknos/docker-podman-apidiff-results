@@ -21,14 +21,14 @@ done
 
 # Compare Podman specs with Docker specs
 for version in "${docker_versions[@]}"; do
-	output="docker-v$version-podman-latest"
-	podman run --rm -t \
-		-v "$(pwd)/specs:/specs:ro,Z" \
-		-v "$(pwd)/results:/results:Z" \
-		openapitools/openapi-diff:latest \
-		"/specs/docker-v$version.yaml" "/specs/podman-latest.yaml" \
-		--markdown "/results/markdown/$output.md" \
-		--html "/results/html/$output.html"
+    for command in breaking changelog diff; do
+
+	    output="docker-v$version-podman-latest-$command"
+        ~/go/bin/oasdiff $command \
+            "specs/docker-v$version.yaml" "specs/podman-latest.yaml" \
+            -f html > "results/html/$output.html"
+        echo "Done with $output"
+    done
 done
 
 # Compare Docker specs with Docker specs
@@ -41,12 +41,9 @@ for version in ${docker_versions[@]}; do
             continue
         fi
         output="docker-v$version-docker-v$other_version"
-        podman run --rm -t \
-            -v "$(pwd)/specs:/specs:ro,Z" \
-            -v "$(pwd)/results:/results:Z" \
-            openapitools/openapi-diff:latest \
-            "/specs/docker-v$version.yaml" "/specs/docker-v$other_version.yaml" \
-            --markdown "/results/markdown/$output.md" \
-            --html "/results/html/$output.html"
+        ~/go/bin/oasdiff diff \
+            "specs/docker-v$version.yaml" "specs/docker-v$other_version.yaml" \
+            -f html > "results/html/$output.html"
+        echo "Done with $output"
         done
     done

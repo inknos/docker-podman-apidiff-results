@@ -1,59 +1,354 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><title>Api Change Log</title><link rel="stylesheet" href="http://deepoove.com/swagger-diff/stylesheets/demo.css"></head><body><header><h1>Api Change Log</h1></header><div class="article"><div><h2>What&#x27;s New</h2><hr><ol><li><span class="PUT">PUT</span>/volumes/{name} <span>&quot;Update a volume. Valid only for Swarm cluster volumes&quot;
-</span></li></ol></div><div><h2>What&#x27;s Deleted</h2><hr><ol></ol></div><div><h2>What&#x27;s Deprecated</h2><hr><ol></ol></div><div><h2>What&#x27;s Changed</h2><hr><ol><li><span class="GET">GET</span>/containers/{id}/logs <span></span><ul class="detail"><li><h3>Response</h3><ul class="change response"><li>Changed response : [200]<span class="comment">//logs returned as a stream in response body.
-For the stream format, [see the documentation for the attach endpoint](#operation/ContainerAttach).
-Note that unlike the attach endpoint, the logs endpoint does not
-upgrade the connection and does not set Content-Type.
-</span><ul class="change request-body"><li>New body: &#x27;application/vnd.docker.raw-stream&#x27;</li><li>New body: &#x27;application/vnd.docker.multiplexed-stream&#x27;</li><li>Deleted body: &#x27;application/json&#x27;</li><li>Deleted body: &#x27;text/plain&#x27;</li></ul></li><li>Changed response : [404]<span class="comment">//no such container</span><ul class="change request-body"><li>New body: &#x27;application/vnd.docker.raw-stream&#x27;</li><li>New body: &#x27;application/vnd.docker.multiplexed-stream&#x27;</li><li>Deleted body: &#x27;text/plain&#x27;</li><li><div><h3>Schema incompatible</h3></div>Changed body: &#x27;application/json&#x27;<p class="missing">Changed property type:  (object -&gt; no schema)</p></li></ul></li><li>Changed response : [500]<span class="comment">//server error</span><ul class="change request-body"><li>New body: &#x27;application/vnd.docker.raw-stream&#x27;</li><li>New body: &#x27;application/vnd.docker.multiplexed-stream&#x27;</li><li>Deleted body: &#x27;application/json&#x27;</li><li>Deleted body: &#x27;text/plain&#x27;</li></ul></li></ul></li></ul></li><li><span class="GET">GET</span>/services/{id}/logs <span></span><ul class="detail"><li><h3>Response</h3><ul class="change response"><li>Changed response : [200]<span class="comment">//logs returned as a stream in response body</span><ul class="change request-body"><li>New body: &#x27;application/vnd.docker.raw-stream&#x27;</li><li>New body: &#x27;application/vnd.docker.multiplexed-stream&#x27;</li><li>Deleted body: &#x27;application/json&#x27;</li><li>Deleted body: &#x27;text/plain&#x27;</li></ul></li><li>Changed response : [404]<span class="comment">//no such service</span><ul class="change request-body"><li>New body: &#x27;application/vnd.docker.raw-stream&#x27;</li><li>New body: &#x27;application/vnd.docker.multiplexed-stream&#x27;</li><li>Deleted body: &#x27;text/plain&#x27;</li><li><div><h3>Schema incompatible</h3></div>Changed body: &#x27;application/json&#x27;<p class="missing">Changed property type:  (object -&gt; no schema)</p></li></ul></li><li>Changed response : [500]<span class="comment">//server error</span><ul class="change request-body"><li>New body: &#x27;application/vnd.docker.raw-stream&#x27;</li><li>New body: &#x27;application/vnd.docker.multiplexed-stream&#x27;</li><li>Deleted body: &#x27;application/json&#x27;</li><li>Deleted body: &#x27;text/plain&#x27;</li></ul></li><li>Changed response : [503]<span class="comment">//node is not part of a swarm</span><ul class="change request-body"><li>New body: &#x27;application/vnd.docker.raw-stream&#x27;</li><li>New body: &#x27;application/vnd.docker.multiplexed-stream&#x27;</li><li>Deleted body: &#x27;application/json&#x27;</li><li>Deleted body: &#x27;text/plain&#x27;</li></ul></li></ul></li></ul></li><li><span class="GET">GET</span>/tasks/{id}/logs <span></span><ul class="detail"><li><h3>Response</h3><ul class="change response"><li>Changed response : [200]<span class="comment">//logs returned as a stream in response body</span><ul class="change request-body"><li>New body: &#x27;application/vnd.docker.raw-stream&#x27;</li><li>New body: &#x27;application/vnd.docker.multiplexed-stream&#x27;</li><li>Deleted body: &#x27;application/json&#x27;</li><li>Deleted body: &#x27;text/plain&#x27;</li></ul></li><li>Changed response : [404]<span class="comment">//no such task</span><ul class="change request-body"><li>New body: &#x27;application/vnd.docker.raw-stream&#x27;</li><li>New body: &#x27;application/vnd.docker.multiplexed-stream&#x27;</li><li>Deleted body: &#x27;text/plain&#x27;</li><li><div><h3>Schema incompatible</h3></div>Changed body: &#x27;application/json&#x27;<p class="missing">Changed property type:  (object -&gt; no schema)</p></li></ul></li><li>Changed response : [500]<span class="comment">//server error</span><ul class="change request-body"><li>New body: &#x27;application/vnd.docker.raw-stream&#x27;</li><li>New body: &#x27;application/vnd.docker.multiplexed-stream&#x27;</li><li>Deleted body: &#x27;application/json&#x27;</li><li>Deleted body: &#x27;text/plain&#x27;</li></ul></li><li>Changed response : [503]<span class="comment">//node is not part of a swarm</span><ul class="change request-body"><li>New body: &#x27;application/vnd.docker.raw-stream&#x27;</li><li>New body: &#x27;application/vnd.docker.multiplexed-stream&#x27;</li><li>Deleted body: &#x27;application/json&#x27;</li><li>Deleted body: &#x27;text/plain&#x27;</li></ul></li></ul></li></ul></li><li><span class="GET">GET</span>/containers/{id}/changes <span></span><ul class="detail"><li><h3>Response</h3><ul class="change response"><li>Changed response : [200]<span class="comment">//The list of changes</span><ul class="change request-body"><li><div><h3>Schema incompatible</h3></div>Changed body: &#x27;application/json&#x27;</li></ul></li></ul></li></ul></li><li><span class="POST">POST</span>/containers/{id}/stop <span></span><ul class="detail"><li><h3>Parameters</h3><ul class="change param"><li>Add signal in query<span class="comment">//Signal to send to the container as an integer or string (e.g. `SIGINT`).
-</span></li></ul></li></ul></li><li><span class="POST">POST</span>/containers/{id}/restart <span></span><ul class="detail"><li><h3>Parameters</h3><ul class="change param"><li>Add signal in query<span class="comment">//Signal to send to the container as an integer or string (e.g. `SIGINT`).
-</span></li></ul></li></ul></li><li><span class="POST">POST</span>/containers/{id}/update <span></span><ul class="detail"><li><h3>Request</h3><ul class="change request-body"><li><div><h3>Schema</h3></div>Changed body: &#x27;application/json&#x27;</li></ul></li></ul></li><li><span class="POST">POST</span>/containers/{id}/attach <span></span><ul class="detail"><li><h3>Response</h3><ul class="change response"><li>Changed response : [400]<span class="comment">//bad parameter</span><ul class="change request-body"><li>New body: &#x27;application/vnd.docker.multiplexed-stream&#x27;</li></ul></li><li>Changed response : [404]<span class="comment">//no such container</span><ul class="change request-body"><li>New body: &#x27;application/vnd.docker.multiplexed-stream&#x27;</li></ul></li><li>Changed response : [500]<span class="comment">//server error</span><ul class="change request-body"><li>New body: &#x27;application/vnd.docker.multiplexed-stream&#x27;</li></ul></li></ul></li></ul></li><li><span class="GET">GET</span>/containers/{id}/attach/ws <span></span><ul class="detail"><li><h3>Parameters</h3><ul class="change param"><li>Add stdin in query<span class="comment">//Attach to `stdin`</span></li><li>Add stdout in query<span class="comment">//Attach to `stdout`</span></li><li>Add stderr in query<span class="comment">//Attach to `stderr`</span></li></ul></li></ul></li><li><span class="GET">GET</span>/images/json <span></span><ul class="detail"><li><h3>Parameters</h3><ul class="change param"><li>Add shared-size in query<span class="comment">//Compute and show shared size as a `SharedSize` field on each image.</span></li></ul></li><li><h3>Response</h3><ul class="change response"><li>Changed response : [200]<span class="comment">//Summary image data for the images matching the query</span><ul class="change request-body"><li><div><h3>Schema incompatible</h3></div>Changed body: &#x27;application/json&#x27;</li></ul></li></ul></li></ul></li><li><span class="POST">POST</span>/build/prune <span></span><ul class="detail"><li><h3>Parameters</h3><ul class="change param"><li>filters in query Notes <del class="comment">A JSON encoded value of the filters (a `map[string][]string`) to
-process on the list of build cache objects.
+<h3 id="new-endpoints-1">New Endpoints: 1</h3>
+<hr>
+<p>PUT /volumes/{name}</p>
+<h3 id="deleted-endpoints-none">Deleted Endpoints: None</h3>
+<hr>
+<h3 id="modified-endpoints-25">Modified Endpoints: 25</h3>
+<hr>
+<p>GET /_ping</p>
+<ul>
+<li>Responses changed
+<ul>
+<li>Modified response: 200
+<ul>
+<li>Headers changed
+<ul>
+<li>New header: Swarm</li>
+<li>Modified header: Builder-Version
+<ul>
+<li>Description changed from 'Default version of docker image builder' to 'Default version of docker image builder</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>The default on Linux is version &quot;2&quot; (BuildKit), but the daemon<br>
+can be configured to recommend version &quot;1&quot; (classic Builder).<br>
+Windows does not yet support BuildKit for native Windows images,<br>
+and uses &quot;1&quot; (classic builder) as a default.</p>
+<p>This value is a recommendation as advertised by the daemon, and<br>
+it is up to the client to choose which builder to use.<br>
+'</p>
+<p>HEAD /_ping</p>
+<ul>
+<li>Responses changed
+<ul>
+<li>Modified response: 200
+<ul>
+<li>Headers changed
+<ul>
+<li>New header: Swarm</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>POST /build/prune</p>
+<ul>
+<li>Modified query param: filters
+<ul>
+<li>Description changed from 'A JSON encoded value of the filters (a <code>map[string][]string</code>) to<br>
+process on the list of build cache objects.</li>
+</ul>
+</li>
+</ul>
+<p>Available filters:</p>
+<ul>
+<li><code>until=&lt;duration&gt;</code>: duration relative to daemon's time, during which build cache was not used, in Go's duration format (e.g., '24h')</li>
+<li><code>id=&lt;id&gt;</code></li>
+<li><code>parent=&lt;id&gt;</code></li>
+<li><code>type=&lt;string&gt;</code></li>
+<li><code>description=&lt;string&gt;</code></li>
+<li><code>inuse</code></li>
+<li><code>shared</code></li>
+<li><code>private</code><br>
+' to 'A JSON encoded value of the filters (a <code>map[string][]string</code>) to<br>
+process on the list of build cache objects.</li>
+</ul>
+<p>Available filters:</p>
+<ul>
+<li><code>until=&lt;timestamp&gt;</code> remove cache older than <code>&lt;timestamp&gt;</code>. The <code>&lt;timestamp&gt;</code> can be Unix timestamps, date formatted timestamps, or Go duration strings (e.g. <code>10m</code>, <code>1h30m</code>) computed relative to the daemon's local time.</li>
+<li><code>id=&lt;id&gt;</code></li>
+<li><code>parent=&lt;id&gt;</code></li>
+<li><code>type=&lt;string&gt;</code></li>
+<li><code>description=&lt;string&gt;</code></li>
+<li><code>inuse</code></li>
+<li><code>shared</code></li>
+<li><code>private</code><br>
+'</li>
+</ul>
+<p>POST /containers/create</p>
+<ul>
+<li>Responses changed
+<ul>
+<li>Modified response: 201</li>
+</ul>
+</li>
+</ul>
+<p>POST /containers/{id}/attach</p>
+<ul>
+<li>Description changed from 'Attach to a container to read its output or send it input. You can attach<br>
+to the same container multiple times and you can reattach to containers<br>
+that have been detached.</li>
+</ul>
+<p>Either the <code>stream</code> or <code>logs</code> parameter must be <code>true</code> for this endpoint<br>
+to do anything.</p>
+<p>See the <a href="https://docs.docker.com/engine/reference/commandline/attach/">documentation for the <code>docker attach</code> command</a><br>
+for more details.</p>
+<h3 id="hijacking">Hijacking</h3>
+<p>This endpoint hijacks the HTTP connection to transport <code>stdin</code>, <code>stdout</code>,<br>
+and <code>stderr</code> on the same socket.</p>
+<p>This is the response from the daemon for an attach request:</p>
+<pre><code>HTTP/1.1 200 OK
+Content-Type: application/vnd.docker.raw-stream
 
-Available filters:
+[STREAM]
+</code></pre>
+<p>After the headers and two new lines, the TCP connection can now be used<br>
+for raw, bidirectional communication between the client and server.</p>
+<p>To hint potential proxies about connection hijacking, the Docker client<br>
+can also optionally send connection upgrade headers.</p>
+<p>For example, the client sends this request to upgrade the connection:</p>
+<pre><code>POST /containers/16253994b7c4/attach?stream=1&amp;stdout=1 HTTP/1.1
+Upgrade: tcp
+Connection: Upgrade
+</code></pre>
+<p>The Docker daemon will respond with a <code>101 UPGRADED</code> response, and will<br>
+similarly follow with the raw stream:</p>
+<pre><code>HTTP/1.1 101 UPGRADED
+Content-Type: application/vnd.docker.raw-stream
+Connection: Upgrade
+Upgrade: tcp
 
-- `until=&lt;duration&gt;`: duration relative to daemon&#x27;s time, during which build cache was not used, in Go&#x27;s duration format (e.g., &#x27;24h&#x27;)
-- `id=&lt;id&gt;`
-- `parent=&lt;id&gt;`
-- `type=&lt;string&gt;`
-- `description=&lt;string&gt;`
-- `inuse`
-- `shared`
-- `private`
-</del> change into <span class="comment">A JSON encoded value of the filters (a `map[string][]string`) to
-process on the list of build cache objects.
+[STREAM]
+</code></pre>
+<h3 id="stream-format">Stream format</h3>
+<p>When the TTY setting is disabled in <a href="#operation/ContainerCreate"><code>POST /containers/create</code></a>,<br>
+the stream over the hijacked connected is multiplexed to separate out<br>
+<code>stdout</code> and <code>stderr</code>. The stream consists of a series of frames, each<br>
+containing a header and a payload.</p>
+<p>The header contains the information which the stream writes (<code>stdout</code> or<br>
+<code>stderr</code>). It also contains the size of the associated frame encoded in<br>
+the last four bytes (<code>uint32</code>).</p>
+<p>It is encoded on the first eight bytes like this:</p>
+<pre><code class="language-go">header := [8]byte{STREAM_TYPE, 0, 0, 0, SIZE1, SIZE2, SIZE3, SIZE4}
+</code></pre>
+<p><code>STREAM_TYPE</code> can be:</p>
+<ul>
+<li>0: <code>stdin</code> (is written on <code>stdout</code>)</li>
+<li>1: <code>stdout</code></li>
+<li>2: <code>stderr</code></li>
+</ul>
+<p><code>SIZE1, SIZE2, SIZE3, SIZE4</code> are the four bytes of the <code>uint32</code> size<br>
+encoded as big endian.</p>
+<p>Following the header is the payload, which is the specified number of<br>
+bytes of <code>STREAM_TYPE</code>.</p>
+<p>The simplest way to implement this protocol is the following:</p>
+<ol>
+<li>Read 8 bytes.</li>
+<li>Choose <code>stdout</code> or <code>stderr</code> depending on the first byte.</li>
+<li>Extract the frame size from the last four bytes.</li>
+<li>Read the extracted size and output it on the correct output.</li>
+<li>Goto 1.</li>
+</ol>
+<h3 id="stream-format-when-using-a-tty">Stream format when using a TTY</h3>
+<p>When the TTY setting is enabled in <a href="#operation/ContainerCreate"><code>POST /containers/create</code></a>,<br>
+the stream is not multiplexed. The data exchanged over the hijacked<br>
+connection is simply the raw data from the process PTY and client's<br>
+<code>stdin</code>.<br>
+' to 'Attach to a container to read its output or send it input. You can attach<br>
+to the same container multiple times and you can reattach to containers<br>
+that have been detached.</p>
+<p>Either the <code>stream</code> or <code>logs</code> parameter must be <code>true</code> for this endpoint<br>
+to do anything.</p>
+<p>See the <a href="https://docs.docker.com/engine/reference/commandline/attach/">documentation for the <code>docker attach</code> command</a><br>
+for more details.</p>
+<h3 id="hijacking-1">Hijacking</h3>
+<p>This endpoint hijacks the HTTP connection to transport <code>stdin</code>, <code>stdout</code>,<br>
+and <code>stderr</code> on the same socket.</p>
+<p>This is the response from the daemon for an attach request:</p>
+<pre><code>HTTP/1.1 200 OK
+Content-Type: application/vnd.docker.raw-stream
 
-Available filters:
+[STREAM]
+</code></pre>
+<p>After the headers and two new lines, the TCP connection can now be used<br>
+for raw, bidirectional communication between the client and server.</p>
+<p>To hint potential proxies about connection hijacking, the Docker client<br>
+can also optionally send connection upgrade headers.</p>
+<p>For example, the client sends this request to upgrade the connection:</p>
+<pre><code>POST /containers/16253994b7c4/attach?stream=1&amp;stdout=1 HTTP/1.1
+Upgrade: tcp
+Connection: Upgrade
+</code></pre>
+<p>The Docker daemon will respond with a <code>101 UPGRADED</code> response, and will<br>
+similarly follow with the raw stream:</p>
+<pre><code>HTTP/1.1 101 UPGRADED
+Content-Type: application/vnd.docker.raw-stream
+Connection: Upgrade
+Upgrade: tcp
 
-- `until=&lt;timestamp&gt;` remove cache older than `&lt;timestamp&gt;`. The `&lt;timestamp&gt;` can be Unix timestamps, date formatted timestamps, or Go duration strings (e.g. `10m`, `1h30m`) computed relative to the daemon&#x27;s local time.
-- `id=&lt;id&gt;`
-- `parent=&lt;id&gt;`
-- `type=&lt;string&gt;`
-- `description=&lt;string&gt;`
-- `inuse`
-- `shared`
-- `private`
-</span></li></ul></li></ul></li><li><span class="POST">POST</span>/images/create <span></span><ul class="detail"><li><h3>Parameters</h3><ul class="change param"><li>platform in query Notes <del class="comment">Platform in the format os[/arch[/variant]]</del> change into <span class="comment">Platform in the format os[/arch[/variant]].
-
-When used in combination with the `fromImage` option, the daemon checks
-if the given image is present in the local image cache with the given
-OS and Architecture, and otherwise attempts to pull the image. If the
-option is not set, the host&#x27;s native OS and Architecture are used.
-If the given image does not exist in the local image cache, the daemon
-attempts to pull the image with the host&#x27;s native OS and Architecture.
-If the given image does exists in the local image cache, but its OS or
-architecture does not match, a warning is produced.
-
-When used with the `fromSrc` option to import an image from an archive,
-this option sets the platform information for the imported image. If
-the option is not set, the host&#x27;s native OS and Architecture are used
-for the imported image.
-</span></li></ul></li></ul></li><li><span class="GET">GET</span>/_ping <span></span><ul class="detail"><li><h3>Response</h3><ul class="change response"><li>Changed response : [200]<span class="comment">//no error</span><ul class="change request-body"></ul></li></ul></li></ul></li><li><span class="HEAD">HEAD</span>/_ping <span></span><ul class="detail"><li><h3>Response</h3><ul class="change response"><li>Changed response : [200]<span class="comment">//no error</span><ul class="change request-body"></ul></li></ul></li></ul></li><li><span class="POST">POST</span>/containers/{id}/exec <span></span><ul class="detail"><li><h3>Request</h3><ul class="change request-body"><li><div><h3>Schema</h3></div>Changed body: &#x27;application/json&#x27;</li></ul></li></ul></li><li><span class="POST">POST</span>/exec/{id}/start <span></span><ul class="detail"><li><h3>Request</h3><ul class="change request-body"><li><div><h3>Schema</h3></div>Changed body: &#x27;application/json&#x27;</li></ul></li><li><h3>Response</h3><ul class="change response"><li>Changed response : [404]<span class="comment">//No such exec instance</span><ul class="change request-body"><li>New body: &#x27;application/vnd.docker.multiplexed-stream&#x27;</li></ul></li><li>Changed response : [409]<span class="comment">//Container is stopped or paused</span><ul class="change request-body"><li>New body: &#x27;application/vnd.docker.multiplexed-stream&#x27;</li></ul></li></ul></li></ul></li><li><span class="POST">POST</span>/volumes/create <span></span><ul class="detail"><li><h3>Request</h3><ul class="change request-body"><li><div><h3>Schema</h3></div>Changed body: &#x27;application/json&#x27;</li></ul></li><li><h3>Response</h3><ul class="change response"><li>Changed response : [201]<span class="comment">//The volume was created successfully</span><ul class="change request-body"><li><div><h3>Schema</h3></div>Changed body: &#x27;application/json&#x27;</li></ul></li></ul></li></ul></li><li><span class="GET">GET</span>/volumes/{name} <span></span><ul class="detail"><li><h3>Response</h3><ul class="change response"><li>Changed response : [200]<span class="comment">//No error</span><ul class="change request-body"><li><div><h3>Schema</h3></div>Changed body: &#x27;application/json&#x27;</li></ul></li></ul></li></ul></li><li><span class="POST">POST</span>/volumes/prune <span></span><ul class="detail"><li><h3>Parameters</h3><ul class="change param"><li>filters in query Notes <del class="comment">Filters to process on the prune list, encoded as JSON (a `map[string][]string`).
-
-Available filters:
-- `label` (`label=&lt;key&gt;`, `label=&lt;key&gt;=&lt;value&gt;`, `label!=&lt;key&gt;`, or `label!=&lt;key&gt;=&lt;value&gt;`) Prune volumes with (or without, in case `label!=...` is used) the specified labels.
-</del> change into <span class="comment">Filters to process on the prune list, encoded as JSON (a `map[string][]string`).
-
-Available filters:
-- `label` (`label=&lt;key&gt;`, `label=&lt;key&gt;=&lt;value&gt;`, `label!=&lt;key&gt;`, or `label!=&lt;key&gt;=&lt;value&gt;`) Prune volumes with (or without, in case `label!=...` is used) the specified labels.
-- `all` (`all=true`) - Consider all (local) volumes for pruning and not just anonymous volumes.
-</span></li></ul></li></ul></li><li><span class="GET">GET</span>/volumes <span></span><ul class="detail"><li><h3>Response</h3><ul class="change response"><li>Changed response : [200]<span class="comment">//Summary volume data that matches the query</span><ul class="change request-body"><li><div><h3>Schema</h3></div>Changed body: &#x27;application/json&#x27;</li></ul></li></ul></li></ul></li><li><span class="GET">GET</span>/containers/json <span></span><ul class="detail"><li><h3>Response</h3><ul class="change response"><li>Changed response : [200]<span class="comment">//no error</span><ul class="change request-body"><li><div><h3>Schema incompatible</h3></div>Changed body: &#x27;application/json&#x27;</li></ul></li></ul></li></ul></li><li><span class="POST">POST</span>/containers/create <span></span><ul class="detail"><li><h3>Request</h3><ul class="change request-body"><li><div><h3>Schema</h3></div>Changed body: &#x27;application/json&#x27;</li><li><div><h3>Schema</h3></div>Changed body: &#x27;application/octet-stream&#x27;</li></ul></li></ul></li><li><span class="GET">GET</span>/containers/{id}/json <span></span><ul class="detail"><li><h3>Response</h3><ul class="change response"><li>Changed response : [200]<span class="comment">//no error</span><ul class="change request-body"><li><div><h3>Schema incompatible</h3></div>Changed body: &#x27;application/json&#x27;<p class="missing">Missing property: HostConfig.KernelMemory (integer)</p></li></ul></li></ul></li></ul></li><li><span class="GET">GET</span>/images/{name}/json <span></span><ul class="detail"><li><h3>Response</h3><ul class="change response"><li>Changed response : [200]<span class="comment">//No error</span><ul class="change request-body"><li><div><h3>Schema</h3></div>Changed body: &#x27;application/json&#x27;</li></ul></li></ul></li></ul></li><li><span class="GET">GET</span>/system/df <span></span><ul class="detail"><li><h3>Parameters</h3><ul class="change param"><li>Add type in query<span class="comment">//Object types, for which to compute and return data.
-</span></li></ul></li><li><h3>Response</h3><ul class="change response"><li>Changed response : [200]<span class="comment">//no error</span><ul class="change request-body"><li><div><h3>Schema incompatible</h3></div>Changed body: &#x27;application/json&#x27;</li><li><div><h3>Schema incompatible</h3></div>Changed body: &#x27;text/plain&#x27;</li></ul></li></ul></li></ul></li><li><span class="POST">POST</span>/services/create <span></span><ul class="detail"><li><h3>Request</h3><ul class="change request-body"><li><div><h3>Schema</h3></div>Changed body: &#x27;application/json&#x27;</li></ul></li></ul></li><li><span class="POST">POST</span>/services/{id}/update <span></span><ul class="detail"><li><h3>Request</h3><ul class="change request-body"><li><div><h3>Schema</h3></div>Changed body: &#x27;application/json&#x27;</li></ul></li></ul></li><li><span class="GET">GET</span>/tasks <span></span><ul class="detail"><li><h3>Response</h3><ul class="change response"><li>Changed response : [200]<span class="comment">//no error</span><ul class="change request-body"><li><div><h3>Schema incompatible</h3></div>Changed body: &#x27;application/json&#x27;</li></ul></li></ul></li></ul></li><li><span class="GET">GET</span>/tasks/{id} <span></span><ul class="detail"><li><h3>Response</h3><ul class="change response"><li>Changed response : [200]<span class="comment">//no error</span><ul class="change request-body"><li><div><h3>Schema incompatible</h3></div>Changed body: &#x27;application/json&#x27;</li></ul></li></ul></li></ul></li><li><span class="GET">GET</span>/info <span></span><ul class="detail"><li><h3>Response</h3><ul class="change response"><li>Changed response : [200]<span class="comment">//No error</span><ul class="change request-body"><li><div><h3>Schema</h3></div>Changed body: &#x27;application/json&#x27;</li></ul></li></ul></li></ul></li><li><span class="GET">GET</span>/services <span></span><ul class="detail"><li><h3>Response</h3><ul class="change response"><li>Changed response : [200]<span class="comment">//no error</span><ul class="change request-body"><li><div><h3>Schema incompatible</h3></div>Changed body: &#x27;application/json&#x27;</li><li><div><h3>Schema incompatible</h3></div>Changed body: &#x27;text/plain&#x27;</li></ul></li></ul></li></ul></li><li><span class="GET">GET</span>/services/{id} <span></span><ul class="detail"><li><h3>Response</h3><ul class="change response"><li>Changed response : [200]<span class="comment">//no error</span><ul class="change request-body"><li><div><h3>Schema incompatible</h3></div>Changed body: &#x27;application/json&#x27;</li><li><div><h3>Schema incompatible</h3></div>Changed body: &#x27;text/plain&#x27;</li></ul></li></ul></li></ul></li></ol></div></div></body></html>
+[STREAM]
+</code></pre>
+<h3 id="stream-format-1">Stream format</h3>
+<p>When the TTY setting is disabled in <a href="#operation/ContainerCreate"><code>POST /containers/create</code></a>,<br>
+the HTTP Content-Type header is set to application/vnd.docker.multiplexed-stream<br>
+and the stream over the hijacked connected is multiplexed to separate out<br>
+<code>stdout</code> and <code>stderr</code>. The stream consists of a series of frames, each<br>
+containing a header and a payload.</p>
+<p>The header contains the information which the stream writes (<code>stdout</code> or<br>
+<code>stderr</code>). It also contains the size of the associated frame encoded in<br>
+the last four bytes (<code>uint32</code>).</p>
+<p>It is encoded on the first eight bytes like this:</p>
+<pre><code class="language-go">header := [8]byte{STREAM_TYPE, 0, 0, 0, SIZE1, SIZE2, SIZE3, SIZE4}
+</code></pre>
+<p><code>STREAM_TYPE</code> can be:</p>
+<ul>
+<li>0: <code>stdin</code> (is written on <code>stdout</code>)</li>
+<li>1: <code>stdout</code></li>
+<li>2: <code>stderr</code></li>
+</ul>
+<p><code>SIZE1, SIZE2, SIZE3, SIZE4</code> are the four bytes of the <code>uint32</code> size<br>
+encoded as big endian.</p>
+<p>Following the header is the payload, which is the specified number of<br>
+bytes of <code>STREAM_TYPE</code>.</p>
+<p>The simplest way to implement this protocol is the following:</p>
+<ol>
+<li>Read 8 bytes.</li>
+<li>Choose <code>stdout</code> or <code>stderr</code> depending on the first byte.</li>
+<li>Extract the frame size from the last four bytes.</li>
+<li>Read the extracted size and output it on the correct output.</li>
+<li>Goto 1.</li>
+</ol>
+<h3 id="stream-format-when-using-a-tty-1">Stream format when using a TTY</h3>
+<p>When the TTY setting is enabled in <a href="#operation/ContainerCreate"><code>POST /containers/create</code></a>,<br>
+the stream is not multiplexed. The data exchanged over the hijacked<br>
+connection is simply the raw data from the process PTY and client's<br>
+<code>stdin</code>.<br>
+'</p>
+<p>GET /containers/{id}/attach/ws</p>
+<ul>
+<li>New query param: stderr</li>
+<li>New query param: stdin</li>
+<li>New query param: stdout</li>
+</ul>
+<p>GET /containers/{id}/changes</p>
+<ul>
+<li>
+<p>Description changed from 'Returns which files in a container's filesystem have been added, deleted,<br>
+or modified. The <code>Kind</code> of modification can be one of:</p>
+</li>
+<li>
+<p><code>0</code>: Modified</p>
+</li>
+<li>
+<p><code>1</code>: Added</p>
+</li>
+<li>
+<p><code>2</code>: Deleted<br>
+' to 'Returns which files in a container's filesystem have been added, deleted,<br>
+or modified. The <code>Kind</code> of modification can be one of:</p>
+</li>
+<li>
+<p><code>0</code>: Modified (&quot;C&quot;)</p>
+</li>
+<li>
+<p><code>1</code>: Added (&quot;A&quot;)</p>
+</li>
+<li>
+<p><code>2</code>: Deleted (&quot;D&quot;)<br>
+'</p>
+</li>
+<li>
+<p>Responses changed</p>
+<ul>
+<li>Modified response: 200</li>
+</ul>
+</li>
+</ul>
+<p>POST /containers/{id}/exec</p>
+<p>GET /containers/{id}/json</p>
+<ul>
+<li>Responses changed
+<ul>
+<li>Modified response: 200</li>
+</ul>
+</li>
+</ul>
+<p>GET /containers/{id}/logs</p>
+<p>POST /containers/{id}/restart</p>
+<ul>
+<li>New query param: signal</li>
+</ul>
+<p>POST /containers/{id}/stop</p>
+<ul>
+<li>New query param: signal</li>
+</ul>
+<p>POST /containers/{id}/update</p>
+<p>POST /exec/{id}/start</p>
+<p>POST /images/create</p>
+<ul>
+<li>Modified query param: platform
+<ul>
+<li>Description changed from 'Platform in the format os[/arch[/variant]]' to 'Platform in the format os[/arch[/variant]].</li>
+</ul>
+</li>
+</ul>
+<p>When used in combination with the <code>fromImage</code> option, the daemon checks<br>
+if the given image is present in the local image cache with the given<br>
+OS and Architecture, and otherwise attempts to pull the image. If the<br>
+option is not set, the host's native OS and Architecture are used.<br>
+If the given image does not exist in the local image cache, the daemon<br>
+attempts to pull the image with the host's native OS and Architecture.<br>
+If the given image does exists in the local image cache, but its OS or<br>
+architecture does not match, a warning is produced.</p>
+<p>When used with the <code>fromSrc</code> option to import an image from an archive,<br>
+this option sets the platform information for the imported image. If<br>
+the option is not set, the host's native OS and Architecture are used<br>
+for the imported image.<br>
+'</p>
+<p>GET /images/json</p>
+<ul>
+<li>New query param: shared-size</li>
+</ul>
+<p>POST /networks/{id}/connect</p>
+<p>POST /networks/{id}/disconnect</p>
+<p>POST /services/create</p>
+<p>GET /services/{id}/logs</p>
+<p>POST /services/{id}/update</p>
+<p>GET /system/df</p>
+<ul>
+<li>New query param: type</li>
+<li>Responses changed
+<ul>
+<li>Modified response: 200</li>
+</ul>
+</li>
+</ul>
+<p>GET /tasks/{id}/logs</p>
+<p>POST /volumes/create</p>
+<p>POST /volumes/prune</p>
+<ul>
+<li>Modified query param: filters
+<ul>
+<li>Description changed from 'Filters to process on the prune list, encoded as JSON (a <code>map[string][]string</code>).</li>
+</ul>
+</li>
+</ul>
+<p>Available filters:</p>
+<ul>
+<li><code>label</code> (<code>label=&lt;key&gt;</code>, <code>label=&lt;key&gt;=&lt;value&gt;</code>, <code>label!=&lt;key&gt;</code>, or <code>label!=&lt;key&gt;=&lt;value&gt;</code>) Prune volumes with (or without, in case <code>label!=...</code> is used) the specified labels.<br>
+' to 'Filters to process on the prune list, encoded as JSON (a <code>map[string][]string</code>).</li>
+</ul>
+<p>Available filters:</p>
+<ul>
+<li><code>label</code> (<code>label=&lt;key&gt;</code>, <code>label=&lt;key&gt;=&lt;value&gt;</code>, <code>label!=&lt;key&gt;</code>, or <code>label!=&lt;key&gt;=&lt;value&gt;</code>) Prune volumes with (or without, in case <code>label!=...</code> is used) the specified labels.</li>
+<li><code>all</code> (<code>all=true</code>) - Consider all (local) volumes for pruning and not just anonymous volumes.<br>
+'</li>
+</ul>
